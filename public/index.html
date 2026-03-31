@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정책자금 매칭 서비스</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background: #f0f4f8;
+    min-height: 100vh;
+    color: #1e293b;
+  }
+
+  /* ── 헤더 ── */
+  header {
+    background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%);
+    color: white;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(30,64,175,.3);
+  }
+  header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+  header p  { margin-top: 6px; font-size: 14px; opacity: .85; }
+
+  /* ── 메인 컨테이너 ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 28px 16px 60px; }
+
+  /* ── 카드 ── */
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title .badge {
+    background: #eff6ff;
+    color: #1e40af;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+  }
+
+  /* ── 폼 요소 ── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 540px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 13px; font-weight: 600; color: #475569; }
+
+  input, select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #1e293b;
+    background: #f8fafc;
+    outline: none;
+    transition: border .2s, box-shadow .2s;
+    font-family: inherit;
+  }
+  input:focus, select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    background: white;
+  }
+
+  .biz-row { display: flex; gap: 10px; align-items: flex-end; }
+  .biz-row input { flex: 1; }
+
+  /* ── 버튼 ── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 22px;
+    border: none; border-radius: 10px; cursor: pointer;
+    font-size: 14px; font-weight: 700; font-family: inherit;
+    transition: all .2s;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    color: white;
+    box-shadow: 0 4px 12px rgba(37,99,235,.3);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,.4); }
+  .btn-primary:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+  .btn-outline {
+    background: white; color: #2563eb;
+    border: 1.5px solid #2563eb;
+  }
+  .btn-outline:hover { background: #eff6ff; }
+  .btn-sm { padding: 8px 14px; font-size: 12px; border-radius: 8px; white-space: nowrap; }
+
+  .search-btn { width: 100%; margin-top: 20px; padding: 14px; font-size: 16px; border-radius: 12px; }
+
+  /* ── 상태 뱃지 ── */
+  .status-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: 600;
+    margin-top: 8px;
+  }
+  .status-ok    { background: #dcfce7; color: #166534; }
+  .status-warn  { background: #fef9c3; color: #854d0e; }
+  .status-error { background: #fee2e2; color: #991b1b; }
+  .status-info  { background: #eff6ff; color: #1e40af; }
+
+  /* ── 결과 섹션 ── */
+  #results-section { display: none; }
+
+  .results-header {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 8px;
+    margin-bottom: 16px;
+  }
+  .results-title { font-size: 17px; font-weight: 700; }
+  .results-count {
+    background: #1e40af; color: white;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 99px;
+  }
+
+  /* ── 필터 탭 ── */
+  .filter-tabs {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .tab-btn {
+    padding: 6px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 99px;
+    background: white; color: #64748b;
+    font-size: 13px; font-weight: 600; font-family: inherit;
+    cursor: pointer; transition: all .15s;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background: #1e40af; color: white; border-color: #1e40af;
+  }
+
+  /* ── 지원사업 카드 ── */
+  .result-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border: 1.5px solid #e2e8f0;
+    transition: all .2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .result-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #1e40af, #2563eb);
+    border-radius: 4px 0 0 4px;
+  }
+  .result-card:hover { border-color: #93c5fd; box-shadow: 0 4px 20px rgba(30,64,175,.1); transform: translateY(-2px); }
+  .result-card.national::before { background: linear-gradient(180deg, #64748b, #94a3b8); }
+
+  .region-badge {
+    font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 99px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .badge-regional { background: #dcfce7; color: #166534; }
+  .badge-national  { background: #f1f5f9; color: #64748b; }
+
+  .result-top {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+    margin-bottom: 10px;
+  }
+  .result-name {
+    font-size: 15px; font-weight: 700; color: #1e293b; line-height: 1.4;
+    flex: 1;
+  }
+  .result-name a { color: inherit; text-decoration: none; }
+  .result-name a:hover { color: #2563eb; }
+
+  .result-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .tag {
+    font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 99px;
+  }
+  .tag-org  { background: #f1f5f9; color: #475569; }
+  .tag-area { background: #eff6ff; color: #1e40af; }
+  .tag-type { background: #f0fdf4; color: #166534; }
+
+  .result-summary {
+    font-size: 13px; color: #64748b; line-height: 1.6;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .result-footer {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    padding-top: 12px; border-top: 1px solid #f1f5f9;
+  }
+  .result-date { font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 4px; }
+  .result-link {
+    font-size: 12px; font-weight: 700; color: #2563eb;
+    text-decoration: none; display: flex; align-items: center; gap: 4px;
+    padding: 5px 12px; border: 1.5px solid #93c5fd; border-radius: 8px;
+    transition: all .15s;
+  }
+  .result-link:hover { background: #eff6ff; }
+
+  /* ── 로딩 ── */
+  .loading {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 14px; padding: 50px 0; color: #64748b; font-size: 14px;
+  }
+  .spinner {
+    width: 42px; height: 42px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── 빈 결과 ── */
+  .empty {
+    text-align: center; padding: 50px 20px; color: #94a3b8;
+  }
+  .empty svg { margin-bottom: 12px; }
+  .empty p { font-size: 14px; }
+
+  /* ── 알림 ── */
+  .notice {
+    background: #fffbeb; border: 1px solid #fde68a;
+    border-radius: 10px; padding: 12px 16px;
+    font-size: 13px; color: #92400e; line-height: 1.5;
+    margin-bottom: 16px;
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .notice svg { flex-shrink: 0; margin-top: 1px; }
+
+  .badge-industry { background: #fef3c7; color: #92400e; }
+  .help-text { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🏛️ 정책자금 매칭 서비스</h1>
+  <p>사업자번호 + 업종/지역을 입력하면 받을 수 있는 정책자금을 찾아드립니다</p>
+</header>
+
+<div class="container">
+
+  <!-- ── STEP 1: 사업자 정보 ── -->
+  <div class="card">
+    <div class="card-title">
+      STEP 1 · 사업자 확인
+      <span class="badge">사업자번호로 상태 조회</span>
+    </div>
+
+    <div class="biz-row">
+      <div class="form-group" style="flex:1">
+        <label for="bizNo">사업자등록번호</label>
+        <input id="bizNo" type="text" placeholder="000-00-00000 또는 0000000000" maxlength="12">
+      </div>
+      <button class="btn btn-outline btn-sm" onclick="checkBizStatus()">상태 확인</button>
+    </div>
+
+    <div id="biz-status"></div>
+  </div>
+
+  <!-- ── STEP 2: 사업 정보 입력 ── -->
+  <div class="card">
+    <div class="card-title">
+      STEP 2 · 사업 정보 입력
+      <span class="badge">업종 · 지역 · 규모</span>
+    </div>
+
+    <div class="notice">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      📍 <strong>지역</strong>은 사업자번호 앞 3자리(세무서 코드)로 자동 감지됩니다. &nbsp;|&nbsp; 📋 <strong>업종</strong>은 공개 API 미지원으로 직접 선택해 주세요.
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>업종</label>
+        <select id="industry">
+          <option value="">전체 업종</option>
+          <optgroup label="소상공인 업종">
+            <option value="음식">음식·숙박업</option>
+            <option value="소매">소매·도소매업</option>
+            <option value="미용">미용·이미용업</option>
+            <option value="세탁">세탁·수선업</option>
+          </optgroup>
+          <optgroup label="제조·기술">
+            <option value="제조">제조업</option>
+            <option value="IT">IT·소프트웨어</option>
+            <option value="기술">기술개발·R&D</option>
+          </optgroup>
+          <optgroup label="서비스">
+            <option value="서비스">서비스업</option>
+            <option value="건설">건설업</option>
+            <option value="농업">농업·수산업</option>
+            <option value="창업">창업·스타트업</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>시·도</label>
+        <select id="region" onchange="updateCityList()">
+          <option value="전국">전국 (지역 무관)</option>
+          <optgroup label="수도권">
+            <option value="서울">서울</option>
+            <option value="경기">경기</option>
+            <option value="인천">인천</option>
+          </optgroup>
+          <optgroup label="영남">
+            <option value="부산">부산</option>
+            <option value="대구">대구</option>
+            <option value="울산">울산</option>
+            <option value="경남">경남</option>
+            <option value="경북">경북</option>
+          </optgroup>
+          <optgroup label="호남·충청·강원·제주">
+            <option value="광주">광주</option>
+            <option value="전남">전남</option>
+            <option value="전북">전북</option>
+            <option value="대전">대전</option>
+            <option value="충남">충남</option>
+            <option value="충북">충북</option>
+            <option value="세종">세종</option>
+            <option value="강원">강원</option>
+            <option value="제주">제주</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>시·군·구 <span style="font-weight:400;color:#94a3b8">(선택)</span></label>
+        <select id="city">
+          <option value="">전체 (시도 기준)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>기업 규모</label>
+        <select id="bizSize">
+          <option value="소상공인">소상공인</option>
+          <option value="중소기업">중소기업</option>
+          <option value="중견기업">중견기업</option>
+          <option value="스타트업">창업·스타트업</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>지원 분야 (선택)</label>
+        <select id="supportType">
+          <option value="">전체</option>
+          <option value="정책자금">정책자금·융자</option>
+          <option value="보조금">보조금·지원금</option>
+          <option value="창업">창업지원</option>
+          <option value="고용">고용·인력</option>
+          <option value="수출">수출·해외진출</option>
+          <option value="기술">기술개발</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn btn-primary search-btn" onclick="searchFunds()" id="searchBtn">
+      🔍 정책자금 찾기
+    </button>
+  </div>
+
+  <!-- ── STEP 3: 결과 ── -->
+  <div id="results-section">
+    <div class="results-header">
+      <div class="results-title">매칭된 지원사업</div>
+      <div class="results-count" id="results-count">0건</div>
+    </div>
+
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="tab-btn active" data-filter="전체" onclick="filterResults(this, '전체')">전체</button>
+      <button class="tab-btn" data-filter="금융" onclick="filterResults(this, '금융')">금융·융자</button>
+      <button class="tab-btn" data-filter="창업" onclick="filterResults(this, '창업')">창업</button>
+      <button class="tab-btn" data-filter="기술" onclick="filterResults(this, '기술')">기술개발</button>
+      <button class="tab-btn" data-filter="인력" onclick="filterResults(this, '인력')">고용·인력</button>
+      <button class="tab-btn" data-filter="수출" onclick="filterResults(this, '수출')">수출</button>
+    </div>
+
+    <div id="results-list"></div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+  let allResults = [];
+  let currentFilter = '전체';
+
+  // ── 시도별 시군구 목록 ──
+  const CITIES = {
+    서울: ['종로구','중구','용산구','성동구','광진구','동대문구','중랑구','성북구','강북구','도봉구','노원구','은평구','서대문구','마포구','양천구','강서구','구로구','금천구','영등포구','동작구','관악구','서초구','강남구','송파구','강동구'],
+    경기: ['수원시','성남시','의정부시','안양시','부천시','광명시','평택시','동두천시','안산시','고양시','과천시','구리시','남양주시','오산시','시흥시','군포시','의왕시','하남시','용인시','파주시','이천시','안성시','김포시','화성시','광주시','양주시','포천시','여주시','연천군','가평군','양평군'],
+    인천: ['중구','동구','미추홀구','연수구','남동구','부평구','계양구','서구','강화군','옹진군'],
+    부산: ['중구','서구','동구','영도구','부산진구','동래구','남구','북구','해운대구','사하구','금정구','강서구','연제구','수영구','사상구','기장군'],
+    대구: ['중구','동구','서구','남구','북구','수성구','달서구','달성군'],
+    광주: ['동구','서구','남구','북구','광산구'],
+    대전: ['동구','중구','서구','유성구','대덕구'],
+    울산: ['중구','남구','동구','북구','울주군'],
+    강원: ['춘천시','원주시','강릉시','동해시','태백시','속초시','삼척시','홍천군','횡성군','영월군','평창군','정선군','철원군','화천군','양구군','인제군','고성군','양양군'],
+    충북: ['청주시','충주시','제천시','보은군','옥천군','영동군','증평군','진천군','괴산군','음성군','단양군'],
+    충남: ['천안시','공주시','보령시','아산시','서산시','논산시','계룡시','당진시','금산군','부여군','서천군','청양군','홍성군','예산군','태안군'],
+    전북: ['전주시','군산시','익산시','정읍시','남원시','김제시','완주군','진안군','무주군','장수군','임실군','순창군','고창군','부안군'],
+    전남: ['목포시','여수시','순천시','나주시','광양시','담양군','곡성군','구례군','고흥군','보성군','화순군','장흥군','강진군','해남군','영암군','무안군','함평군','영광군','장성군','완도군','진도군','신안군'],
+    경북: ['포항시','경주시','김천시','안동시','구미시','영주시','영천시','상주시','문경시','경산시','군위군','의성군','청송군','영양군','영덕군','청도군','고령군','성주군','칠곡군','예천군','봉화군','울진군','울릉군'],
+    경남: ['창원시','진주시','통영시','사천시','김해시','밀양시','거제시','양산시','의령군','함안군','창녕군','고성군','남해군','하동군','산청군','함양군','거창군','합천군'],
+    제주: ['제주시','서귀포시'],
+    세종: [],
+    전국: []
+  };
+
+  function updateCityList() {
+    const region = document.getElementById('region').value;
+    const citySelect = document.getElementById('city');
+    const cities = CITIES[region] || [];
+    citySelect.innerHTML = '<option value="">전체 (시도 기준)</option>';
+    cities.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c; opt.textContent = c;
+      citySelect.appendChild(opt);
+    });
+    citySelect.disabled = cities.length === 0;
+  }
+
+  // ── 사업자번호 포맷 ──
+  document.getElementById('bizNo').addEventListener('input', function() {
+    let v = this.value.replace(/\D/g, '');
+    if (v.length > 10) v = v.slice(0, 10);
+    if (v.length > 5) v = v.slice(0,3) + '-' + v.slice(3,5) + '-' + v.slice(5);
+    else if (v.length > 3) v = v.slice(0,3) + '-' + v.slice(3);
+    this.value = v;
+  });
+
+  // ── 세무서 코드 → 지역 매핑 ──
+  const TAX_OFFICE_MAP = {
+    서울: [101,104,105,106,107,108,109,110,113,114,117,119,120,145,146,147,
+           201,204,206,209,210,211,212,214,215,217,220,230],
+    인천: [121,122,131,137,150,154],
+    경기: [123,124,125,126,127,128,129,130,132,134,135,138,140,
+           141,142,143,144,149,151,152,153,231,232,233,234,235,236],
+    강원: [221,222,223,224,225,226,227],
+    충북: [301,302,303,304,317],
+    대전: [305,314,318],
+    세종: [320],
+    충남: [307,308,310,311,312,313,316,319],
+    전북: [401,402,403,404,407,418],
+    광주: [408,409,410,419],
+    전남: [411,412,415,416,417],
+    대구: [502,503,504,514,516],
+    경북: [505,506,507,508,510,511,512,513,515],
+    부산: [602,603,605,606,607,617,621,623,625],
+    울산: [610,620],
+    경남: [608,609,611,612,613,615,624],
+    제주: [616]
+  };
+
+  function detectRegionFromBizNo(bizNo) {
+    const digits = bizNo.replace(/-/g, '');
+    if (digits.length < 3) return null;
+    const code = parseInt(digits.substring(0, 3), 10);
+    for (const [region, codes] of Object.entries(TAX_OFFICE_MAP)) {
+      if (codes.includes(code)) return region;
+    }
+    return null;
+  }
+
+  // 사업자번호 입력 시 지역 자동 감지 + 10자리 완성 시 자동 상태조회
+  document.getElementById('bizNo').addEventListener('input', function() {
+    const digits = this.value.replace(/-/g, '');
+    if (digits.length >= 3) {
+      const region = detectRegionFromBizNo(digits);
+      if (region) {
+        const sel = document.getElementById('region');
+        if (sel.value !== region) { sel.value = region; showRegionDetect(region); }
+      } else {
+        const el = document.getElementById('region-detect');
+        if (el) el.innerHTML = '';
+      }
+    }
+    if (digits.length === 10) checkBizStatus();
+  });
+
+  function showRegionDetect(region) {
+    let el = document.getElementById('region-detect');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'region-detect';
+      el.style.cssText = 'font-size:12px;margin-top:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;';
+      document.getElementById('region').closest('.form-group').appendChild(el);
+    }
+    el.innerHTML = `
+      <span style="background:#dcfce7;color:#166534;padding:3px 10px;border-radius:99px;font-weight:700;">📍 ${region} 자동감지</span>
+      <span style="color:#94a3b8;font-size:11px;">세무서 코드 기반 · 직접 변경 가능</span>`;
+  }
+
+  // ── 사업자 상태 확인 (자동 + 수동 공용) ──
+  async function checkBizStatus() {
+    const biz = document.getElementById('bizNo').value.replace(/-/g, '');
+    if (biz.length !== 10) {
+      showBizStatus('사업자번호 10자리를 정확히 입력하세요.', 'error');
+      return;
+    }
+    showBizStatus('조회 중...', 'info');
+    try {
+      const res = await fetch('/api/business-status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ businessNumber: biz })
+      });
+      const json = await res.json();
+      if (!json.success) { showBizStatus('조회 실패: ' + json.error, 'error'); return; }
+      const d = json.data?.data?.[0];
+      if (!d) { showBizStatus('조회 결과 없음', 'warn'); return; }
+      const statusMap = { '01': ['계속사업자', 'ok'], '02': ['휴업자', 'warn'], '03': ['폐업자', 'error'] };
+      const [label, type] = statusMap[d.b_stt_cd] || [d.b_stt, 'info'];
+      const estimatedRegion = detectRegionFromBizNo(biz);
+      const regionText = estimatedRegion ? ` · 추정 소재지: ${estimatedRegion}` : '';
+      showBizStatus(`${label} · ${d.tax_type || ''}${regionText}`, type);
+    } catch (e) {
+      showBizStatus('조회 오류: ' + e.message, 'error');
+    }
+  }
+
+  function showBizStatus(msg, type) {
+    const el = document.getElementById('biz-status');
+    el.innerHTML = `<div class="status-badge status-${type}">${msg}</div>`;
+  }
+
+  // ── 정책자금 검색 ──
+  async function searchFunds() {
+    const region   = document.getElementById('region').value;
+    const industry = document.getElementById('industry').value;
+    const size     = document.getElementById('bizSize').value;
+    const support  = document.getElementById('supportType').value;
+
+    document.getElementById('searchBtn').disabled = true;
+    document.getElementById('searchBtn').textContent = '검색 중...';
+    document.getElementById('results-section').style.display = 'block';
+    document.getElementById('results-list').innerHTML = loadingHTML();
+
+    try {
+      const city = document.getElementById('city').value;
+      const params = new URLSearchParams({ region, industry, size });
+      if (city)    params.append('city', city);
+      if (support) params.append('keyword', support);
+      const res = await fetch('/api/search?' + params);
+      const json = await res.json();
+
+      if (!json.success) throw new Error(json.error);
+
+      allResults = json.data || [];
+      currentFilter = '전체';
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === '전체'));
+      renderResults(allResults);
+    } catch (e) {
+      document.getElementById('results-list').innerHTML = `
+        <div class="empty">
+          <p>⚠️ 오류가 발생했습니다.<br>${e.message}</p>
+        </div>`;
+    } finally {
+      document.getElementById('searchBtn').disabled = false;
+      document.getElementById('searchBtn').textContent = '🔍 정책자금 찾기';
+    }
+  }
+
+  // ── 필터 ──
+  function filterResults(btn, filter) {
+    currentFilter = filter;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+
+    const filtered = filter === '전체'
+      ? allResults
+      : allResults.filter(item => {
+          const realm = item.pldirSportRealmLclasCodeNm || '';
+          const tags  = item.hashTags || '';
+          const name  = item.pblancNm || '';
+          return realm.includes(filter) || tags.includes(filter) || name.includes(filter);
+        });
+
+    renderResults(filtered);
+  }
+
+  // ── 렌더링 ──
+  function renderResults(list) {
+    document.getElementById('results-count').textContent = list.length + '건';
+
+    if (!list.length) {
+      document.getElementById('results-list').innerHTML = `
+        <div class="empty">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <p>해당 조건의 지원사업이 없습니다.<br>지역이나 업종 조건을 변경해 보세요.</p>
+        </div>`;
+      return;
+    }
+
+    document.getElementById('results-list').innerHTML = list.map(item => resultCardHTML(item)).join('');
+  }
+
+  function resultCardHTML(item) {
+    const name    = esc(item.pblancNm || '제목 없음');
+    const org     = esc(item.jrsdInsttNm || item.excInsttNm || '');
+    const realm   = esc(item.pldirSportRealmLclasCodeNm || '');
+    const period  = esc(item.reqstBeginEndDe || '상시 모집');
+    const summary = esc(item.bsnsSumryCn || item.trgetNm || '');
+    const url     = item.pblancUrl || '#';
+    const tags    = (item.hashtags || item.hashTags || '').split(',').filter(t => t.trim()).slice(0, 5);
+
+    const tagHTML = tags.map(t => {
+      const cls = t.includes('서울')||t.includes('경기')||t.includes('부산')||t.includes('대구')||t.includes('광주')||t.includes('대전')||t.includes('인천')||t.includes('울산')||t.includes('세종')||t.includes('강원')||t.includes('충')||t.includes('전')||t.includes('경')||t.includes('제주') ? 'tag-area'
+                : t.includes('소상공인')||t.includes('중소기업')||t.includes('창업') ? 'tag-type' : 'tag-org';
+      return `<span class="tag ${cls}">${esc(t.trim())}</span>`;
+    }).join('');
+
+    const isRegional   = item._isRegional;
+    const hasIndustry  = item._hasIndustry;
+    const hasCity      = item._hasCity;
+    const regionBadge  = hasCity
+      ? `<span class="region-badge badge-regional">📍 시군구특화</span>`
+      : isRegional
+        ? `<span class="region-badge badge-regional">📍 지역특화</span>`
+        : `<span class="region-badge badge-national">🌐 전국공통</span>`;
+    const industryBadge = hasIndustry
+      ? `<span class="region-badge badge-industry">🏷 업종매칭</span>`
+      : '';
+
+    return `
+    <div class="result-card${isRegional ? '' : ' national'}">
+      <div class="result-top">
+        <div class="result-name">
+          <a href="${url}" target="_blank">${name}</a>
+        </div>
+        <div style="display:flex;gap:4px;flex-shrink:0">${regionBadge}${industryBadge}</div>
+      </div>
+      <div class="result-tags">
+        ${org ? `<span class="tag tag-org">🏛 ${org}</span>` : ''}
+        ${realm ? `<span class="tag tag-type">${realm}</span>` : ''}
+        ${tagHTML}
+      </div>
+      ${summary ? `<div class="result-summary">${summary}</div>` : ''}
+      <div class="result-footer">
+        <div class="result-date">📅 신청기간: ${period}</div>
+        ${url !== '#' ? `<a class="result-link" href="${url}" target="_blank">상세보기 →</a>` : ''}
+      </div>
+    </div>`;
+  }
+
+  function loadingHTML() {
+    return `<div class="loading">
+      <div class="spinner"></div>
+      <div>기업마당 공공 API에서 실시간 데이터를 가져오는 중...</div>
+    </div>`;
+  }
+
+  function esc(str) {
+    return String(str)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+</script>
+</body>
+</html>

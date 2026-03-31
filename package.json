@@ -1,0 +1,13 @@
+{
+  "name": "policy-fund-matcher",
+  "version": "1.0.0",
+  "description": "정책자금 매칭 서비스",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.7.0"
+  }
+}
