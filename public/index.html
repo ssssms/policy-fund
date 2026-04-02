@@ -252,6 +252,61 @@
 
   .badge-industry { background: #fef3c7; color: #92400e; }
   .help-text { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+
+  /* ── 금융 카테고리 대시보드 ── */
+  .fin-cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 600px) { .fin-cat-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .fin-cat-card {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px 12px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .fin-cat-card:hover { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,.15); transform: translateY(-2px); }
+  .fin-cat-card.active-cat { border-color: #2563eb; background: #eff6ff; }
+  .fin-cat-icon { font-size: 34px; margin-bottom: 8px; line-height: 1; }
+  .fin-cat-name { font-size: 13px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+  .fin-cat-desc { font-size: 10px; color: #64748b; line-height: 1.5; }
+
+  /* ── 금융 유형 뱃지 ── */
+  .badge-fin { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 99px; white-space: nowrap; flex-shrink: 0; }
+  .fin-창업지원 { background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe; }
+  .fin-융자지원 { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+  .fin-특례보증 { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+  .fin-이차보전 { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+
+  /* ── 금융 하이라이트 박스 ── */
+  .finance-highlight {
+    background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .finance-highlight span { display: flex; align-items: center; gap: 4px; }
+
+  /* ── 노이즈 카드 ── */
+  .result-card.noise-card { opacity: 0.55; }
+  .result-card.noise-card::before { background: #cbd5e1; }
+
+  /* ── 핵심금융 탭 ── */
+  .tab-btn.tab-finance { border-color: #2563eb; color: #2563eb; }
+  .tab-btn.tab-finance.active { background: linear-gradient(135deg, #1e40af, #2563eb); border-color: transparent; }
 </style>
 </head>
 <body>
@@ -386,6 +441,36 @@
     </button>
   </div>
 
+  <!-- ── 금융 혜택 카테고리 대시보드 ── -->
+  <div class="card">
+    <div class="card-title">
+      💎 핵심 금융 지원 유형
+      <span class="badge">클릭하면 해당 유형만 필터</span>
+    </div>
+    <div class="fin-cat-grid">
+      <div class="fin-cat-card" id="cat-창업지원" onclick="quickFilter('창업지원')">
+        <div class="fin-cat-icon">🚀</div>
+        <div class="fin-cat-name">창업지원</div>
+        <div class="fin-cat-desc">신규창업·예비창업<br>창업자금</div>
+      </div>
+      <div class="fin-cat-card" id="cat-융자지원" onclick="quickFilter('융자지원')">
+        <div class="fin-cat-icon">💰</div>
+        <div class="fin-cat-name">융자지원</div>
+        <div class="fin-cat-desc">정책자금·대출<br>소진공</div>
+      </div>
+      <div class="fin-cat-card" id="cat-특례보증" onclick="quickFilter('특례보증')">
+        <div class="fin-cat-icon">🛡️</div>
+        <div class="fin-cat-name">특례보증</div>
+        <div class="fin-cat-desc">신용보증·보증서<br>재단보증·특례</div>
+      </div>
+      <div class="fin-cat-card" id="cat-이차보전" onclick="quickFilter('이차보전')">
+        <div class="fin-cat-icon">📉</div>
+        <div class="fin-cat-name">이차보전</div>
+        <div class="fin-cat-desc">이자지원·금리우대<br>이차보전</div>
+      </div>
+    </div>
+  </div>
+
   <!-- ── STEP 3: 결과 ── -->
   <div id="results-section">
     <div class="results-header">
@@ -395,11 +480,12 @@
 
     <div class="filter-tabs" id="filter-tabs">
       <button class="tab-btn active" data-filter="전체" onclick="filterResults(this, '전체')">전체</button>
-      <button class="tab-btn" data-filter="금융" onclick="filterResults(this, '금융')">금융·융자</button>
-      <button class="tab-btn" data-filter="창업" onclick="filterResults(this, '창업')">창업</button>
-      <button class="tab-btn" data-filter="기술" onclick="filterResults(this, '기술')">기술개발</button>
-      <button class="tab-btn" data-filter="인력" onclick="filterResults(this, '인력')">고용·인력</button>
-      <button class="tab-btn" data-filter="수출" onclick="filterResults(this, '수출')">수출</button>
+      <button class="tab-btn tab-finance" data-filter="핵심금융" onclick="filterResults(this, '핵심금융')">💎 핵심금융</button>
+      <button class="tab-btn" data-filter="창업지원" onclick="filterResults(this, '창업지원')">🚀 창업지원</button>
+      <button class="tab-btn" data-filter="융자지원" onclick="filterResults(this, '융자지원')">💰 융자지원</button>
+      <button class="tab-btn" data-filter="특례보증" onclick="filterResults(this, '특례보증')">🛡 특례보증</button>
+      <button class="tab-btn" data-filter="이차보전" onclick="filterResults(this, '이차보전')">📉 이차보전</button>
+      <button class="tab-btn" data-filter="기타" onclick="filterResults(this, '기타')">기타</button>
     </div>
 
     <div id="results-list"></div>
@@ -458,6 +544,41 @@
   };
 
   const ALL_REGIONS = ['서울','부산','대구','인천','광주','대전','울산','세종','경기','강원','충북','충남','전북','전남','경북','경남','제주'];
+
+  // ── 핵심 금융 카테고리 키워드 ──
+  const FINANCE_CATS = {
+    '창업지원': ['신규창업','예비창업','창업자금'],
+    '융자지원': ['융자','대출','소진공','정책자금'],
+    '특례보증': ['신용보증','보증서','재단보증','특례'],
+    '이차보전': ['이차보전','이자지원','금리우대','이자보전'],
+  };
+  const NOISE_KEYWORDS = ['전시회','박람회','컨설팅','교육','연수','카탈로그','마케팅','홍보'];
+
+  function classifyFinance(content) {
+    for (const [cat, keywords] of Object.entries(FINANCE_CATS)) {
+      if (keywords.some(kw => content.includes(kw))) return cat;
+    }
+    return null;
+  }
+
+  function isNoise(content) {
+    return NOISE_KEYWORDS.some(kw => content.includes(kw));
+  }
+
+  function extractFinanceHighlight(text) {
+    const t = (text || '').replace(/\s+/g, ' ');
+    const parts = [];
+    // 지원 한도/금액 추출
+    const amtMatch = t.match(/(?:최대|한도|지원금액|융자한도|융자규모)\s*([\d,]+\s*(?:억|천만|백만|만)?\s*원)/);
+    if (amtMatch) parts.push(`💰 최대 ${amtMatch[1].replace(/\s/g,'')}`);
+    // 금리/이율 추출
+    const rateMatch = t.match(/(?:연\s*|금리\s*|이율\s*)([\d.]+)\s*%/);
+    if (rateMatch) parts.push(`📉 연 ${rateMatch[1]}%`);
+    // 이차보전율 추출
+    const diffMatch = t.match(/([\d.]+)\s*%p?\s*(?:이차보전|금리인하|금리우대)/);
+    if (diffMatch && !rateMatch) parts.push(`📉 ${diffMatch[1]}%p 금리인하`);
+    return parts;
+  }
 
   function cityToHashtag(city) {
     if (!city) return '';
@@ -704,7 +825,9 @@
             goodRealms.has(realm)
           );
 
-          return { ...item, _isRegional: isRegional, _hasRegion: hasSelectedRegion, _hasCity: hasCity, _hasIndustry: hasIndustry, _realm: realm };
+          const finCat  = classifyFinance(content);
+          const noise   = !finCat && isNoise(content);
+          return { ...item, _isRegional: isRegional, _hasRegion: hasSelectedRegion, _hasCity: hasCity, _hasIndustry: hasIndustry, _realm: realm, _finCat: finCat, _isNoise: noise };
         })
         .filter(item => {
           if (!item._hasRegion) return false;
@@ -717,9 +840,12 @@
         const jrsdA = ((a.jrsdInsttNm || '') + (a.excInsttNm || '')).toLowerCase();
         const jrsdB = ((b.jrsdInsttNm || '') + (b.excInsttNm || '')).toLowerCase();
         const cityMatch = cityTag.toLowerCase();
-        const scoreA = (a._hasCity ? 8 : 0) + (a._isRegional ? 4 : 0) + (a._hasIndustry ? 2 : 0)
+        // 핵심금융 +20점, 노이즈 -10점 페널티
+        const finA = a._finCat ? 20 : (a._isNoise ? -10 : 0);
+        const finB = b._finCat ? 20 : (b._isNoise ? -10 : 0);
+        const scoreA = finA + (a._hasCity ? 8 : 0) + (a._isRegional ? 4 : 0) + (a._hasIndustry ? 2 : 0)
                      + (cityMatch && jrsdA.includes(cityMatch) ? 1 : 0);
-        const scoreB = (b._hasCity ? 8 : 0) + (b._isRegional ? 4 : 0) + (b._hasIndustry ? 2 : 0)
+        const scoreB = finB + (b._hasCity ? 8 : 0) + (b._isRegional ? 4 : 0) + (b._hasIndustry ? 2 : 0)
                      + (cityMatch && jrsdB.includes(cityMatch) ? 1 : 0);
         return scoreB - scoreA;
       });
@@ -743,17 +869,30 @@
   function filterResults(btn, filter) {
     currentFilter = filter;
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+    // 대시보드 카드 활성 표시 해제
+    document.querySelectorAll('.fin-cat-card').forEach(c => c.classList.remove('active-cat'));
 
-    const filtered = filter === '전체'
-      ? allResults
-      : allResults.filter(item => {
-          const realm = item.pldirSportRealmLclasCodeNm || '';
-          const tags  = item.hashTags || '';
-          const name  = item.pblancNm || '';
-          return realm.includes(filter) || tags.includes(filter) || name.includes(filter);
-        });
-
+    let filtered;
+    if (filter === '전체') {
+      filtered = allResults;
+    } else if (filter === '핵심금융') {
+      filtered = allResults.filter(item => item._finCat);
+    } else if (filter === '기타') {
+      filtered = allResults.filter(item => !item._finCat);
+    } else {
+      filtered = allResults.filter(item => item._finCat === filter);
+      const catCard = document.getElementById('cat-' + filter);
+      if (catCard) catCard.classList.add('active-cat');
+    }
     renderResults(filtered);
+  }
+
+  // 대시보드 아이콘 클릭 시 호출
+  function quickFilter(cat) {
+    if (!allResults.length) return;
+    const tabBtn = document.querySelector(`[data-filter="${cat}"]`);
+    if (tabBtn) filterResults(tabBtn, cat);
+    document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
   }
 
   // ── 렌더링 ──
@@ -774,12 +913,15 @@
     document.getElementById('results-list').innerHTML = list.map(item => resultCardHTML(item)).join('');
   }
 
+  const FIN_CAT_ICON = { '창업지원':'🚀', '융자지원':'💰', '특례보증':'🛡', '이차보전':'📉' };
+
   function resultCardHTML(item) {
     const name    = esc(item.pblancNm || '제목 없음');
     const org     = esc(item.jrsdInsttNm || item.excInsttNm || '');
     const realm   = esc(item.pldirSportRealmLclasCodeNm || '');
     const period  = esc(item.reqstBeginEndDe || '상시 모집');
-    const summary = esc(item.bsnsSumryCn || item.trgetNm || '');
+    const rawSummary = item.bsnsSumryCn || item.trgetNm || '';
+    const summary = esc(rawSummary);
     const url     = item.pblancUrl || '#';
     const tags    = (item.hashtags || item.hashTags || '').split(',').filter(t => t.trim()).slice(0, 5);
 
@@ -789,31 +931,41 @@
       return `<span class="tag ${cls}">${esc(t.trim())}</span>`;
     }).join('');
 
-    const isRegional   = item._isRegional;
-    const hasIndustry  = item._hasIndustry;
-    const hasCity      = item._hasCity;
-    const regionBadge  = hasCity
+    const isRegional  = item._isRegional;
+    const hasCity     = item._hasCity;
+    const finCat      = item._finCat;
+    const isNoiseItem = item._isNoise;
+
+    const regionBadge = hasCity
       ? `<span class="region-badge badge-regional">📍 시군구특화</span>`
       : isRegional
         ? `<span class="region-badge badge-regional">📍 지역특화</span>`
         : `<span class="region-badge badge-national">🌐 전국공통</span>`;
-    const industryBadge = hasIndustry
-      ? `<span class="region-badge badge-industry">🏷 업종매칭</span>`
+
+    const finBadge = finCat
+      ? `<span class="badge-fin fin-${finCat}">${FIN_CAT_ICON[finCat]} ${finCat}</span>`
+      : '';
+
+    // 금융 하이라이트 (한도·금리) 추출
+    const highlights = finCat ? extractFinanceHighlight(rawSummary) : [];
+    const highlightHTML = highlights.length
+      ? `<div class="finance-highlight">${highlights.map(h => `<span>${h}</span>`).join('')}</div>`
       : '';
 
     return `
-    <div class="result-card${isRegional ? '' : ' national'}">
+    <div class="result-card${isRegional ? '' : ' national'}${isNoiseItem ? ' noise-card' : ''}">
       <div class="result-top">
         <div class="result-name">
           <a href="${url}" target="_blank">${name}</a>
         </div>
-        <div style="display:flex;gap:4px;flex-shrink:0">${regionBadge}${industryBadge}</div>
+        <div style="display:flex;gap:4px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">${finBadge}${regionBadge}</div>
       </div>
       <div class="result-tags">
         ${org ? `<span class="tag tag-org">🏛 ${org}</span>` : ''}
         ${realm ? `<span class="tag tag-type">${realm}</span>` : ''}
         ${tagHTML}
       </div>
+      ${highlightHTML}
       ${summary ? `<div class="result-summary">${summary}</div>` : ''}
       <div class="result-footer">
         <div class="result-date">📅 신청기간: ${period}</div>
