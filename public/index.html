@@ -12,6 +12,7 @@
     background: #f0f4f8;
     min-height: 100vh;
     color: #1e293b;
+    overflow-x: hidden;
   }
 
   /* ── 헤더 ── */
@@ -19,10 +20,13 @@
     background: linear-gradient(135deg, #00C7A9 0%, #3dd4b2 50%, #E2F15E 100%);
     color: white;
     padding: 28px 24px 32px;
-    text-align: center;
     box-shadow: 0 4px 20px rgba(0,199,169,.35);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
   }
   header::before {
     content: '';
@@ -30,17 +34,23 @@
     width: 200px; height: 200px;
     background: rgba(255,255,255,.08);
     border-radius: 50%;
+    pointer-events: none;
+  }
+  .header-text {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
   }
   .header-logo {
-    position: absolute; top: 50%; right: 24px;
-    transform: translateY(-50%);
-    height: 32px; width: auto;
+    height: 16px; width: auto;
+    flex-shrink: 0;
+    position: relative; z-index: 1;
   }
-  header h1 { font-size: 28px; font-weight: 800; opacity: 1; letter-spacing: -0.5px; line-height: 1.2; }
-  header p  { margin-top: 8px; font-size: 15px; opacity: .88; }
+  header h1 { font-size: 28px; font-weight: 800; opacity: 1; letter-spacing: -0.5px; line-height: 1.2; word-break: keep-all; }
+  header p  { margin-top: 8px; font-size: 15px; opacity: .88; word-break: keep-all; }
 
   /* ── 메인 컨테이너 ── */
-  .container { max-width: 860px; margin: 0 auto; padding: 28px 16px 60px; }
+  .container { max-width: 860px; margin: 0 auto; padding: 28px 16px 60px; width: 100%; }
 
   /* ── 카드 ── */
   .card {
@@ -201,7 +211,7 @@
   }
   .result-name {
     font-size: 15px; font-weight: 700; color: #1e293b; line-height: 1.4;
-    flex: 1;
+    flex: 1; min-width: 0; word-break: keep-all;
   }
   .result-name a { color: inherit; text-decoration: none; }
   .result-name a:hover { color: #00C7A9; }
@@ -321,14 +331,68 @@
   /* ── 핵심금융 탭 ── */
   .tab-btn.tab-finance { border-color: #00C7A9; color: #00C7A9; }
   .tab-btn.tab-finance.active { background: linear-gradient(135deg, #007a68, #00C7A9, #b8e84a); border-color: transparent; }
+
+  /* ────────────────────────────────────
+     모바일 반응형
+  ──────────────────────────────────── */
+  @media (max-width: 600px) {
+    /* 헤더 */
+    header { padding: 18px 16px 22px; gap: 12px; }
+    header h1 { font-size: 18px; line-height: 1.3; }
+    header p  { font-size: 12px; }
+    .header-logo { height: 14px; }
+
+    /* 컨테이너·카드 */
+    .container { padding: 14px 10px 48px; }
+    .card { padding: 18px 14px; }
+
+    /* 안내 텍스트 줄바꿈 개선 */
+    .notice { font-size: 12px; line-height: 1.6; }
+    .notice-sep { display: block; height: 4px; } /* &nbsp;|&nbsp; 대신 줄바꿈 역할 */
+
+    /* 사업자번호 행 */
+    .biz-row { flex-direction: column; align-items: stretch; gap: 8px; }
+    .biz-row .btn { align-self: flex-start; }
+
+    /* 결과 카드 */
+    .result-card { padding: 14px 12px 14px 16px; }
+    .result-top { flex-wrap: wrap; gap: 8px; }
+    .result-name { font-size: 14px; }
+    .result-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+    /* 필터 탭 */
+    .filter-tabs { gap: 6px; }
+    .tab-btn { padding: 5px 11px; font-size: 12px; }
+
+    /* 금융 카테고리 카드 */
+    .fin-cat-card { padding: 14px 8px 10px; }
+    .fin-cat-icon { font-size: 26px; margin-bottom: 6px; }
+    .fin-cat-name { font-size: 12px; }
+    .fin-cat-desc { font-size: 10px; }
+
+    /* 검색 버튼 */
+    .search-btn { font-size: 15px; padding: 13px; }
+
+    /* 뱃지 줄바꿈 방지 */
+    .badge-fin, .region-badge { font-size: 10px; padding: 2px 7px; }
+  }
+
+  @media (max-width: 380px) {
+    header { gap: 10px; }
+    header h1 { font-size: 16px; }
+    .header-logo { height: 12px; }
+    .fin-cat-desc { display: none; } /* 매우 작은 화면에서 설명 숨김 */
+  }
 </style>
 </head>
 <body>
 
 <header>
+  <div class="header-text">
+    <h1>소상공인 정책자금 매칭 서비스</h1>
+    <p>사업자번호 · 업종 · 지역으로 받을 수 있는 정책자금을 찾아드립니다</p>
+  </div>
   <img src="ci.png" class="header-logo" alt="iM뱅크 로고">
-  <h1>소상공인 정책자금 매칭 서비스</h1>
-  <p>사업자번호 · 업종 · 지역으로 받을 수 있는 정책자금을 찾아드립니다</p>
 </header>
 
 <div class="container">
@@ -362,7 +426,7 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
       </svg>
-      📍 <strong>지역</strong>은 사업자번호 앞 3자리(세무서 코드)로 자동 감지됩니다. &nbsp;|&nbsp; 📋 <strong>업종</strong>은 공개 API 미지원으로 직접 선택해 주세요.
+      📍 <strong>지역</strong>은 사업자번호 앞 3자리로 자동 감지됩니다.<span class="notice-sep"></span>📋 <strong>업종</strong>은 공개 API 미지원으로 직접 선택해 주세요.
     </div>
 
     <div class="form-grid">
@@ -866,9 +930,9 @@
         // 핵심금융 +20점, 노이즈 -10점 페널티
         const finA = a._finCat ? 20 : (a._isNoise ? -10 : 0);
         const finB = b._finCat ? 20 : (b._isNoise ? -10 : 0);
-        const scoreA = finA + (a._hasCity ? 8 : 0) + (a._isRegional ? 4 : 0) + (a._hasIndustry ? 2 : 0)
+        const scoreA = finA + (a._hasCity ? 30 : 0) + (a._isRegional ? 4 : 0) + (a._hasIndustry ? 2 : 0)
                      + (cityMatch && jrsdA.includes(cityMatch) ? 1 : 0);
-        const scoreB = finB + (b._hasCity ? 8 : 0) + (b._isRegional ? 4 : 0) + (b._hasIndustry ? 2 : 0)
+        const scoreB = finB + (b._hasCity ? 30 : 0) + (b._isRegional ? 4 : 0) + (b._hasIndustry ? 2 : 0)
                      + (cityMatch && jrsdB.includes(cityMatch) ? 1 : 0);
         return scoreB - scoreA;
       });

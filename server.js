@@ -186,14 +186,14 @@ app.get('/api/search', async (req, res) => {
         return true;
       });
 
-    // 정렬: 시군구매칭(8) + 지역특화(4) + 업종매칭(2) + 기관명시군구일치(1)
+    // 정렬: 시군구매칭(30) + 지역특화(4) + 업종매칭(2) + 기관명시군구일치(1)
     processed.sort((a, b) => {
       const jrsdA = ((a.jrsdInsttNm || '') + (a.excInsttNm || '')).toLowerCase();
       const jrsdB = ((b.jrsdInsttNm || '') + (b.excInsttNm || '')).toLowerCase();
       const cityMatch = cityTag.toLowerCase();
-      const scoreA = (a._hasCity ? 8 : 0) + (a._isRegional ? 4 : 0) + (a._hasIndustry ? 2 : 0)
+      const scoreA = (a._hasCity ? 30 : 0) + (a._isRegional ? 4 : 0) + (a._hasIndustry ? 2 : 0)
                    + (cityMatch && jrsdA.includes(cityMatch) ? 1 : 0);
-      const scoreB = (b._hasCity ? 8 : 0) + (b._isRegional ? 4 : 0) + (b._hasIndustry ? 2 : 0)
+      const scoreB = (b._hasCity ? 30 : 0) + (b._isRegional ? 4 : 0) + (b._hasIndustry ? 2 : 0)
                    + (cityMatch && jrsdB.includes(cityMatch) ? 1 : 0);
       return scoreB - scoreA;
     });
