@@ -408,6 +408,88 @@
 </div><!-- /container -->
 
 <script>
+  // ── 기업마당 API 키 ──
+  const BIZINFO_KEY = 'QP6yn2';
+
+  // ── 업종별 검색 키워드 매핑 ──
+  const INDUSTRY_KEYWORDS = {
+    '음식':  ['외식', '식품', '음식점'],
+    '소매':  ['도소매', '유통'],
+    '미용':  ['이미용', '미용'],
+    '세탁':  ['세탁', '수선'],
+    '제조':  ['제조업', '제조'],
+    'IT':    ['IT', '소프트웨어', '디지털'],
+    '기술':  ['기술개발', 'R&D', '연구개발'],
+    '서비스':['서비스업'],
+    '건설':  ['건설업', '건설'],
+    '농업':  ['농업', '농축산', '수산'],
+    '창업':  ['창업', '스타트업'],
+  };
+
+  const INDUSTRY_MATCH_WORDS = {
+    '음식':  ['음식','외식','식품','요식','식당','카페','주점'],
+    '소매':  ['도소매','소매','유통','판매점'],
+    '미용':  ['미용','이미용','네일','헤어'],
+    '세탁':  ['세탁','수선','의류'],
+    '제조':  ['제조','생산','공장'],
+    'IT':    ['it','소프트웨어','디지털','앱','플랫폼','정보통신'],
+    '기술':  ['기술개발','r&d','연구개발','특허','기술사업화'],
+    '서비스':['서비스','컨설팅'],
+    '건설':  ['건설','시공','인테리어'],
+    '농업':  ['농업','농축산','수산','임업','어업'],
+    '창업':  ['창업','스타트업','벤처','초기기업'],
+  };
+
+  const LIFE_INDUSTRIES = new Set(['음식','소매','미용','세탁','서비스','건설','농업']);
+  const TECH_REALMS     = new Set(['기술','수출']);
+
+  const INDUSTRY_REALMS = {
+    '음식':  new Set(['금융','경영','내수','인력','창업']),
+    '소매':  new Set(['금융','경영','내수','인력','창업']),
+    '미용':  new Set(['금융','경영','내수','인력','창업']),
+    '세탁':  new Set(['금융','경영','내수','인력','창업']),
+    '제조':  new Set(['금융','기술','수출','경영','인력']),
+    'IT':    new Set(['기술','창업','경영','금융']),
+    '기술':  new Set(['기술','창업','경영','금융']),
+    '서비스':new Set(['금융','경영','인력','창업','내수']),
+    '건설':  new Set(['금융','경영','인력']),
+    '농업':  new Set(['금융','경영','수출','내수']),
+    '창업':  new Set(['창업','기술','경영','금융']),
+  };
+
+  const ALL_REGIONS = ['서울','부산','대구','인천','광주','대전','울산','세종','경기','강원','충북','충남','전북','전남','경북','경남','제주'];
+
+  function cityToHashtag(city) {
+    if (!city) return '';
+    return city.replace(/(특별시|광역시|특별자치시|특별자치도|시|군|구)$/, '');
+  }
+
+  // ── 기업마당 API 직접 호출 (브라우저 → bizinfo.go.kr) ──
+  async function callBizinfo(hashtags, kw, seen, results) {
+    const params = new URLSearchParams({
+      crtfcKey: BIZINFO_KEY,
+      dataType: 'json',
+      pageIndex: 1,
+      pageUnit: 30
+    });
+    if (hashtags) params.append('hashtags', hashtags);
+    if (kw)       params.append('keyword', kw);
+
+    const url = `https://www.bizinfo.go.kr/uss/rss/bizinfoApi.do?${params}`;
+
+    const response = await fetch(url, {
+      headers: { 'Accept': 'application/json' },
+      signal: AbortSignal.timeout(15000)
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+
+    for (const item of (data.jsonArray || [])) {
+      const id = item.pblancId || item.pblancNm;
+      if (id && !seen.has(id)) { seen.add(id); results.push(item); }
+    }
+  }
+
   let allResults = [];
   let currentFilter = '전체';
 
@@ -550,29 +632,99 @@
     el.innerHTML = `<div class="status-badge status-${type}">${msg}</div>`;
   }
 
-  // ── 정책자금 검색 ──
+  // ── 정책자금 검색 (브라우저에서 기업마당 API 직접 호출) ──
   async function searchFunds() {
     const region   = document.getElementById('region').value;
     const industry = document.getElementById('industry').value;
     const size     = document.getElementById('bizSize').value;
-    const support  = document.getElementById('supportType').value;
+    const city     = document.getElementById('city').value;
 
     document.getElementById('searchBtn').disabled = true;
     document.getElementById('searchBtn').textContent = '검색 중...';
     document.getElementById('results-section').style.display = 'block';
     document.getElementById('results-list').innerHTML = loadingHTML();
 
+    const results = [];
+    const seen = new Set();
+
     try {
-      const city = document.getElementById('city').value;
-      const params = new URLSearchParams({ region, industry, size });
-      if (city)    params.append('city', city);
-      if (support) params.append('keyword', support);
-      const res = await fetch('/api/search?' + params);
-      const json = await res.json();
+      const regionTag = region && region !== '전국' ? region : '';
+      const sizeTag   = size === '소상공인' ? '소상공인' : '중소기업';
+      const kwList    = industry ? (INDUSTRY_KEYWORDS[industry] || [industry]) : [];
+      const cityTag   = cityToHashtag(city);
+      const cityFull  = city || '';
 
-      if (!json.success) throw new Error(json.error);
+      if (regionTag) {
+        if (cityTag) {
+          for (const kw of kwList) {
+            await callBizinfo(`${cityTag},${regionTag},${sizeTag}`, kw, seen, results);
+          }
+          await callBizinfo(`${cityTag},${regionTag},${sizeTag}`, '', seen, results);
+          await callBizinfo(`${cityTag},${sizeTag}`, '', seen, results);
+          await callBizinfo(`${regionTag},${sizeTag}`, cityTag, seen, results);
+          if (cityFull !== cityTag) {
+            await callBizinfo(`${regionTag},${sizeTag}`, cityFull, seen, results);
+          }
+        }
+        for (const kw of kwList) {
+          await callBizinfo(`${regionTag},${sizeTag}`, kw, seen, results);
+        }
+        await callBizinfo(`${regionTag},${sizeTag}`, '', seen, results);
+      } else {
+        for (const kw of kwList) {
+          await callBizinfo(sizeTag, kw, seen, results);
+        }
+        await callBizinfo(sizeTag, '정책자금', seen, results);
+      }
 
-      allResults = json.data || [];
+      // ── 후처리 ──
+      const matchWords     = industry ? (INDUSTRY_MATCH_WORDS[industry] || [industry]) : [];
+      const goodRealms     = industry ? (INDUSTRY_REALMS[industry] || new Set()) : new Set();
+      const isLifeIndustry = LIFE_INDUSTRIES.has(industry);
+
+      const processed = results
+        .map(item => {
+          const tags    = item.hashtags || '';
+          const jrsd    = (item.jrsdInsttNm || '') + (item.excInsttNm || '');
+          const content = (item.pblancNm + ' ' + (item.bsnsSumryCn || '') + ' ' + tags + ' ' + jrsd).toLowerCase();
+          const realm   = item.pldirSportRealmLclasCodeNm || '';
+
+          const regionCount       = ALL_REGIONS.filter(r => tags.includes(r)).length;
+          const hasSelectedRegion = regionTag ? tags.includes(regionTag) : true;
+          const isRegional        = hasSelectedRegion && regionCount <= 5;
+
+          const hasCity = cityTag ? (
+            tags.includes(cityTag) ||
+            content.includes(cityTag.toLowerCase()) ||
+            (cityFull !== cityTag && content.includes(cityFull.toLowerCase()))
+          ) : false;
+
+          const hasIndustry = matchWords.length === 0 || (
+            matchWords.some(w => content.includes(w.toLowerCase())) ||
+            goodRealms.has(realm)
+          );
+
+          return { ...item, _isRegional: isRegional, _hasRegion: hasSelectedRegion, _hasCity: hasCity, _hasIndustry: hasIndustry, _realm: realm };
+        })
+        .filter(item => {
+          if (!item._hasRegion) return false;
+          if (isLifeIndustry && TECH_REALMS.has(item._realm) &&
+              !matchWords.some(w => (item.pblancNm || '').toLowerCase().includes(w))) return false;
+          return true;
+        });
+
+      processed.sort((a, b) => {
+        const jrsdA = ((a.jrsdInsttNm || '') + (a.excInsttNm || '')).toLowerCase();
+        const jrsdB = ((b.jrsdInsttNm || '') + (b.excInsttNm || '')).toLowerCase();
+        const cityMatch = cityTag.toLowerCase();
+        const scoreA = (a._hasCity ? 8 : 0) + (a._isRegional ? 4 : 0) + (a._hasIndustry ? 2 : 0)
+                     + (cityMatch && jrsdA.includes(cityMatch) ? 1 : 0);
+        const scoreB = (b._hasCity ? 8 : 0) + (b._isRegional ? 4 : 0) + (b._hasIndustry ? 2 : 0)
+                     + (cityMatch && jrsdB.includes(cityMatch) ? 1 : 0);
+        return scoreB - scoreA;
+      });
+
+      allResults = processed;
       currentFilter = '전체';
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === '전체'));
       renderResults(allResults);
