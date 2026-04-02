@@ -31,16 +31,14 @@
     background: rgba(255,255,255,.08);
     border-radius: 50%;
   }
-  .header-brand {
-    display: flex; align-items: center; justify-content: center;
-    gap: 12px; margin-bottom: 10px;
+  .header-logo {
+    position: absolute; top: 50%; right: 24px;
+    transform: translateY(-50%);
+    height: 40px; width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.2));
   }
-  .header-brand-name {
-    font-size: 30px; font-weight: 800; color: white;
-    letter-spacing: -1px; line-height: 1;
-  }
-  header h1 { font-size: 16px; font-weight: 600; opacity: .95; letter-spacing: -0.3px; }
-  header p  { margin-top: 5px; font-size: 13px; opacity: .82; }
+  header h1 { font-size: 28px; font-weight: 800; opacity: 1; letter-spacing: -0.5px; line-height: 1.2; }
+  header p  { margin-top: 8px; font-size: 15px; opacity: .88; }
 
   /* ── 메인 컨테이너 ── */
   .container { max-width: 860px; margin: 0 auto; padding: 28px 16px 60px; }
@@ -329,18 +327,7 @@
 <body>
 
 <header>
-  <div class="header-brand">
-    <!-- iM뱅크 심볼 (white version) -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 66" height="44" style="flex-shrink:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))">
-      <!-- i: 세로 막대 -->
-      <rect x="0" y="20" width="14" height="46" fill="white"/>
-      <!-- M 왼쪽 아치 -->
-      <path d="M22,0 L36,0 Q66,0 66,66 L52,66 Q22,66 22,0 Z" fill="white"/>
-      <!-- M 오른쪽 아치 -->
-      <path d="M96,0 L110,0 Q110,66 80,66 L66,66 Q66,0 96,0 Z" fill="white"/>
-    </svg>
-    <div class="header-brand-name">iM뱅크</div>
-  </div>
+  <img src="logo.svg" class="header-logo" alt="iM뱅크 로고">
   <h1>소상공인 정책자금 매칭 서비스</h1>
   <p>사업자번호 · 업종 · 지역으로 받을 수 있는 정책자금을 찾아드립니다</p>
 </header>

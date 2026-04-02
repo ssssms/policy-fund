@@ -1,0 +1,19 @@
+<svg viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- iM 심볼 (CI 가이드 실측 경로 기반, 정규화) -->
+  <!-- i 세로막대 -->
+  <rect x="0" y="9.3" width="9.3" height="16.85" fill="#00C4A6"/>
+  <!-- M 왼쪽 아치 (좌측 arc) -->
+  <path d="M9.32 0 V9.27 C18.66 9.27 26.25 16.87 26.25 26.16 H35.57 C35.57 11.74 23.82 0 9.32 0 Z" fill="url(#grad)"/>
+  <!-- M 오른쪽 아치 -->
+  <path d="M52.51 0 V9.27 C43.17 9.27 35.58 16.87 35.58 26.16 H26.26 C26.26 11.74 38.01 0 52.51 0 Z" fill="#00C4A6"/>
+  <!-- iM뱅크 텍스트 -->
+  <text x="64" y="22" font-size="20" font-weight="800" fill="white"
+    font-family="'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif"
+    dominant-baseline="middle" letter-spacing="-0.5">iM뱅크</text>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C4A6"/>
+      <stop offset="100%" stop-color="#5DDBB6"/>
+    </linearGradient>
+  </defs>
+</svg>
