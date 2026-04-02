@@ -19,14 +19,11 @@
   header {
     background: linear-gradient(135deg, #00C7A9 0%, #3dd4b2 50%, #E2F15E 100%);
     color: white;
-    padding: 28px 24px 32px;
+    padding: 28px 24px 28px;
+    text-align: center;
     box-shadow: 0 4px 20px rgba(0,199,169,.35);
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
   }
   header::before {
     content: '';
@@ -36,17 +33,12 @@
     border-radius: 50%;
     pointer-events: none;
   }
-  .header-text {
-    flex: 1;
-    min-width: 0;
-    text-align: center;
-  }
+  .header-text { text-align: center; }
   .header-logo {
+    position: absolute; right: 20px; bottom: 18px;
     height: 16px; width: auto;
-    flex-shrink: 0;
-    position: relative; z-index: 1;
   }
-  header h1 { font-size: 28px; font-weight: 800; opacity: 1; letter-spacing: -0.5px; line-height: 1.2; word-break: keep-all; }
+  header h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; word-break: keep-all; }
   header p  { margin-top: 8px; font-size: 15px; opacity: .88; word-break: keep-all; }
 
   /* ── 메인 컨테이너 ── */
@@ -336,11 +328,16 @@
      모바일 반응형
   ──────────────────────────────────── */
   @media (max-width: 600px) {
-    /* 헤더 */
-    header { padding: 18px 16px 22px; gap: 12px; }
-    header h1 { font-size: 18px; line-height: 1.3; }
+    /* 헤더: 모바일은 CI를 텍스트 아래로 */
+    header { padding: 20px 16px 16px; }
+    header h1 { font-size: 19px; line-height: 1.3; }
     header p  { font-size: 12px; }
-    .header-logo { height: 14px; }
+    .header-logo {
+      position: static;
+      display: block;
+      margin: 10px auto 0;
+      height: 14px;
+    }
 
     /* 컨테이너·카드 */
     .container { padding: 14px 10px 48px; }
@@ -391,8 +388,8 @@
   <div class="header-text">
     <h1>소상공인 정책자금 매칭 서비스</h1>
     <p>사업자번호 · 업종 · 지역으로 받을 수 있는 정책자금을 찾아드립니다</p>
+    <img src="ci.png" class="header-logo" alt="iM뱅크 CI">
   </div>
-  <img src="ci.png" class="header-logo" alt="iM뱅크 로고">
 </header>
 
 <div class="container">
@@ -423,10 +420,13 @@
     </div>
 
     <div class="notice">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px">
         <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
       </svg>
-      📍 <strong>지역</strong>은 사업자번호 앞 3자리로 자동 감지됩니다.<span class="notice-sep"></span>📋 <strong>업종</strong>은 공개 API 미지원으로 직접 선택해 주세요.
+      <div>
+        <div>📍 <strong>지역</strong>은 사업자번호 앞 3자리로 자동 감지됩니다.</div>
+        <div style="margin-top:4px">📋 <strong>업종</strong>은 공개 API 미지원으로 직접 선택해 주세요.</div>
+      </div>
     </div>
 
     <div class="form-grid">
