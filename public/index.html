@@ -16,14 +16,31 @@
 
   /* ── 헤더 ── */
   header {
-    background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%);
+    background: linear-gradient(135deg, #00C7A9 0%, #3dd4b2 50%, #E2F15E 100%);
     color: white;
-    padding: 32px 24px;
+    padding: 28px 24px 32px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(30,64,175,.3);
+    box-shadow: 0 4px 20px rgba(0,199,169,.35);
+    position: relative;
+    overflow: hidden;
   }
-  header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
-  header p  { margin-top: 6px; font-size: 14px; opacity: .85; }
+  header::before {
+    content: '';
+    position: absolute; right: -40px; top: -40px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,.08);
+    border-radius: 50%;
+  }
+  .header-brand {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; margin-bottom: 10px;
+  }
+  .header-brand-name {
+    font-size: 30px; font-weight: 800; color: white;
+    letter-spacing: -1px; line-height: 1;
+  }
+  header h1 { font-size: 16px; font-weight: 600; opacity: .95; letter-spacing: -0.3px; }
+  header p  { margin-top: 5px; font-size: 13px; opacity: .82; }
 
   /* ── 메인 컨테이너 ── */
   .container { max-width: 860px; margin: 0 auto; padding: 28px 16px 60px; }
@@ -39,15 +56,15 @@
   .card-title {
     font-size: 15px;
     font-weight: 700;
-    color: #1e40af;
+    color: #007a68;
     margin-bottom: 18px;
     display: flex;
     align-items: center;
     gap: 8px;
   }
   .card-title .badge {
-    background: #eff6ff;
-    color: #1e40af;
+    background: #e6faf7;
+    color: #007a68;
     font-size: 11px;
     padding: 2px 8px;
     border-radius: 99px;
@@ -78,8 +95,8 @@
     font-family: inherit;
   }
   input:focus, select:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    border-color: #00C7A9;
+    box-shadow: 0 0 0 3px rgba(0,199,169,.12);
     background: white;
   }
 
@@ -95,17 +112,17 @@
     transition: all .2s;
   }
   .btn-primary {
-    background: linear-gradient(135deg, #1e40af, #2563eb);
+    background: linear-gradient(135deg, #007a68, #00C7A9, #b8e84a);
     color: white;
-    box-shadow: 0 4px 12px rgba(37,99,235,.3);
+    box-shadow: 0 4px 12px rgba(0,199,169,.3);
   }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,.4); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,199,169,.4); }
   .btn-primary:disabled { opacity: .6; cursor: not-allowed; transform: none; }
   .btn-outline {
-    background: white; color: #2563eb;
-    border: 1.5px solid #2563eb;
+    background: white; color: #00C7A9;
+    border: 1.5px solid #00C7A9;
   }
-  .btn-outline:hover { background: #eff6ff; }
+  .btn-outline:hover { background: #e6faf7; }
   .btn-sm { padding: 8px 14px; font-size: 12px; border-radius: 8px; white-space: nowrap; }
 
   .search-btn { width: 100%; margin-top: 20px; padding: 14px; font-size: 16px; border-radius: 12px; }
@@ -119,7 +136,7 @@
   .status-ok    { background: #dcfce7; color: #166534; }
   .status-warn  { background: #fef9c3; color: #854d0e; }
   .status-error { background: #fee2e2; color: #991b1b; }
-  .status-info  { background: #eff6ff; color: #1e40af; }
+  .status-info  { background: #e6faf7; color: #007a68; }
 
   /* ── 결과 섹션 ── */
   #results-section { display: none; }
@@ -131,7 +148,7 @@
   }
   .results-title { font-size: 17px; font-weight: 700; }
   .results-count {
-    background: #1e40af; color: white;
+    background: #007a68; color: white;
     font-size: 13px; font-weight: 700;
     padding: 4px 14px; border-radius: 99px;
   }
@@ -150,7 +167,7 @@
     cursor: pointer; transition: all .15s;
   }
   .tab-btn.active, .tab-btn:hover {
-    background: #1e40af; color: white; border-color: #1e40af;
+    background: #007a68; color: white; border-color: #007a68;
   }
 
   /* ── 지원사업 카드 ── */
@@ -168,10 +185,10 @@
     content: '';
     position: absolute; left: 0; top: 0; bottom: 0;
     width: 4px;
-    background: linear-gradient(180deg, #1e40af, #2563eb);
+    background: linear-gradient(180deg, #00C7A9, #E2F15E);
     border-radius: 4px 0 0 4px;
   }
-  .result-card:hover { border-color: #93c5fd; box-shadow: 0 4px 20px rgba(30,64,175,.1); transform: translateY(-2px); }
+  .result-card:hover { border-color: #6ed5c4; box-shadow: 0 4px 20px rgba(0,122,104,.1); transform: translateY(-2px); }
   .result-card.national::before { background: linear-gradient(180deg, #64748b, #94a3b8); }
 
   .region-badge {
@@ -190,14 +207,14 @@
     flex: 1;
   }
   .result-name a { color: inherit; text-decoration: none; }
-  .result-name a:hover { color: #2563eb; }
+  .result-name a:hover { color: #00C7A9; }
 
   .result-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
   .tag {
     font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 99px;
   }
   .tag-org  { background: #f1f5f9; color: #475569; }
-  .tag-area { background: #eff6ff; color: #1e40af; }
+  .tag-area { background: #e6faf7; color: #007a68; }
   .tag-type { background: #f0fdf4; color: #166534; }
 
   .result-summary {
@@ -212,12 +229,12 @@
   }
   .result-date { font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 4px; }
   .result-link {
-    font-size: 12px; font-weight: 700; color: #2563eb;
+    font-size: 12px; font-weight: 700; color: #00C7A9;
     text-decoration: none; display: flex; align-items: center; gap: 4px;
-    padding: 5px 12px; border: 1.5px solid #93c5fd; border-radius: 8px;
+    padding: 5px 12px; border: 1.5px solid #6ed5c4; border-radius: 8px;
     transition: all .15s;
   }
-  .result-link:hover { background: #eff6ff; }
+  .result-link:hover { background: #e6faf7; }
 
   /* ── 로딩 ── */
   .loading {
@@ -227,7 +244,7 @@
   .spinner {
     width: 42px; height: 42px;
     border: 3px solid #e2e8f0;
-    border-top-color: #2563eb;
+    border-top-color: #00C7A9;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
   }
@@ -270,8 +287,8 @@
     cursor: pointer;
     transition: all .2s;
   }
-  .fin-cat-card:hover { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,.15); transform: translateY(-2px); }
-  .fin-cat-card.active-cat { border-color: #2563eb; background: #eff6ff; }
+  .fin-cat-card:hover { border-color: #00C7A9; box-shadow: 0 4px 16px rgba(0,199,169,.15); transform: translateY(-2px); }
+  .fin-cat-card.active-cat { border-color: #00C7A9; background: #e6faf7; }
   .fin-cat-icon { font-size: 34px; margin-bottom: 8px; line-height: 1; }
   .fin-cat-name { font-size: 13px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
   .fin-cat-desc { font-size: 10px; color: #64748b; line-height: 1.5; }
@@ -285,13 +302,13 @@
 
   /* ── 금융 하이라이트 박스 ── */
   .finance-highlight {
-    background: linear-gradient(135deg, #eff6ff, #f0fdf4);
-    border: 1px solid #bfdbfe;
+    background: linear-gradient(135deg, #e6faf7, #f0fdf4);
+    border: 1px solid #99e0d5;
     border-radius: 8px;
     padding: 8px 14px;
     font-size: 12px;
     font-weight: 700;
-    color: #1e40af;
+    color: #007a68;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -305,15 +322,27 @@
   .result-card.noise-card::before { background: #cbd5e1; }
 
   /* ── 핵심금융 탭 ── */
-  .tab-btn.tab-finance { border-color: #2563eb; color: #2563eb; }
-  .tab-btn.tab-finance.active { background: linear-gradient(135deg, #1e40af, #2563eb); border-color: transparent; }
+  .tab-btn.tab-finance { border-color: #00C7A9; color: #00C7A9; }
+  .tab-btn.tab-finance.active { background: linear-gradient(135deg, #007a68, #00C7A9, #b8e84a); border-color: transparent; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🏛️ 정책자금 매칭 서비스</h1>
-  <p>사업자번호 + 업종/지역을 입력하면 받을 수 있는 정책자금을 찾아드립니다</p>
+  <div class="header-brand">
+    <!-- iM뱅크 심볼 (white version) -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 66" height="44" style="flex-shrink:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))">
+      <!-- i: 세로 막대 -->
+      <rect x="0" y="20" width="14" height="46" fill="white"/>
+      <!-- M 왼쪽 아치 -->
+      <path d="M22,0 L36,0 Q66,0 66,66 L52,66 Q22,66 22,0 Z" fill="white"/>
+      <!-- M 오른쪽 아치 -->
+      <path d="M96,0 L110,0 Q110,66 80,66 L66,66 Q66,0 96,0 Z" fill="white"/>
+    </svg>
+    <div class="header-brand-name">iM뱅크</div>
+  </div>
+  <h1>소상공인 정책자금 매칭 서비스</h1>
+  <p>사업자번호 · 업종 · 지역으로 받을 수 있는 정책자금을 찾아드립니다</p>
 </header>
 
 <div class="container">
