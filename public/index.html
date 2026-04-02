@@ -923,17 +923,41 @@
           return true;
         });
 
+      // 접수 중 여부 판단
+      const today = new Date(); today.setHours(0,0,0,0);
+      function isOpenNow(item) {
+        const p = item.reqstBeginEndDe || '';
+        if (!p || p.includes('상시')) return true;
+        const m = p.match(/(\d{4}[-.]?\d{2}[-.]?\d{2})\s*[~～]\s*(\d{4}[-.]?\d{2}[-.]?\d{2})/);
+        if (!m) return true;
+        const norm = s => s.replace(/[-.']/g,'').replace(/^(\d{4})(\d{2})(\d{2})$/,'$1-$2-$3');
+        const end = new Date(norm(m[2])); end.setHours(23,59,59,999);
+        const start = new Date(norm(m[1]));
+        return today >= start && today <= end;
+      }
+
+      processed.forEach(item => { item._isOpen = isOpenNow(item); });
+
       processed.sort((a, b) => {
         const jrsdA = ((a.jrsdInsttNm || '') + (a.excInsttNm || '')).toLowerCase();
         const jrsdB = ((b.jrsdInsttNm || '') + (b.excInsttNm || '')).toLowerCase();
         const cityMatch = cityTag.toLowerCase();
-        // 핵심금융 +20점, 노이즈 -10점 페널티
-        const finA = a._finCat ? 20 : (a._isNoise ? -10 : 0);
-        const finB = b._finCat ? 20 : (b._isNoise ? -10 : 0);
-        const scoreA = finA + (a._hasCity ? 30 : 0) + (a._isRegional ? 4 : 0) + (a._hasIndustry ? 2 : 0)
-                     + (cityMatch && jrsdA.includes(cityMatch) ? 1 : 0);
-        const scoreB = finB + (b._hasCity ? 30 : 0) + (b._isRegional ? 4 : 0) + (b._hasIndustry ? 2 : 0)
-                     + (cityMatch && jrsdB.includes(cityMatch) ? 1 : 0);
+        // 1순위: 접수 중(+100) > 2순위: 시군구매칭(+40) > 3순위: 지역특화(+20) >
+        // 4순위: 업종매칭(+10) > 5순위: 핵심금융 보너스(+5) / 노이즈 패널티(-30)
+        const scoreA = (a._isOpen ? 100 : 0)
+                     + (a._hasCity ? 40 : 0)
+                     + (a._isRegional ? 20 : 0)
+                     + (a._hasIndustry ? 10 : 0)
+                     + (a._finCat ? 5 : 0)
+                     + (cityMatch && jrsdA.includes(cityMatch) ? 2 : 0)
+                     + (a._isNoise ? -30 : 0);
+        const scoreB = (b._isOpen ? 100 : 0)
+                     + (b._hasCity ? 40 : 0)
+                     + (b._isRegional ? 20 : 0)
+                     + (b._hasIndustry ? 10 : 0)
+                     + (b._finCat ? 5 : 0)
+                     + (cityMatch && jrsdB.includes(cityMatch) ? 2 : 0)
+                     + (b._isNoise ? -30 : 0);
         return scoreB - scoreA;
       });
 
@@ -1022,6 +1046,7 @@
     const hasCity     = item._hasCity;
     const finCat      = item._finCat;
     const isNoiseItem = item._isNoise;
+    const isOpen      = item._isOpen;
 
     const regionBadge = hasCity
       ? `<span class="region-badge badge-regional">📍 시군구특화</span>`
@@ -1055,7 +1080,12 @@
       ${highlightHTML}
       ${summary ? `<div class="result-summary">${summary}</div>` : ''}
       <div class="result-footer">
-        <div class="result-date">📅 신청기간: ${period}</div>
+        <div class="result-date">
+          ${isOpen
+            ? `<span class="status-badge status-ok" style="margin:0 6px 0 0;padding:2px 8px;font-size:11px">✅ 접수 중</span>`
+            : `<span class="status-badge status-error" style="margin:0 6px 0 0;padding:2px 8px;font-size:11px">❌ 마감</span>`
+          }📅 ${period}
+        </div>
         ${url !== '#' ? `<a class="result-link" href="${url}" target="_blank">상세보기 →</a>` : ''}
       </div>
     </div>`;

@@ -186,15 +186,33 @@ app.get('/api/search', async (req, res) => {
         return true;
       });
 
-    // 정렬: 시군구매칭(30) + 지역특화(4) + 업종매칭(2) + 기관명시군구일치(1)
+    // 접수 중 여부 판단
+    const today = new Date(); today.setHours(0,0,0,0);
+    function isOpenNow(item) {
+      const p = item.reqstBeginEndDe || '';
+      if (!p || p.includes('상시')) return true;
+      const m = p.match(/(\d{4}[-.]?\d{2}[-.]?\d{2})\s*[~～]\s*(\d{4}[-.]?\d{2}[-.]?\d{2})/);
+      if (!m) return true;
+      const norm = s => s.replace(/[-.']/g,'').replace(/^(\d{4})(\d{2})(\d{2})$/,'$1-$2-$3');
+      const end = new Date(norm(m[2])); end.setHours(23,59,59,999);
+      const start = new Date(norm(m[1]));
+      return today >= start && today <= end;
+    }
+    processed.forEach(item => { item._isOpen = isOpenNow(item); });
+
+    // 정렬: 접수중(100) > 시군구(40) > 지역특화(20) > 업종(10) > 핵심금융(5) / 노이즈(-30)
     processed.sort((a, b) => {
       const jrsdA = ((a.jrsdInsttNm || '') + (a.excInsttNm || '')).toLowerCase();
       const jrsdB = ((b.jrsdInsttNm || '') + (b.excInsttNm || '')).toLowerCase();
       const cityMatch = cityTag.toLowerCase();
-      const scoreA = (a._hasCity ? 30 : 0) + (a._isRegional ? 4 : 0) + (a._hasIndustry ? 2 : 0)
-                   + (cityMatch && jrsdA.includes(cityMatch) ? 1 : 0);
-      const scoreB = (b._hasCity ? 30 : 0) + (b._isRegional ? 4 : 0) + (b._hasIndustry ? 2 : 0)
-                   + (cityMatch && jrsdB.includes(cityMatch) ? 1 : 0);
+      const scoreA = (a._isOpen ? 100 : 0) + (a._hasCity ? 40 : 0) + (a._isRegional ? 20 : 0)
+                   + (a._hasIndustry ? 10 : 0) + (a._finCat ? 5 : 0)
+                   + (cityMatch && jrsdA.includes(cityMatch) ? 2 : 0)
+                   + (a._isNoise ? -30 : 0);
+      const scoreB = (b._isOpen ? 100 : 0) + (b._hasCity ? 40 : 0) + (b._isRegional ? 20 : 0)
+                   + (b._hasIndustry ? 10 : 0) + (b._finCat ? 5 : 0)
+                   + (cityMatch && jrsdB.includes(cityMatch) ? 2 : 0)
+                   + (b._isNoise ? -30 : 0);
       return scoreB - scoreA;
     });
 
