@@ -5,10 +5,9 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// ── 국세청 API 키 (발급 키 고정) ──
-const NTS_API_KEY = '602232bf3c4efc9b39717b92fc82ee11a3ef22aa1821f1d883a2f16a321821bc';
-
-// ── 기업마당 테스트 키 ──
+// ── API 키 ──
+const DATA_GO_KR_KEY = '602232bf3c4efc9b39717b92fc82ee11a3ef22aa1821f1d883a2f16a321821bc';
+const NTS_API_KEY = DATA_GO_KR_KEY;
 const BIZINFO_KEY = 'QP6yn2';
 
 // ── 업종별 검색 키워드 매핑 ──
@@ -229,6 +228,109 @@ app.get('/api/search', async (req, res) => {
     console.error('[오류]', err.message);
     res.status(500).json({ success: false, error: err.message });
   }
+});
+
+// ─────────────────────────────────────────────
+// 추가 공공 API 통합 검색
+// ─────────────────────────────────────────────
+
+// XML 간이 파서 (의존성 없이)
+function parseXmlItems(xml) {
+  const items = [];
+  const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+  let match;
+  while ((match = itemRegex.exec(xml)) !== null) {
+    const item = {};
+    const inner = match[1];
+    // CDATA 포함 필드: <tag><![CDATA[값]]></tag> 또는 <tag>값</tag>
+    const fieldRegex = /<(\w+)>(?:<!\[CDATA\[([\s\S]*?)\]\]>|([\s\S]*?))<\/\1>/g;
+    let fm;
+    while ((fm = fieldRegex.exec(inner)) !== null) {
+      const val = (fm[2] !== undefined ? fm[2] : fm[3]).trim();
+      if (!item[fm[1]]) item[fm[1]] = val; // 첫 번째 값만 (중복 fileName 등)
+    }
+    items.push(item);
+  }
+  return items;
+}
+
+// 중기부 사업공고 → bizinfo 포맷으로 변환
+function normalizeMss(item) {
+  const period = (item.applicationStartDate && item.applicationEndDate)
+    ? `${item.applicationStartDate} ~ ${item.applicationEndDate}` : '상시';
+  return {
+    pblancNm: item.title || '',
+    bsnsSumryCn: (item.dataContents || '').replace(/<[^>]+>/g, ''),
+    jrsdInsttNm: '중소벤처기업부',
+    excInsttNm: item.writerPosition || '',
+    reqstBeginEndDe: period,
+    pblancUrl: item.viewUrl || '#',
+    pblancId: 'MSS_' + (item.itemId || ''),
+    hashtags: '',
+    pldirSportRealmLclasCodeNm: '',
+    _source: 'mss'
+  };
+}
+
+// K-Startup → bizinfo 포맷으로 변환
+function normalizeKstartup(item) {
+  const start = (item.pbanc_rcpt_bgng_dt || '').replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+  const end = (item.pbanc_rcpt_end_dt || '').replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+  const period = start && end ? `${start} ~ ${end}` : '상시';
+  return {
+    pblancNm: item.biz_pbanc_nm || item.intg_pbanc_biz_nm || '',
+    bsnsSumryCn: item.pbanc_ctnt || '',
+    jrsdInsttNm: item.sprv_inst || '창업진흥원',
+    excInsttNm: item.pbanc_ntrp_nm || '',
+    reqstBeginEndDe: period,
+    pblancUrl: item.detl_pg_url || '#',
+    pblancId: 'KSTARTUP_' + (item.pbanc_sn || item.id || ''),
+    hashtags: [item.aply_trgt, item.biz_enyy].filter(Boolean).join(','),
+    pldirSportRealmLclasCodeNm: '창업',
+    trgetNm: item.aply_trgt || '',
+    _source: 'kstartup'
+  };
+}
+
+app.get('/api/search-extra', async (req, res) => {
+  const results = [];
+  const seen = new Set();
+  const errors = [];
+
+  const addResult = (item) => {
+    const id = item.pblancId;
+    if (id && !seen.has(id)) { seen.add(id); results.push(item); }
+  };
+
+  // 1. 중기부 사업공고 (XML)
+  try {
+    const url = `https://apis.data.go.kr/1421000/mssBizService_v2/getbizList_v2?serviceKey=${encodeURIComponent(DATA_GO_KR_KEY)}&pageNo=1&numOfRows=50&returnType=xml`;
+    console.log('[중기부 사업공고]', url);
+    const response = await fetch(url, { timeout: 10000 });
+    const xml = await response.text();
+    const items = parseXmlItems(xml);
+    items.forEach(item => addResult(normalizeMss(item)));
+    console.log(`[중기부 사업공고] ${items.length}건 수집`);
+  } catch (err) {
+    console.error('[중기부 사업공고 오류]', err.message);
+    errors.push('중기부 사업공고: ' + err.message);
+  }
+
+  // 2. K-Startup (JSON)
+  try {
+    const url = `https://apis.data.go.kr/B552735/kisedKstartupService01/getAnnouncementInformation01?serviceKey=${encodeURIComponent(DATA_GO_KR_KEY)}&page=1&perPage=50&returnType=json`;
+    console.log('[K-Startup]', url);
+    const response = await fetch(url, { timeout: 10000 });
+    const data = await response.json();
+    const items = data.data || [];
+    items.forEach(item => addResult(normalizeKstartup(item)));
+    console.log(`[K-Startup] ${items.length}건 수집`);
+  } catch (err) {
+    console.error('[K-Startup 오류]', err.message);
+    errors.push('K-Startup: ' + err.message);
+  }
+
+  res.json({ success: true, total: results.length, data: results, errors });
 });
 
 // ─────────────────────────────────────────────
