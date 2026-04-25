@@ -132,11 +132,19 @@ app.get('/api/search', async (req, res) => {
       }
       // ⑤ 시도 전체 (업종 무관 일반 지원)
       await callBizinfo(`${regionTag},${sizeTag}`, '');
+      // ⑥ 금융 카테고리 전용 hashtag 추가 검색
+      for (const tag of ['이차보전','이자보전','금리','융자','신용보증','창업자금']) {
+        await callBizinfo(`${tag},${regionTag},${sizeTag}`, '');
+      }
     } else {
       for (const kw of kwList) {
         await callBizinfo(sizeTag, kw);
       }
       await callBizinfo(sizeTag, '정책자금');
+      // 금융 카테고리 전용 hashtag 추가 검색
+      for (const tag of ['이차보전','이자보전','금리','융자','신용보증','창업자금']) {
+        await callBizinfo(`${tag},${sizeTag}`, '');
+      }
     }
 
     // ── 후처리 ──

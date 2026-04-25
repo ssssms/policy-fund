@@ -626,10 +626,10 @@
 
   // ── 핵심 금융 카테고리 키워드 ──
   const FINANCE_CATS = {
+    '이차보전': ['이차보전','이자지원','금리우대','이자보전','금리지원','이자차액','저금리 융자','대출이자'],
     '창업지원': ['신규창업','예비창업','창업자금'],
     '융자지원': ['융자','대출','소진공','정책자금'],
     '특례보증': ['신용보증','보증서','재단보증','특례'],
-    '이차보전': ['이차보전','이자지원','금리우대','이자보전','금리지원','이자차액','저금리 융자'],
   };
   const NOISE_KEYWORDS = ['전시회','박람회','컨설팅','교육','연수','카탈로그','마케팅','홍보'];
 
@@ -870,18 +870,18 @@
           await callBizinfo(`${regionTag},${sizeTag}`, kw, seen, results);
         }
         await callBizinfo(`${regionTag},${sizeTag}`, '', seen, results);
-        // ── 금융 카테고리 전용 키워드 추가 검색 ──
-        for (const kw of ['이차보전','이자지원','융자','신용보증','창업자금']) {
-          await callBizinfo(`${regionTag},${sizeTag}`, kw, seen, results);
+        // ── 금융 카테고리 전용 hashtag 추가 검색 ──
+        for (const tag of ['이차보전','이자보전','금리','융자','신용보증','창업자금']) {
+          await callBizinfo(`${tag},${regionTag},${sizeTag}`, '', seen, results);
         }
       } else {
         for (const kw of kwList) {
           await callBizinfo(sizeTag, kw, seen, results);
         }
         await callBizinfo(sizeTag, '정책자금', seen, results);
-        // ── 금융 카테고리 전용 키워드 추가 검색 ──
-        for (const kw of ['이차보전','이자지원','융자','신용보증','창업자금']) {
-          await callBizinfo(sizeTag, kw, seen, results);
+        // ── 금융 카테고리 전용 hashtag 추가 검색 ──
+        for (const tag of ['이차보전','이자보전','금리','융자','신용보증','창업자금']) {
+          await callBizinfo(`${tag},${sizeTag}`, '', seen, results);
         }
       }
 
