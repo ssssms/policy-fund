@@ -345,27 +345,31 @@ app.get('/api/search-extra', async (req, res) => {
     errors.push('K-Startup: ' + err.message);
   }
 
-  // 3. 산업통상자원부 공고 크롤링 (5페이지, 약 50건)
+  // 3. 산업통상자원부 공고 (실시간 크롤링 → 실패 시 캐시 파일 fallback)
+  let motieCount = 0;
   try {
-    let motieCount = 0;
+    const motieUrl = 'https://www.motie.go.kr/kor/article/ATCLc01b2801b?pageIndex=1';
+    console.log('[산통부] 실시간 크롤링 시도');
+    const response = await fetch(motieUrl, {
+      timeout: 8000,
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
+    });
+    const html = await response.text();
+    // 실시간 크롤링 성공 시 5페이지 수집
     for (let page = 1; page <= 5; page++) {
-      const motieUrl = `https://www.motie.go.kr/kor/article/ATCLc01b2801b?pageIndex=${page}`;
-      if (page === 1) console.log('[산통부 크롤링] 1~5페이지 수집 시작');
-      const response = await fetch(motieUrl, {
-        timeout: 10000,
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
-      });
-      const html = await response.text();
+      const pageHtml = page === 1 ? html : await (await fetch(
+        `https://www.motie.go.kr/kor/article/ATCLc01b2801b?pageIndex=${page}`,
+        { timeout: 8000, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' } }
+      )).text();
       const trRegex = /<tr>([\s\S]*?)<\/tr>/g;
       let m;
-      while ((m = trRegex.exec(html)) !== null) {
+      while ((m = trRegex.exec(pageHtml)) !== null) {
         const tr = m[1];
         const viewMatch = tr.match(/article\.view\('(\d+)'\)/);
         const titleMatch = tr.match(/<i>([\s\S]*?)<\/i>/);
         const dateMatch = tr.match(/<td>(\d{4}-\d{2}-\d{2})<\/td>/);
         if (viewMatch && titleMatch) {
           const title = titleMatch[1].trim();
-          // 지원사업 관련만 필터 (채용, 입법예고, 포상 등 제외)
           const isRelevant = /지원|보전|융자|보증|자금|수급/.test(title)
                           && !/채용|합격|입법예고|인사|임기제|전입|포상/.test(title);
           if (isRelevant) {
@@ -375,10 +379,20 @@ app.get('/api/search-extra', async (req, res) => {
         }
       }
     }
-    console.log(`[산통부 크롤링] ${motieCount}건 수집`);
+    console.log(`[산통부] 실시간 크롤링 ${motieCount}건`);
   } catch (err) {
-    console.error('[산통부 크롤링 오류]', err.message);
-    errors.push('산통부: ' + err.message);
+    // 실시간 크롤링 실패 → 캐시 파일 fallback
+    console.log(`[산통부] 실시간 크롤링 실패 (${err.message}), 캐시 파일 사용`);
+    try {
+      const fs = require('fs');
+      const cached = JSON.parse(fs.readFileSync(path.join(__dirname, 'motie-data.json'), 'utf-8'));
+      cached.data.forEach(item => addResult(item));
+      motieCount = cached.data.length;
+      console.log(`[산통부] 캐시 파일 ${motieCount}건 (${cached.updatedAt})`);
+    } catch (fileErr) {
+      console.error('[산통부] 캐시 파일도 없음:', fileErr.message);
+      errors.push('산통부: 크롤링 및 캐시 모두 실패');
+    }
   }
 
   res.json({ success: true, total: results.length, data: results, errors });

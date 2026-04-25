@@ -1,0 +1,30 @@
+name: 산통부 공고 크롤링
+
+on:
+  schedule:
+    - cron: '0 0,6,12 * * *'  # 매일 09:00, 15:00, 21:00 KST (UTC 0,6,12)
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 의존성 설치
+        run: npm install
+
+      - name: 산통부 크롤링
+        run: node crawl-motie.js
+
+      - name: 변경사항 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add motie-data.json
+          git diff --staged --quiet || git commit -m "산통부 공고 자동 업데이트 $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
