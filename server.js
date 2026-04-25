@@ -292,6 +292,22 @@ function normalizeKstartup(item) {
   };
 }
 
+// 산통부 공고 크롤링 → bizinfo 포맷으로 변환
+function normalizeMotie(id, title, date) {
+  return {
+    pblancNm: title,
+    bsnsSumryCn: '',
+    jrsdInsttNm: '산업통상자원부',
+    excInsttNm: '',
+    reqstBeginEndDe: date || '상시',
+    pblancUrl: `https://www.motie.go.kr/kor/article/ATCLc01b2801b/${id}/view`,
+    pblancId: 'MOTIE_' + id,
+    hashtags: '',
+    pldirSportRealmLclasCodeNm: '',
+    _source: 'motie'
+  };
+}
+
 app.get('/api/search-extra', async (req, res) => {
   const results = [];
   const seen = new Set();
@@ -328,6 +344,40 @@ app.get('/api/search-extra', async (req, res) => {
   } catch (err) {
     console.error('[K-Startup 오류]', err.message);
     errors.push('K-Startup: ' + err.message);
+  }
+
+  // 3. 산업통상자원부 공고 크롤링
+  try {
+    const motieUrl = 'https://www.motie.go.kr/kor/article/ATCLc01b2801b';
+    console.log('[산통부 크롤링]', motieUrl);
+    const response = await fetch(motieUrl, {
+      timeout: 10000,
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
+    });
+    const html = await response.text();
+    const trRegex = /<tr>([\s\S]*?)<\/tr>/g;
+    let m;
+    let motieCount = 0;
+    while ((m = trRegex.exec(html)) !== null) {
+      const tr = m[1];
+      const viewMatch = tr.match(/article\.view\('(\d+)'\)/);
+      const titleMatch = tr.match(/<i>([\s\S]*?)<\/i>/);
+      const dateMatch = tr.match(/<td>(\d{4}-\d{2}-\d{2})<\/td>/);
+      if (viewMatch && titleMatch) {
+        const title = titleMatch[1].trim();
+        // 지원사업 관련만 필터 (채용, 입법예고, 포상 등 제외)
+        const isRelevant = /지원|보전|융자|보증|자금|수급/.test(title)
+                        && !/채용|합격|입법예고|인사|임기제|전입|포상|모집 공고$/.test(title);
+        if (isRelevant) {
+          addResult(normalizeMotie(viewMatch[1], title, dateMatch ? dateMatch[1] : ''));
+          motieCount++;
+        }
+      }
+    }
+    console.log(`[산통부 크롤링] ${motieCount}건 수집`);
+  } catch (err) {
+    console.error('[산통부 크롤링 오류]', err.message);
+    errors.push('산통부: ' + err.message);
   }
 
   res.json({ success: true, total: results.length, data: results, errors });
