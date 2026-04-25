@@ -202,8 +202,7 @@ app.get('/api/search', async (req, res) => {
       if (!m) return true;
       const norm = s => s.replace(/[-.']/g,'').replace(/^(\d{4})(\d{2})(\d{2})$/,'$1-$2-$3');
       const end = new Date(norm(m[2])); end.setHours(23,59,59,999);
-      const start = new Date(norm(m[1]));
-      return today >= start && today <= end;
+      return today <= end;  // 종료일이 안 지났으면 접수 중 (시작 전 포함)
     }
     processed.forEach(item => { item._isOpen = isOpenNow(item); });
 
