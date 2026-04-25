@@ -346,31 +346,33 @@ app.get('/api/search-extra', async (req, res) => {
     errors.push('K-Startup: ' + err.message);
   }
 
-  // 3. 산업통상자원부 공고 크롤링
+  // 3. 산업통상자원부 공고 크롤링 (5페이지, 약 50건)
   try {
-    const motieUrl = 'https://www.motie.go.kr/kor/article/ATCLc01b2801b';
-    console.log('[산통부 크롤링]', motieUrl);
-    const response = await fetch(motieUrl, {
-      timeout: 10000,
-      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
-    });
-    const html = await response.text();
-    const trRegex = /<tr>([\s\S]*?)<\/tr>/g;
-    let m;
     let motieCount = 0;
-    while ((m = trRegex.exec(html)) !== null) {
-      const tr = m[1];
-      const viewMatch = tr.match(/article\.view\('(\d+)'\)/);
-      const titleMatch = tr.match(/<i>([\s\S]*?)<\/i>/);
-      const dateMatch = tr.match(/<td>(\d{4}-\d{2}-\d{2})<\/td>/);
-      if (viewMatch && titleMatch) {
-        const title = titleMatch[1].trim();
-        // 지원사업 관련만 필터 (채용, 입법예고, 포상 등 제외)
-        const isRelevant = /지원|보전|융자|보증|자금|수급/.test(title)
-                        && !/채용|합격|입법예고|인사|임기제|전입|포상|모집 공고$/.test(title);
-        if (isRelevant) {
-          addResult(normalizeMotie(viewMatch[1], title, dateMatch ? dateMatch[1] : ''));
-          motieCount++;
+    for (let page = 1; page <= 5; page++) {
+      const motieUrl = `https://www.motie.go.kr/kor/article/ATCLc01b2801b?pageIndex=${page}`;
+      if (page === 1) console.log('[산통부 크롤링] 1~5페이지 수집 시작');
+      const response = await fetch(motieUrl, {
+        timeout: 10000,
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
+      });
+      const html = await response.text();
+      const trRegex = /<tr>([\s\S]*?)<\/tr>/g;
+      let m;
+      while ((m = trRegex.exec(html)) !== null) {
+        const tr = m[1];
+        const viewMatch = tr.match(/article\.view\('(\d+)'\)/);
+        const titleMatch = tr.match(/<i>([\s\S]*?)<\/i>/);
+        const dateMatch = tr.match(/<td>(\d{4}-\d{2}-\d{2})<\/td>/);
+        if (viewMatch && titleMatch) {
+          const title = titleMatch[1].trim();
+          // 지원사업 관련만 필터 (채용, 입법예고, 포상 등 제외)
+          const isRelevant = /지원|보전|융자|보증|자금|수급/.test(title)
+                          && !/채용|합격|입법예고|인사|임기제|전입|포상/.test(title);
+          if (isRelevant) {
+            addResult(normalizeMotie(viewMatch[1], title, dateMatch ? dateMatch[1] : ''));
+            motieCount++;
+          }
         }
       }
     }
