@@ -1214,8 +1214,8 @@
       wsec.classList.add('is-hidden');
       wsec.classList.remove('flash');
     }
-    const wbtn = document.getElementById('cat-도매자금');
-    if (wbtn) wbtn.classList.remove('active-cat');
+    // 핵심 금융 지원 유형 카드 5개 모두 active 시각 해제 (이전 quickFilter/도매자금 클릭 잔재 제거)
+    document.querySelectorAll('.fin-cat-card').forEach(c => c.classList.remove('active-cat'));
 
     document.getElementById('searchBtn').disabled = true;
     document.getElementById('searchBtn').textContent = '검색 중...';
