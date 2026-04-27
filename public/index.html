@@ -553,11 +553,24 @@
     border-radius: 4px;
     border: 1px solid #99e0d5;
   }
+  .wp-active-tag.more {
+    background: transparent;
+    color: #64748b;
+    border-style: dashed;
+    font-style: italic;
+    font-weight: 500;
+  }
   .wp-active-scope {
     color: #64748b;
     font-weight: 500;
     font-size: 10px;
     margin-left: 2px;
+  }
+  .wp-active-hint {
+    font-size: 10px;
+    font-weight: 500;
+    color: #64748b;
+    margin-left: 6px;
   }
 
   /* 신청기간 박스 */
@@ -1656,19 +1669,25 @@
           ${app.verifyNote ? `<div class="wp-verify-note"><span class="wp-verify-icon">💬</span><span class="wp-verify-text">${esc(app.verifyNote)}</span></div>` : ''}
         </div>` : '';
 
-      // 현재 활성 지역(C2) 또는 분야(KDB특별) 블록
+      // 현재 활성 지역(C2) 또는 분야(KDB특별) 블록 — "예시" + "외 다수" 표기
       let activeBlock = '';
       if (Array.isArray(p.activeRegions) && p.activeRegions.length) {
+        const moreTag = p.activeRegionsMore
+          ? `<span class="wp-active-tag more">+ ${esc(p.activeRegionsMore)}</span>`
+          : '';
         activeBlock = `
           <div class="wp-active">
-            <div class="wp-active-label">📍 활성 공고 지역</div>
-            <div class="wp-active-tags">${p.activeRegions.map(r => `<span class="wp-active-tag">${esc(r)}</span>`).join('')}</div>
+            <div class="wp-active-label">📍 활성 공고 지역 <span class="wp-active-hint">(예시)</span></div>
+            <div class="wp-active-tags">${p.activeRegions.map(r => `<span class="wp-active-tag">${esc(r)}</span>`).join('')}${moreTag}</div>
           </div>`;
       } else if (Array.isArray(p.activeFields) && p.activeFields.length) {
+        const moreTag = p.activeFieldsMore
+          ? `<span class="wp-active-tag more">+ ${esc(p.activeFieldsMore)}</span>`
+          : '';
         activeBlock = `
           <div class="wp-active">
-            <div class="wp-active-label">🎯 진행 중 분야</div>
-            <div class="wp-active-tags">${p.activeFields.map(f => `<span class="wp-active-tag">${esc(f.name)}<span class="wp-active-scope">(${esc(f.scope)})</span></span>`).join('')}</div>
+            <div class="wp-active-label">🎯 진행 중 분야 <span class="wp-active-hint">(예시)</span></div>
+            <div class="wp-active-tags">${p.activeFields.map(f => `<span class="wp-active-tag">${esc(f.name)}<span class="wp-active-scope">(${esc(f.scope)})</span></span>`).join('')}${moreTag}</div>
           </div>`;
       }
 

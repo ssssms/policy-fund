@@ -50,11 +50,11 @@
       "category": "한은 도매성 자금",
       "issuer": "한국은행 지역본부",
       "operator": "시중은행 (iM뱅크 포함)",
-      "status": "상시 운영 (지역본부별 활성 공고 다수)",
+      "status": "상시 운영 (전국 지역본부 다수 활성)",
       "application": {
         "model": "always_via_branch",
         "currentStatus": "open",
-        "windowText": "상시 (종료일 9999-12-31, 지역본부별 운영). 2026년 다수 지역에서 활성 공고 진행 중",
+        "windowText": "상시 (종료일 9999-12-31). 전국 지역본부에서 다양한 명칭으로 다수 공고 진행 중",
         "verifyNote": "지역별 운영 한도 잔여는 영업점에서 확인 권장"
       },
       "activeRegions": [
@@ -64,6 +64,7 @@
         "울산",
         "포항"
       ],
+      "activeRegionsMore": "전국 다수 지역",
       "target": "지방 소재 중소기업 (대구·경북 핵심)",
       "purposes": ["시설", "운영"],
       "limit": {
@@ -106,7 +107,7 @@
       "application": {
         "model": "annual_announce",
         "currentStatus": "open",
-        "windowText": "현재 신청 가능 (2026년 다수 분야 공고 진행 중)",
+        "windowText": "현재 신청 가능 — 다양한 분야·명칭으로 다수 공고 진행 중",
         "verifyNote": "구체적 신청 분야·자격요건은 영업점에서 확인"
       },
       "target": "국내 중소·중견기업",
@@ -152,15 +153,17 @@
       "application": {
         "model": "annual_announce",
         "currentStatus": "open",
-        "windowText": "현재 신청 가능 — 정책목적별 분야 다수 활성",
+        "windowText": "현재 신청 가능 — 정책목적별 분야 다수 활성 (아래는 예시)",
         "verifyNote": "분야별 자격요건이 다르므로 영업점 사전 상담 권장"
       },
       "activeFields": [
         { "name": "탄소중립지원", "scope": "중소기업" },
         { "name": "일자리창출기업", "scope": "중소기업" },
         { "name": "지역결제활성화", "scope": "중소기업" },
-        { "name": "수출기업우대", "scope": "중견기업" }
+        { "name": "수출기업우대", "scope": "중견기업" },
+        { "name": "해외사업자금", "scope": "중소·중견" }
       ],
+      "activeFieldsMore": "외 다수 분야",
       "target": "기술력·성장잠재력이 있는 중소·중견기업 (정책목적 분야별 자격요건)",
       "purposes": ["시설", "운영"],
       "limit": {
