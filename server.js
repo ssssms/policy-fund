@@ -393,7 +393,18 @@ app.get('/api/search-extra', async (req, res) => {
     errors.push('gov24: 캐시 파일 없음');
   }
 
-  // 4. 산업통상자원부 공고 (실시간 크롤링 → 실패 시 캐시 파일 fallback)
+  // 4. 지역신용보증재단 보증상품 (대구·경북 동적 + 서울·경기 정적, 캐시 사용)
+  try {
+    const fs = require('fs');
+    const cached = JSON.parse(fs.readFileSync(path.join(__dirname, 'shinbo-data.json'), 'utf-8'));
+    cached.data.forEach(item => addResult(item));
+    console.log(`[shinbo] 캐시 ${cached.data.length}건 (${cached.updatedAt})`);
+  } catch (err) {
+    console.error('[shinbo] 캐시 파일 로드 실패:', err.message);
+    errors.push('shinbo: 캐시 파일 없음');
+  }
+
+  // 5. 산업통상자원부 공고 (실시간 크롤링 → 실패 시 캐시 파일 fallback)
   let motieCount = 0;
   try {
     const motieUrl = 'https://www.motie.go.kr/kor/article/ATCLc01b2801b?pageIndex=1';
