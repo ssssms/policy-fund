@@ -291,6 +291,43 @@ function normalizeKstartup(item) {
   };
 }
 
+// 행안부 공공서비스(혜택) gov24 → bizinfo 포맷으로 변환
+function parseGov24Location(orgName) {
+  if (!orgName) return { region: '', city: '' };
+  const m = orgName.match(/^(\S+(?:특별시|광역시|특별자치시|특별자치도|도))\s*(\S+(?:시|군|구))?/);
+  if (m) return { region: m[1], city: m[2] || '' };
+  return { region: '', city: '' };
+}
+function normalizeGov24(item) {
+  const orgName = item['소관기관명'] || '';
+  const orgType = item['소관기관유형'] || '';
+  const { region, city } = parseGov24Location(orgName);
+  return {
+    pblancNm: item['서비스명'] || '',
+    bsnsSumryCn: item['서비스목적요약'] || item['지원내용'] || '',
+    jrsdInsttNm: orgName,
+    excInsttNm: item['부서명'] || '',
+    reqstBeginEndDe: item['신청기한'] || '상시',
+    pblancUrl: item['상세조회URL'] || '#',
+    pblancId: 'GOV24_' + (item['서비스ID'] || ''),
+    hashtags: [region, city, item['서비스분야'], orgType].filter(Boolean).join(','),
+    pldirSportRealmLclasCodeNm: item['서비스분야'] || '',
+    trgetNm: item['지원대상'] || '',
+    _source: 'gov24'
+  };
+}
+
+// gov24 정책자금 필터 (캐시 미스 시 실시간 호출용)
+const GOV24_INCLUDE_RE = /이차보전|이자보전|이자차액|정책자금|융자|신용보증|특례보증|경영안정자금|창업자금|운영자금|육성기금|육성자금|소상공인.{0,6}(지원|자금|융자|보증)|중소기업.{0,6}(지원|자금|융자|보증|육성)|창업기업.{0,6}(지원|자금)/;
+const GOV24_EXCLUDE_RE = /학자금|등록금|대학생|임대주택|전세자금|주거안정자금|보증금.{0,4}융자|지역화폐|상품권|방역|소독|방제|도로점용|점용료|손실보상금|자활기업|사회투자|디지털.{0,4}파기|위생해충|장애인.{0,4}활동|영유아|아동수당|어린이집|돌봄|보육|결혼이민|외국인.{0,4}복지/;
+function filterGov24Raw(items) {
+  return items.filter(it => {
+    const blob = [it['서비스명']||'', it['서비스목적요약']||'', it['지원내용']||'', it['지원대상']||''].join(' ');
+    if (GOV24_EXCLUDE_RE.test(blob)) return false;
+    return GOV24_INCLUDE_RE.test(blob);
+  });
+}
+
 // 산통부 공고 크롤링 → bizinfo 포맷으로 변환
 function normalizeMotie(id, title, date) {
   return {
@@ -345,7 +382,18 @@ app.get('/api/search-extra', async (req, res) => {
     errors.push('K-Startup: ' + err.message);
   }
 
-  // 3. 산업통상자원부 공고 (실시간 크롤링 → 실패 시 캐시 파일 fallback)
+  // 3. 행안부 공공서비스 gov24 (전체 1만건 → 정책자금 296건 캐시 사용, 매일 GitHub Actions 갱신)
+  try {
+    const fs = require('fs');
+    const cached = JSON.parse(fs.readFileSync(path.join(__dirname, 'gov24-data.json'), 'utf-8'));
+    cached.data.forEach(item => addResult(item));
+    console.log(`[gov24] 캐시 ${cached.data.length}건 (${cached.updatedAt})`);
+  } catch (err) {
+    console.error('[gov24] 캐시 파일 로드 실패:', err.message);
+    errors.push('gov24: 캐시 파일 없음');
+  }
+
+  // 4. 산업통상자원부 공고 (실시간 크롤링 → 실패 시 캐시 파일 fallback)
   let motieCount = 0;
   try {
     const motieUrl = 'https://www.motie.go.kr/kor/article/ATCLc01b2801b?pageIndex=1';

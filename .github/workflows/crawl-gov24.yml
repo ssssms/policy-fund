@@ -1,0 +1,33 @@
+name: 행안부 공공서비스(혜택) 캐시 갱신
+
+on:
+  schedule:
+    - cron: '30 0 * * *'  # 매일 09:30 KST (UTC 00:30) - motie 09:00과 30분 차이
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 의존성 설치
+        run: npm install
+
+      - name: gov24 전체 수집 + 정책자금 필터
+        run: node crawl-gov24.js
+
+      - name: 변경사항 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add gov24-data.json
+          git diff --staged --quiet || git commit -m "gov24 정책자금 캐시 자동 업데이트 $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
