@@ -960,7 +960,7 @@
         return scoreB - scoreA;
       });
 
-      // ── 추가 공공 API (중기부 사업공고 + K-Startup) ──
+      // ── 추가 공공 API (중기부/K-Startup/gov24/신보재단/산통부) ──
       try {
         const extraRes = await fetch('/api/search-extra');
         const extraJson = await extraRes.json();
@@ -969,19 +969,40 @@
             const id = item.pblancId;
             if (id && !seen.has(id)) {
               seen.add(id);
-              // 동일한 후처리 적용
               const tags    = item.hashtags || '';
               const jrsd    = (item.jrsdInsttNm || '') + (item.excInsttNm || '');
               const content = (item.pblancNm + ' ' + (item.bsnsSumryCn || '') + ' ' + tags + ' ' + jrsd).toLowerCase();
               const realm   = item.pldirSportRealmLclasCodeNm || '';
+
+              // 시도/시군구 매칭 (기업마당과 동일 로직, content/jrsd/tags 광범위 검색)
+              const hasSelectedRegion = regionTag
+                ? (tags.includes(regionTag) || content.includes(regionTag.toLowerCase()))
+                : true;
+              const hasCity = cityTag ? (
+                tags.includes(cityTag) ||
+                content.includes(cityTag.toLowerCase()) ||
+                (cityFull !== cityTag && content.includes(cityFull.toLowerCase()))
+              ) : false;
+
+              // 시도 선택 + 시도 매칭 실패 시 제외 (단, 시군구 매칭은 시도 누락이어도 통과)
+              if (regionTag && !hasSelectedRegion && !hasCity) continue;
+
+              const hasIndustry = matchWords.length === 0 || (
+                matchWords.some(w => content.includes(w.toLowerCase())) ||
+                goodRealms.has(realm)
+              );
+              // 생활업종-기술/수출 realm 제외 (기업마당과 동일)
+              if (isLifeIndustry && TECH_REALMS.has(realm) &&
+                  !matchWords.some(w => (item.pblancNm || '').toLowerCase().includes(w))) continue;
+
               const finCat  = classifyFinance(content);
               const noise   = !finCat && isNoise(content);
               processed.push({
                 ...item,
-                _isRegional: false,
-                _hasRegion: true,
-                _hasCity: false,
-                _hasIndustry: matchWords.length === 0 || matchWords.some(w => content.includes(w.toLowerCase())),
+                _isRegional: hasSelectedRegion,
+                _hasRegion: hasSelectedRegion,
+                _hasCity: hasCity,
+                _hasIndustry: hasIndustry,
                 _realm: realm,
                 _finCat: finCat,
                 _isNoise: noise,
