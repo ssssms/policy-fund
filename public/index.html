@@ -344,9 +344,7 @@
   .result-card.noise-card { opacity: 0.55; }
   .result-card.noise-card::before { background: #cbd5e1; }
 
-  /* ── 핵심금융 탭 ── */
-  .tab-btn.tab-finance { border-color: #00C7A9; color: #00C7A9; }
-  .tab-btn.tab-finance.active { background: linear-gradient(135deg, #007a68, #00C7A9, #b8e84a); border-color: transparent; }
+  /* ── 핵심금융 탭 — 다른 탭과 동일 스타일 적용 (.tab-finance는 마커로만 유지) ── */
 
   /* ────────────────────────────────────
      모바일 반응형
@@ -642,11 +640,26 @@
   }
   .wp-source:hover { color: #00C7A9; text-decoration: underline; }
   .wp-asof {
-    text-align: right;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     font-size: 11px;
-    color: #94a3b8;
-    margin-top: 12px;
+    line-height: 1.6;
+    text-align: left;
   }
+  .wp-asof-date {
+    font-weight: 700;
+    color: #64748b;
+  }
+  .wp-asof-note {
+    color: #94a3b8;
+  }
+
+  /* 도매 정책금융 카드 숨김/표시 (🏦 도매자금 클릭 시 표시) */
+  .wholesale-card.is-hidden { display: none; }
 </style>
 </head>
 <body>
@@ -823,8 +836,8 @@
     </div>
   </div>
 
-  <!-- ── 도매 정책금융 안내 (C1·C2·온렌딩) ── -->
-  <div class="card wholesale-card" id="wholesale-section">
+  <!-- ── 도매 정책금융 안내 (C1·C2·온렌딩) — 페이지 진입 시 숨김, 🏦 도매자금 클릭 시 표시 ── -->
+  <div class="card wholesale-card is-hidden" id="wholesale-section">
     <div class="card-title">
       🏦 도매 정책금융 안내 (C1·C2·온렌딩)
       <span class="badge">한국은행 · 산업은행 저리 자금</span>
@@ -1140,6 +1153,13 @@
     const industry = document.getElementById('industry').value;
     const size     = document.getElementById('bizSize').value;
     const city     = document.getElementById('city').value;
+
+    // 검색 시작 시 도매금융 카드 숨김 (정책자금 결과를 우선 보이게)
+    const wsec = document.getElementById('wholesale-section');
+    if (wsec) {
+      wsec.classList.add('is-hidden');
+      wsec.classList.remove('flash');
+    }
 
     document.getElementById('searchBtn').disabled = true;
     document.getElementById('searchBtn').textContent = '검색 중...';
@@ -1481,6 +1501,8 @@
   function scrollToWholesale() {
     const sec = document.getElementById('wholesale-section');
     if (!sec) return;
+    // 숨김 상태면 먼저 표시
+    sec.classList.remove('is-hidden');
     sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
     sec.classList.remove('flash');
     // reflow 후 클래스 재부여 → 애니메이션 재실행
@@ -1495,7 +1517,12 @@
       if (!data.success) throw new Error(data.error || '데이터 로드 실패');
       WHOLESALE_PRODUCTS = data.products || [];
       const asOfEl = document.getElementById('wp-asof');
-      if (asOfEl) asOfEl.textContent = `기준일: ${data.asOf || ''} · ${data.note || ''}`;
+      if (asOfEl) {
+        asOfEl.innerHTML = `
+          <div class="wp-asof-date">📅 기준일: ${esc(data.asOf || '')}</div>
+          ${data.note ? `<div class="wp-asof-note">${esc(data.note)}</div>` : ''}
+        `;
+      }
       renderWholesale();
     } catch (err) {
       console.error('[도매 정책금융]', err);
