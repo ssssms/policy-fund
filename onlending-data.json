@@ -50,14 +50,21 @@
       "category": "한은 도매성 자금",
       "issuer": "한국은행 지역본부",
       "operator": "시중은행 (iM뱅크 포함)",
-      "status": "상시 운영 + 시한특별자금 별도",
+      "status": "상시 운영 (지역본부별 활성 공고 다수)",
       "application": {
         "model": "always_via_branch",
-        "currentStatus": "verify_at_branch",
-        "windowText": "상시 (한은 지역본부 운영기준) + 시한특별자금은 시즌별 별도 공지",
-        "verifyNote": "분기별 한도와 별개로 시한특별자금(예: 한시특별자금) 운영 시점은 영업점 확인 필수"
+        "currentStatus": "open",
+        "windowText": "상시 (종료일 9999-12-31, 지역본부별 운영). 2026년 다수 지역에서 활성 공고 진행 중",
+        "verifyNote": "지역별 운영 한도 잔여는 영업점에서 확인 권장"
       },
-      "target": "지방 소재 중소기업 (대구·경북 등 비수도권)",
+      "activeRegions": [
+        "대구광역시",
+        "경북 김천",
+        "경북 영주",
+        "울산",
+        "포항"
+      ],
+      "target": "지방 소재 중소기업 (대구·경북 핵심)",
       "purposes": ["시설", "운영"],
       "limit": {
         "perCompany": "동일기업 8억원 이내 (소상공인 1억원) — 한은 지역본부 운영기준 사례",
@@ -74,13 +81,13 @@
       "applyAt": "가까운 iM뱅크 영업점에서 상담·신청",
       "highlights": [
         "지방 중소기업 집중 지원 (대구·경북 핵심 대상)",
-        "한은 지역본부 → 지역 은행 → 기업 구조",
+        "전국 다수 지역본부에서 상시 공고 진행 중 (종료일 미지정)",
         "시설자금 분할상환 시 최장 15년"
       ],
       "sources": [
         {
-          "label": "한국은행 지역본부 C2 운용현황 (부산본부 예시)",
-          "url": "https://www.bok.or.kr/portal/bbs/P0000810/list.do?menuNo=200563"
+          "label": "기업마당 — 지방중소기업지원자금 검색 (다수 활성 공고)",
+          "url": "https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/list.do?searchCondition=pblancNm&searchKeyword=%EC%A7%80%EB%B0%A9%EC%A4%91%EC%86%8C%EA%B8%B0%EC%97%85%EC%A7%80%EC%9B%90%EC%9E%90%EA%B8%88"
         },
         {
           "label": "취급은행 상품안내 예시 (하나은행)",
@@ -95,13 +102,12 @@
       "category": "산은 도매성 자금",
       "issuer": "KDB 산업은행",
       "operator": "중개금융기관 (iM뱅크 등 시중은행)",
-      "status": "연 1회 공고 (매년 3월경 갱신)",
+      "status": "현재 진행 중 (2026년 다수 분야 공고 활성)",
       "application": {
         "model": "annual_announce",
-        "currentStatus": "verify_at_branch",
-        "lastWindow": "2025년 공고: 2025-03-06 ~ 2026-03-05 (PBLN_000000000108749 종료)",
-        "windowText": "2025년 공고 종료 (2026-03-05). 2026년 공고 일정 미확인",
-        "verifyNote": "2026년 공고 게시 여부와 신청 가능 시점은 KDB 1588-1500 또는 iM뱅크 영업점에서 확인 필요"
+        "currentStatus": "open",
+        "windowText": "현재 신청 가능 (2026년 다수 분야 공고 진행 중)",
+        "verifyNote": "구체적 신청 분야·자격요건은 영업점에서 확인"
       },
       "target": "국내 중소·중견기업",
       "purposes": ["시설", "운영", "리스"],
@@ -126,11 +132,11 @@
       ],
       "sources": [
         {
-          "label": "기업마당 KDB 온렌딩 (2025년 공고, 만료)",
-          "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000108749"
+          "label": "기업마당 — KDB 온렌딩 공고 검색",
+          "url": "https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/list.do?searchCondition=pblancNm&searchKeyword=%EC%98%A8%EB%A0%8C%EB%94%A9"
         },
         {
-          "label": "KDB 온렌딩 디지털 플랫폼 (현행 운영)",
+          "label": "KDB 온렌딩 디지털 플랫폼",
           "url": "https://onlending.kdb.co.kr/"
         }
       ]
@@ -142,15 +148,20 @@
       "category": "산은 도매성 자금",
       "issuer": "KDB 산업은행",
       "operator": "중개금융기관 (iM뱅크 등 시중은행)",
-      "status": "연 1회 공고",
+      "status": "현재 진행 중 (정책목적별 분야 다수 활성)",
       "application": {
         "model": "annual_announce",
-        "currentStatus": "verify_at_branch",
-        "lastWindow": "2025년 공고: 2025-03-06 ~ 2026-03-05 (일반 온렌딩과 함께 게시)",
-        "windowText": "2025년 공고 종료 (2026-03-05). 2026년 공고 일정 미확인",
-        "verifyNote": "특별 온렌딩은 자격요건 심사가 별도 진행되므로 영업점 사전 상담 권장"
+        "currentStatus": "open",
+        "windowText": "현재 신청 가능 — 정책목적별 분야 다수 활성",
+        "verifyNote": "분야별 자격요건이 다르므로 영업점 사전 상담 권장"
       },
-      "target": "기술력·성장잠재력이 있는 중소·중견기업 (특별 자격요건)",
+      "activeFields": [
+        { "name": "탄소중립지원", "scope": "중소기업" },
+        { "name": "일자리창출기업", "scope": "중소기업" },
+        { "name": "지역결제활성화", "scope": "중소기업" },
+        { "name": "수출기업우대", "scope": "중견기업" }
+      ],
+      "target": "기술력·성장잠재력이 있는 중소·중견기업 (정책목적 분야별 자격요건)",
       "purposes": ["시설", "운영"],
       "limit": {
         "perCompany": "중소기업 200억원 / 중견기업 300억원",
@@ -167,16 +178,16 @@
       "applyAt": "가까운 iM뱅크 영업점에서 상담·신청",
       "highlights": [
         "한도 상향 (일반 대비 2배)",
-        "기술력·성장잠재력 평가 통과 기업",
-        "정책자금 우대 조건 적용"
+        "탄소중립·일자리창출·지역결제·수출 등 분야별 우대",
+        "정책목적 부합 시 추가 금리 우대"
       ],
       "sources": [
         {
-          "label": "기업마당 KDB 온렌딩 (2025년 공고, 만료)",
-          "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000108749"
+          "label": "기업마당 — KDB 온렌딩 공고 검색",
+          "url": "https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/list.do?searchCondition=pblancNm&searchKeyword=%EC%98%A8%EB%A0%8C%EB%94%A9"
         },
         {
-          "label": "KDB 온렌딩 디지털 플랫폼 (현행 운영)",
+          "label": "KDB 온렌딩 디지털 플랫폼",
           "url": "https://onlending.kdb.co.kr/"
         }
       ]

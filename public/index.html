@@ -293,13 +293,19 @@
   .fin-cat-icon { font-size: 30px; margin-bottom: 8px; line-height: 1; }
   .fin-cat-name { font-size: 13px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
   .fin-cat-desc { font-size: 10px; color: #64748b; line-height: 1.5; }
-  /* 5번째 "안내" 변형 — 도매자금 (필터가 아닌 스크롤 안내) */
+  /* 5번째 "안내" 변형 — 도매자금 (필터가 아닌 토글 안내) */
   .fin-cat-card.info {
     background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
     border-color: #99e0d5;
     border-style: dashed;
   }
   .fin-cat-card.info:hover { border-style: solid; border-color: #00C7A9; }
+  /* 펼쳐진 상태: 다른 4개 카드의 active 시각과 일관 */
+  .fin-cat-card.info.active-cat {
+    border-style: solid;
+    border-color: #00C7A9;
+    background: #e6faf7;
+  }
   .fin-cat-card .info-badge {
     position: absolute;
     top: 6px; right: 6px;
@@ -518,6 +524,41 @@
   .wp-app-status.closed  .dot { background: #ef4444; }
   .wp-app-status.verify  { background: #fef3c7; color: #92400e; }
   .wp-app-status.verify  .dot { background: #f59e0b; }
+
+  /* 현재 활성 지역/분야 박스 (C2: 지역, KDB특별: 분야) */
+  .wp-active {
+    background: #ecfdf5;
+    border: 1px solid #99e0d5;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+  }
+  .wp-active-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #065f46;
+    margin-bottom: 5px;
+  }
+  .wp-active-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .wp-active-tag {
+    font-size: 11px;
+    font-weight: 600;
+    background: white;
+    color: #065f46;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #99e0d5;
+  }
+  .wp-active-scope {
+    color: #64748b;
+    font-weight: 500;
+    font-size: 10px;
+    margin-left: 2px;
+  }
 
   /* 신청기간 박스 */
   .wp-window {
@@ -1160,6 +1201,8 @@
       wsec.classList.add('is-hidden');
       wsec.classList.remove('flash');
     }
+    const wbtn = document.getElementById('cat-도매자금');
+    if (wbtn) wbtn.classList.remove('active-cat');
 
     document.getElementById('searchBtn').disabled = true;
     document.getElementById('searchBtn').textContent = '검색 중...';
@@ -1501,13 +1544,23 @@
   function scrollToWholesale() {
     const sec = document.getElementById('wholesale-section');
     if (!sec) return;
-    // 숨김 상태면 먼저 표시
-    sec.classList.remove('is-hidden');
-    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    sec.classList.remove('flash');
-    // reflow 후 클래스 재부여 → 애니메이션 재실행
-    void sec.offsetWidth;
-    sec.classList.add('flash');
+    const btn = document.getElementById('cat-도매자금');
+    const wasHidden = sec.classList.contains('is-hidden');
+
+    if (wasHidden) {
+      // 펼치기 + 스크롤 + 플래시 + 카드 active 표시
+      sec.classList.remove('is-hidden');
+      if (btn) btn.classList.add('active-cat');
+      sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      sec.classList.remove('flash');
+      void sec.offsetWidth;
+      sec.classList.add('flash');
+    } else {
+      // 접기 (스크롤·플래시 없음)
+      sec.classList.add('is-hidden');
+      sec.classList.remove('flash');
+      if (btn) btn.classList.remove('active-cat');
+    }
   }
 
   async function loadWholesaleFinance() {
@@ -1603,6 +1656,22 @@
           ${app.verifyNote ? `<div class="wp-verify-note"><span class="wp-verify-icon">💬</span><span class="wp-verify-text">${esc(app.verifyNote)}</span></div>` : ''}
         </div>` : '';
 
+      // 현재 활성 지역(C2) 또는 분야(KDB특별) 블록
+      let activeBlock = '';
+      if (Array.isArray(p.activeRegions) && p.activeRegions.length) {
+        activeBlock = `
+          <div class="wp-active">
+            <div class="wp-active-label">📍 활성 공고 지역</div>
+            <div class="wp-active-tags">${p.activeRegions.map(r => `<span class="wp-active-tag">${esc(r)}</span>`).join('')}</div>
+          </div>`;
+      } else if (Array.isArray(p.activeFields) && p.activeFields.length) {
+        activeBlock = `
+          <div class="wp-active">
+            <div class="wp-active-label">🎯 진행 중 분야</div>
+            <div class="wp-active-tags">${p.activeFields.map(f => `<span class="wp-active-tag">${esc(f.name)}<span class="wp-active-scope">(${esc(f.scope)})</span></span>`).join('')}</div>
+          </div>`;
+      }
+
       return `
       <div class="wp-card ${codeClass(p.code)}">
         <div class="wp-card-head">
@@ -1613,6 +1682,7 @@
         <div class="wp-issuer">${esc(p.issuer)} → ${esc(p.operator)}</div>
         ${appBadge}
         ${windowBox}
+        ${activeBlock}
 
         <div class="wp-keyfact">
           <div class="wp-keyfact-item">
