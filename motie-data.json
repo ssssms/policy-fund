@@ -1,43 +1,7 @@
 {
-  "updatedAt": "2026-04-25T10:52:10.860Z",
-  "total": 11,
+  "updatedAt": "2026-04-27T09:11:02.216Z",
+  "total": 8,
   "data": [
-    {
-      "pblancNm": "2026년 나프타 수급 안정화 지원사업 공고(수정)",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-04-24",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71049/view",
-      "pblancId": "MOTIE_71049",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년 2차 요소 수급 안정화 지원사업 공고",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-04-22",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71042/view",
-      "pblancId": "MOTIE_71042",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년도「관세피해업종 이차보전지원」사업 공고",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-04-22",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71040/view",
-      "pblancId": "MOTIE_71040",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "_source": "motie"
-    },
     {
       "pblancNm": "2026년도 산업통상협력개발지원사업(ODA) 공고",
       "bsnsSumryCn": "",
