@@ -541,8 +541,23 @@
   .wp-window .wp-verify-note {
     margin-top: 4px;
     color: #92400e;
-    font-style: normal;
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+    line-height: 1.5;
   }
+  .wp-window .wp-verify-note .wp-verify-icon { flex-shrink: 0; }
+  .wp-window .wp-verify-note .wp-verify-text { flex: 1; }
+  .wp-window .wp-last-window {
+    margin-top: 2px;
+    color: #a16207;
+    font-size: 10.5px;
+    display: flex;
+    gap: 4px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .wp-window .wp-last-window .wp-last-icon { flex-shrink: 0; }
   .wp-name { font-size: 14px; font-weight: 700; color: #1e293b; line-height: 1.35; margin-bottom: 3px; }
   .wp-issuer { font-size: 11px; color: #64748b; margin-bottom: 11px; }
 
@@ -1557,8 +1572,8 @@
         <div class="wp-window">
           <span class="wp-window-label">신청기간</span>
           <div>${esc(app.windowText || '-')}</div>
-          ${app.lastWindow && app.lastWindow !== app.windowText ? `<div style="margin-top:2px;color:#a16207;font-size:10.5px">└ ${esc(app.lastWindow)}</div>` : ''}
-          ${app.verifyNote ? `<div class="wp-verify-note">💬 ${esc(app.verifyNote)}</div>` : ''}
+          ${app.lastWindow && app.lastWindow !== app.windowText ? `<div class="wp-last-window"><span class="wp-last-icon">└</span><span>${esc(app.lastWindow)}</span></div>` : ''}
+          ${app.verifyNote ? `<div class="wp-verify-note"><span class="wp-verify-icon">💬</span><span class="wp-verify-text">${esc(app.verifyNote)}</span></div>` : ''}
         </div>` : '';
 
       return `
