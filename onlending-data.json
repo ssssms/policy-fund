@@ -1,0 +1,159 @@
+{
+  "asOf": "2026-04-27",
+  "note": "정확한 한도·금리는 분기별 변동. 신청 전 최신 정보는 출처 링크 또는 iM뱅크 영업점에서 확인 바랍니다.",
+  "products": [
+    {
+      "code": "C1",
+      "name": "한국은행 금융중개지원대출 — 본점 총액한도",
+      "shortName": "C1 자금",
+      "category": "한은 도매성 자금",
+      "issuer": "한국은행 본점",
+      "operator": "시중은행 (iM뱅크 포함)",
+      "status": "운영 중 (상시)",
+      "target": "전국 소재 중소기업",
+      "purposes": ["시설", "운영"],
+      "limit": {
+        "perCompany": "은행별 운용 한도 내",
+        "totalCeiling": "한국은행 본점이 분기별 의결로 결정"
+      },
+      "term": {
+        "facility": "은행 운용 기준 (통상 5년 이내, 분할상환 시 연장)",
+        "operating": "은행 운용 기준 (통상 1년 이내)"
+      },
+      "rate": {
+        "summary": "한국은행 적용금리 + 취급은행 가산금리",
+        "note": "한은 차입효과로 시중 일반 대출 대비 낮은 금리"
+      },
+      "applyAt": "가까운 iM뱅크 영업점에서 상담·신청",
+      "highlights": [
+        "전국 중소기업 대상 (지역 제한 없음)",
+        "한은 본점이 금융기관 본점에 한도 배정",
+        "시설·운영 자금 모두 활용 가능"
+      ],
+      "sources": [
+        {
+          "label": "한국은행 금융통화위원회 의결사항",
+          "url": "https://www.bok.or.kr/portal/bbs/P0000093/list.do?menuNo=200761"
+        }
+      ]
+    },
+    {
+      "code": "C2",
+      "name": "한국은행 금융중개지원대출 — 지방중소기업지원 프로그램",
+      "shortName": "C2 자금",
+      "category": "한은 도매성 자금",
+      "issuer": "한국은행 지역본부",
+      "operator": "시중은행 (iM뱅크 포함)",
+      "status": "운영 중 (상시)",
+      "target": "지방 소재 중소기업 (대구·경북 등 비수도권)",
+      "purposes": ["시설", "운영"],
+      "limit": {
+        "perCompany": "한은 지역본부 운영기준에 따라 차등 적용",
+        "totalCeiling": "한국은행 지역본부별 배정 한도"
+      },
+      "term": {
+        "facility": "5년 이내 (분할상환 시 15년 이내)",
+        "operating": "1년 이내"
+      },
+      "rate": {
+        "summary": "변동금리 약 연 3.66 ~ 5.00% (취급은행 사례)",
+        "note": "한은 차입효과 약 1.22% 반영, 시중 대출 대비 우대"
+      },
+      "applyAt": "가까운 iM뱅크 영업점에서 상담·신청",
+      "highlights": [
+        "지방 중소기업 집중 지원 (대구·경북 핵심 대상)",
+        "한은 지역본부 → 지역 은행 → 기업 구조",
+        "시설자금 분할상환 시 최장 15년"
+      ],
+      "sources": [
+        {
+          "label": "한국은행 지역본부 C2 운용현황 (부산본부 예시)",
+          "url": "https://www.bok.or.kr/portal/bbs/P0000810/list.do?menuNo=200563"
+        },
+        {
+          "label": "취급은행 상품안내 예시 (하나은행)",
+          "url": "https://www.kebhana.com/cont/mall/mall08/mall0802/mall080206/1459714_131044.jsp"
+        }
+      ]
+    },
+    {
+      "code": "KDB-ON-GENERAL",
+      "name": "KDB 산업은행 일반 온렌딩",
+      "shortName": "온렌딩 (일반)",
+      "category": "산은 도매성 자금",
+      "issuer": "KDB 산업은행",
+      "operator": "중개금융기관 (iM뱅크 등 시중은행)",
+      "status": "운영 중 (연 1회 공고, 매년 3월 갱신)",
+      "target": "국내 중소·중견기업",
+      "purposes": ["시설", "운영", "리스"],
+      "limit": {
+        "perCompany": "중소기업 100억원 / 중견기업 200억원",
+        "totalCeiling": "산업은행 연도별 자금공급 규모 내"
+      },
+      "term": {
+        "facility": "최장 10년 (거치 3년 이내)",
+        "operating": "최장 3년 (거치 6개월 이내)",
+        "lease": "최대 5년"
+      },
+      "rate": {
+        "summary": "매월 5일 고시 (변동/고정 1·2·3년)",
+        "note": "산은 → 중개은행 전대 구조로 시중 대출 대비 저금리"
+      },
+      "applyAt": "가까운 iM뱅크 영업점에서 상담·신청 (중개금융기관 영업점 방문)",
+      "highlights": [
+        "중견기업까지 지원 (C1·C2와 차별점)",
+        "시설자금 최장 10년 장기 대출",
+        "리스자금도 가능"
+      ],
+      "sources": [
+        {
+          "label": "기업마당 KDB 온렌딩 대출 제도 안내",
+          "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000108749"
+        },
+        {
+          "label": "KDB 온렌딩 디지털 플랫폼",
+          "url": "https://onlending.kdb.co.kr/"
+        }
+      ]
+    },
+    {
+      "code": "KDB-ON-SPECIAL",
+      "name": "KDB 산업은행 특별 온렌딩",
+      "shortName": "온렌딩 (특별)",
+      "category": "산은 도매성 자금",
+      "issuer": "KDB 산업은행",
+      "operator": "중개금융기관 (iM뱅크 등 시중은행)",
+      "status": "운영 중 (연 1회 공고)",
+      "target": "기술력·성장잠재력이 있는 중소·중견기업 (특별 자격요건)",
+      "purposes": ["시설", "운영"],
+      "limit": {
+        "perCompany": "중소기업 200억원 / 중견기업 300억원",
+        "totalCeiling": "산업은행 별도 배정 한도"
+      },
+      "term": {
+        "facility": "최장 10년 (거치 3년 이내)",
+        "operating": "최장 3년 (거치 6개월 이내)"
+      },
+      "rate": {
+        "summary": "일반 온렌딩 대비 추가 우대 (매월 5일 고시)",
+        "note": "신성장·혁신기업·녹색·지역균형 등 정책목적 부합 시 적용"
+      },
+      "applyAt": "가까운 iM뱅크 영업점에서 상담·신청",
+      "highlights": [
+        "한도 상향 (일반 대비 2배)",
+        "기술력·성장잠재력 평가 통과 기업",
+        "정책자금 우대 조건 적용"
+      ],
+      "sources": [
+        {
+          "label": "기업마당 KDB 온렌딩 대출 제도 안내",
+          "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000108749"
+        },
+        {
+          "label": "KDB 온렌딩 디지털 플랫폼",
+          "url": "https://onlending.kdb.co.kr/"
+        }
+      ]
+    }
+  ]
+}

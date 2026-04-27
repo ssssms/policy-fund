@@ -458,6 +458,21 @@ app.get('/api/search-extra', async (req, res) => {
 });
 
 // ─────────────────────────────────────────────
+// 도매 정책금융 안내 (C1 / C2 / KDB 온렌딩)
+// 정적 JSON 서빙 — 분기별 수동 갱신
+// ─────────────────────────────────────────────
+app.get('/api/onlending', (req, res) => {
+  try {
+    const fs = require('fs');
+    const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'onlending-data.json'), 'utf-8'));
+    res.json({ success: true, ...data });
+  } catch (err) {
+    console.error('[온렌딩] 데이터 로드 실패:', err.message);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// ─────────────────────────────────────────────
 // 국세청 사업자 상태 조회
 // ─────────────────────────────────────────────
 app.post('/api/business-status', async (req, res) => {
