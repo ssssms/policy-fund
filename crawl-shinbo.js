@@ -83,103 +83,14 @@ async function crawlFoundation(cfg) {
   return results;
 }
 
-// ── 서울·경기 정적 데이터 (보증상품 연간 변동 적음, 시연 안정성 우선) ──
-const STATIC_PRODUCTS = [
-  // ── 서울신용보증재단 ──
-  {
-    region: '서울', name: '소상공인 일반보증',
-    purpose: '서울시 소재 소상공인 운영자금 지원',
-    target: '서울시 사업자등록 소상공인',
-    cond: '한도 1억원 이내, 보증료 0.5~1.5%',
-    url: 'https://www.seoulshinbo.co.kr/'
-  },
-  {
-    region: '서울', name: '청년창업 특별보증',
-    purpose: '만 19~39세 청년 창업기업 지원',
-    target: '서울시 청년 창업기업(업력 3년 이내)',
-    cond: '한도 1억원, 우대 보증료율 적용',
-    url: 'https://www.seoulshinbo.co.kr/'
-  },
-  {
-    region: '서울', name: '골목상권 응원 특례보증',
-    purpose: '서울시 골목상권 소상공인 경영안정 자금 지원',
-    target: '서울시 골목상권 소상공인',
-    cond: '한도 5천만원, 이차보전 적용',
-    url: 'https://www.seoulshinbo.co.kr/'
-  },
-  {
-    region: '서울', name: '서울형 정책자금',
-    purpose: '서울시 정책자금 융자 보증',
-    target: '서울시 소상공인·중소기업',
-    cond: '한도 2억원, 시중금리 대비 우대',
-    url: 'https://www.seoulshinbo.co.kr/'
-  },
-  {
-    region: '서울', name: '서울신보 손실보전 특례보증',
-    purpose: '경영악화 소상공인 긴급 운영자금',
-    target: '서울시 소상공인',
-    cond: '한도 1천만원, 보증료 0.5%',
-    url: 'https://www.seoulshinbo.co.kr/'
-  },
-  // ── 경기신용보증재단 ──
-  {
-    region: '경기', name: '경기도 소상공인 특례보증',
-    purpose: '경기도 소상공인 경영안정 자금',
-    target: '경기도 사업자등록 소상공인',
-    cond: '한도 7천만원, 보증비율 100%',
-    url: 'https://www.gcgf.or.kr/'
-  },
-  {
-    region: '경기', name: 'G-희망 경기도 특례보증',
-    purpose: '경기도 중소기업 운영자금',
-    target: '경기도 중소기업',
-    cond: '한도 1억원, 이차보전 1~2%',
-    url: 'https://www.gcgf.or.kr/'
-  },
-  {
-    region: '경기', name: '경기 청년창업 특례보증',
-    purpose: '경기도 청년 창업기업 지원',
-    target: '만 19~39세 경기도 창업자',
-    cond: '한도 1억원, 보증료 0.3% 우대',
-    url: 'https://www.gcgf.or.kr/'
-  },
-  {
-    region: '경기', name: '경기 신혼부부 창업특례보증',
-    purpose: '경기도 신혼부부 창업 자금',
-    target: '경기도 신혼부부 창업자',
-    cond: '한도 5천만원, 우대 이차보전',
-    url: 'https://www.gcgf.or.kr/'
-  },
-  {
-    region: '경기', name: '경기도 골목상권 활력자금 특례보증',
-    purpose: '경기도 골목상권 소상공인 활력 지원',
-    target: '경기도 골목상권 소상공인',
-    cond: '한도 3천만원, 보증료 면제',
-    url: 'https://www.gcgf.or.kr/'
-  }
-];
-
-function staticToItems() {
-  return STATIC_PRODUCTS.map((p, i) => ({
-    pblancNm: p.name,
-    bsnsSumryCn: `목적: ${p.purpose} / 대상: ${p.target} / 조건: ${p.cond}`,
-    jrsdInsttNm: `${p.region}신용보증재단`,
-    excInsttNm: '',
-    reqstBeginEndDe: '상시',
-    pblancUrl: p.url,
-    pblancId: `SHINBO_${p.region}_S${i+1}`,
-    hashtags: [p.region, '신용보증재단', '소상공인', '중소기업', '보증'].join(','),
-    pldirSportRealmLclasCodeNm: '금융',
-    trgetNm: p.target,
-    _source: 'shinbo'
-  }));
-}
+// 서울·경기는 SPA라 동적 크롤링이 어려워, 실데이터만 제공하기 위해 제외
+// (서울/경기 시군구 정책자금은 gov24와 기업마당이 이미 커버)
 
 (async () => {
   try {
     const all = [];
 
-    // 동적: 대구·경북
+    // 동적: 대구·경북 (실데이터)
     const daegu = await crawlFoundation({
       region: '대구', host: 'www.dgsinbo.or.kr',
       listPath: '/page/10039/10043.tc', max: 100
@@ -192,15 +103,10 @@ function staticToItems() {
     });
     all.push(...gyeongbuk);
 
-    // 정적: 서울·경기
-    const staticItems = staticToItems();
-    all.push(...staticItems);
-    console.log(`\n[서울·경기 정적] ${staticItems.length}건`);
-
     const output = {
       updatedAt: new Date().toISOString(),
       total: all.length,
-      regions: { 대구: daegu.length, 경북: gyeongbuk.length, 서울: 5, 경기: 5 },
+      regions: { 대구: daegu.length, 경북: gyeongbuk.length },
       data: all
     };
     fs.writeFileSync('shinbo-data.json', JSON.stringify(output, null, 2), 'utf-8');

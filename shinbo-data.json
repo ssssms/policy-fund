@@ -1,11 +1,9 @@
 {
-  "updatedAt": "2026-04-27T04:43:00.787Z",
-  "total": 124,
+  "updatedAt": "2026-04-27T05:01:53.767Z",
+  "total": 114,
   "regions": {
     "대구": 47,
-    "경북": 67,
-    "서울": 5,
-    "경기": 5
+    "경북": 67
   },
   "data": [
     {
@@ -1488,136 +1486,6 @@
       "hashtags": "경북,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "아래의 조건을 모두 충족하는 소기업·소상공인 ① 사업자등록 후 영업중인 업력 1년 이상 ② 대표자 개인신용평점 710점 이상 ③ 경쟁력 강화 체크리스트 충족",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "소상공인 일반보증",
-      "bsnsSumryCn": "목적: 서울시 소재 소상공인 운영자금 지원 / 대상: 서울시 사업자등록 소상공인 / 조건: 한도 1억원 이내, 보증료 0.5~1.5%",
-      "jrsdInsttNm": "서울신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.seoulshinbo.co.kr/",
-      "pblancId": "SHINBO_서울_S1",
-      "hashtags": "서울,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "서울시 사업자등록 소상공인",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "청년창업 특별보증",
-      "bsnsSumryCn": "목적: 만 19~39세 청년 창업기업 지원 / 대상: 서울시 청년 창업기업(업력 3년 이내) / 조건: 한도 1억원, 우대 보증료율 적용",
-      "jrsdInsttNm": "서울신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.seoulshinbo.co.kr/",
-      "pblancId": "SHINBO_서울_S2",
-      "hashtags": "서울,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "서울시 청년 창업기업(업력 3년 이내)",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "골목상권 응원 특례보증",
-      "bsnsSumryCn": "목적: 서울시 골목상권 소상공인 경영안정 자금 지원 / 대상: 서울시 골목상권 소상공인 / 조건: 한도 5천만원, 이차보전 적용",
-      "jrsdInsttNm": "서울신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.seoulshinbo.co.kr/",
-      "pblancId": "SHINBO_서울_S3",
-      "hashtags": "서울,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "서울시 골목상권 소상공인",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "서울형 정책자금",
-      "bsnsSumryCn": "목적: 서울시 정책자금 융자 보증 / 대상: 서울시 소상공인·중소기업 / 조건: 한도 2억원, 시중금리 대비 우대",
-      "jrsdInsttNm": "서울신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.seoulshinbo.co.kr/",
-      "pblancId": "SHINBO_서울_S4",
-      "hashtags": "서울,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "서울시 소상공인·중소기업",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "서울신보 손실보전 특례보증",
-      "bsnsSumryCn": "목적: 경영악화 소상공인 긴급 운영자금 / 대상: 서울시 소상공인 / 조건: 한도 1천만원, 보증료 0.5%",
-      "jrsdInsttNm": "서울신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.seoulshinbo.co.kr/",
-      "pblancId": "SHINBO_서울_S5",
-      "hashtags": "서울,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "서울시 소상공인",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "경기도 소상공인 특례보증",
-      "bsnsSumryCn": "목적: 경기도 소상공인 경영안정 자금 / 대상: 경기도 사업자등록 소상공인 / 조건: 한도 7천만원, 보증비율 100%",
-      "jrsdInsttNm": "경기신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.gcgf.or.kr/",
-      "pblancId": "SHINBO_경기_S6",
-      "hashtags": "경기,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "경기도 사업자등록 소상공인",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "G-희망 경기도 특례보증",
-      "bsnsSumryCn": "목적: 경기도 중소기업 운영자금 / 대상: 경기도 중소기업 / 조건: 한도 1억원, 이차보전 1~2%",
-      "jrsdInsttNm": "경기신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.gcgf.or.kr/",
-      "pblancId": "SHINBO_경기_S7",
-      "hashtags": "경기,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "경기도 중소기업",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "경기 청년창업 특례보증",
-      "bsnsSumryCn": "목적: 경기도 청년 창업기업 지원 / 대상: 만 19~39세 경기도 창업자 / 조건: 한도 1억원, 보증료 0.3% 우대",
-      "jrsdInsttNm": "경기신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.gcgf.or.kr/",
-      "pblancId": "SHINBO_경기_S8",
-      "hashtags": "경기,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "만 19~39세 경기도 창업자",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "경기 신혼부부 창업특례보증",
-      "bsnsSumryCn": "목적: 경기도 신혼부부 창업 자금 / 대상: 경기도 신혼부부 창업자 / 조건: 한도 5천만원, 우대 이차보전",
-      "jrsdInsttNm": "경기신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.gcgf.or.kr/",
-      "pblancId": "SHINBO_경기_S9",
-      "hashtags": "경기,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "경기도 신혼부부 창업자",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "경기도 골목상권 활력자금 특례보증",
-      "bsnsSumryCn": "목적: 경기도 골목상권 소상공인 활력 지원 / 대상: 경기도 골목상권 소상공인 / 조건: 한도 3천만원, 보증료 면제",
-      "jrsdInsttNm": "경기신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.gcgf.or.kr/",
-      "pblancId": "SHINBO_경기_S10",
-      "hashtags": "경기,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "경기도 골목상권 소상공인",
       "_source": "shinbo"
     }
   ]
