@@ -1,7 +1,31 @@
 {
-  "updatedAt": "2026-04-27T17:12:10.501Z",
-  "total": 8,
+  "updatedAt": "2026-04-28T07:58:04.814Z",
+  "total": 9,
   "data": [
+    {
+      "pblancNm": "2026년 2차 요소 수급 안정화 지원사업 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-22",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71042/view",
+      "pblancId": "MOTIE_71042",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도「관세피해업종 이차보전지원」사업 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-22",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71040/view",
+      "pblancId": "MOTIE_71040",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "_source": "motie"
+    },
     {
       "pblancNm": "2026년도 산업통상협력개발지원사업(ODA) 공고",
       "bsnsSumryCn": "",
@@ -46,18 +70,6 @@
       "reqstBeginEndDe": "2026-04-17",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71026/view",
       "pblancId": "MOTIE_71026",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년도 제조암묵지기반AI모델개발사업 신규지원 대상과제 공고(수정)",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-04-17",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71021/view",
-      "pblancId": "MOTIE_71021",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "_source": "motie"
