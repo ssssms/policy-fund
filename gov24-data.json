@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-28T09:34:33.107Z",
-  "total": 296,
+  "updatedAt": "2026-04-29T08:39:43.170Z",
+  "total": 298,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -1553,6 +1553,38 @@
       "_orgType": "시군구",
       "_region": "인천광역시",
       "_city": "옹진군"
+    },
+    {
+      "pblancNm": "소상공인 임차료 지원",
+      "bsnsSumryCn": "폐업 후 재창업한 소상공인 임차료 지원(최대 250만원)",
+      "jrsdInsttNm": "광주광역시 서구",
+      "excInsttNm": "민생경제과",
+      "reqstBeginEndDe": "접수기관 별 상이",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/360000000256",
+      "pblancId": "GOV24_360000000256",
+      "hashtags": "광주광역시,서구,생활안정,시군구",
+      "pldirSportRealmLclasCodeNm": "생활안정",
+      "trgetNm": "☐ 지원대상 \r\n    ○ 공고일 기준 5년 내 서구에서 사업장 운영(60일 이상) 후 폐업한 사업자로 폐업 이후부터 공고일 내 재창업한 임차 소상공인\r\n    ○ 임대차 계약서상 월 임차료 200만원 이하인 자",
+      "_source": "gov24",
+      "_orgType": "시군구",
+      "_region": "광주광역시",
+      "_city": "서구"
+    },
+    {
+      "pblancNm": "소상공인 특례보증 대출이자 지원",
+      "bsnsSumryCn": "소상공인 특례보증 대출 이자 지원(1년)",
+      "jrsdInsttNm": "광주광역시 서구",
+      "excInsttNm": "민생경제과",
+      "reqstBeginEndDe": "접수기관 별 상이",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/360000000258",
+      "pblancId": "GOV24_360000000258",
+      "hashtags": "광주광역시,서구,생활안정,시군구",
+      "pldirSportRealmLclasCodeNm": "생활안정",
+      "trgetNm": "서구 관내 소상공인",
+      "_source": "gov24",
+      "_orgType": "시군구",
+      "_region": "광주광역시",
+      "_city": "서구"
     },
     {
       "pblancNm": "소상공인 경영안정자금지원",
