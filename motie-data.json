@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-29T17:10:55.787Z",
-  "total": 5,
+  "updatedAt": "2026-04-30T07:55:01.653Z",
+  "total": 7,
   "data": [
     {
       "pblancNm": "2026년 2차 요소 수급 안정화 지원사업 공고",
@@ -27,6 +27,54 @@
       "_source": "motie"
     },
     {
+      "pblancNm": "2026년도 산업통상협력개발지원사업(ODA) 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71031/view",
+      "pblancId": "MOTIE_71031",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도 뿌리산업 혁신공정장비 개발사업 신규지원 대상과제 공고(2차)",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71030/view",
+      "pblancId": "MOTIE_71030",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도 신산업 대응 차세대 공통·핵심 뿌리기술개발사업 신규지원 대상과제 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71029/view",
+      "pblancId": "MOTIE_71029",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년 나프타 수급 안정화 지원사업 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-17",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71026/view",
+      "pblancId": "MOTIE_71026",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "_source": "motie"
+    },
+    {
       "pblancNm": "2026년도 제조암묵지기반AI모델개발사업 신규지원 대상과제 공고(수정)",
       "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
@@ -34,30 +82,6 @@
       "reqstBeginEndDe": "2026-04-17",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71021/view",
       "pblancId": "MOTIE_71021",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년 중동피해 긴급지원 지사화사업 참여기업 모집 공고",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-04-13",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71011/view",
-      "pblancId": "MOTIE_71011",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년 수출지원기반활용사업(긴급지원바우처 3차) 참여기업 모집공고",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-04-13",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71010/view",
-      "pblancId": "MOTIE_71010",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "_source": "motie"
