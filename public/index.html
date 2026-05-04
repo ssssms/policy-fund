@@ -350,6 +350,75 @@
   .result-card.noise-card { opacity: 0.55; }
   .result-card.noise-card::before { background: #cbd5e1; }
 
+  /* ── AI 매칭 보강 (parsed-funds.json) ── */
+  .llm-reason {
+    display: flex; align-items: flex-start; gap: 8px;
+    background: linear-gradient(135deg, #faf5ff, #f0f9ff);
+    border: 1px solid #d8b4fe;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 12.5px; font-weight: 600; color: #6b21a8;
+    line-height: 1.5;
+  }
+  .llm-reason .llm-icon {
+    flex-shrink: 0;
+    background: #a855f7; color: white;
+    font-size: 9px; font-weight: 800;
+    padding: 2px 6px; border-radius: 4px;
+    letter-spacing: 0.3px;
+    margin-top: 1px;
+  }
+  .llm-amount {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fff7ed; color: #9a3412;
+    border: 1px solid #fed7aa;
+    font-size: 12px; font-weight: 700;
+    padding: 4px 10px; border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  .tag-special {
+    background: #fce7f3; color: #9d174d;
+    border: 1px solid #fbcfe8;
+  }
+  .tag-status-verify { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+  .tag-status-closed { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+  .badge-ai {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.3px;
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    color: white;
+    padding: 3px 8px; border-radius: 99px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  /* ── AI 특수자격 필터 칩 (결과 상단) ── */
+  .ai-filter-row {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin: 10px 0 14px;
+    padding: 10px 12px;
+    background: #faf5ff;
+    border: 1px dashed #d8b4fe;
+    border-radius: 10px;
+  }
+  .ai-filter-row.empty { display: none; }
+  .ai-filter-label {
+    font-size: 11px; font-weight: 700; color: #7e22ce;
+    padding: 3px 0;
+    margin-right: 4px;
+  }
+  .ai-filter-chip {
+    font-size: 11px; font-weight: 600;
+    background: white; color: #6b21a8;
+    border: 1px solid #d8b4fe;
+    padding: 4px 10px; border-radius: 99px;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .ai-filter-chip:hover { background: #f3e8ff; }
+  .ai-filter-chip.active {
+    background: #a855f7; color: white;
+    border-color: #a855f7;
+  }
+
   /* ── 핵심금융 탭 — 다른 탭과 동일 스타일 적용 (.tab-finance는 마커로만 유지) ── */
 
   /* ────────────────────────────────────
@@ -400,6 +469,16 @@
 
     /* 뱃지 줄바꿈 방지 */
     .badge-fin, .region-badge { font-size: 10px; padding: 2px 7px; }
+
+    /* AI 보강 요소 — 모바일 폰트·패딩 축소 */
+    .badge-ai { font-size: 9px; padding: 2px 6px; }
+    .llm-reason { font-size: 12px; padding: 7px 10px; gap: 6px; }
+    .llm-reason .llm-icon { font-size: 8px; padding: 1px 5px; }
+    .llm-amount { font-size: 11.5px; padding: 3px 9px; }
+    .tag-special { font-size: 10px; padding: 2px 7px; }
+    .ai-filter-row { padding: 8px 10px; gap: 5px; }
+    .ai-filter-label { font-size: 10.5px; }
+    .ai-filter-chip { font-size: 10.5px; padding: 3px 8px; }
   }
 
   @media (max-width: 380px) {
@@ -407,6 +486,8 @@
     header h1 { font-size: 16px; }
     .header-logo { height: 12px; }
     .fin-cat-desc { display: none; } /* 매우 작은 화면에서 설명 숨김 */
+    /* AI 필터 칩이 너무 많이 차지하지 않도록 — 6개까지만 */
+    .ai-filter-chip:nth-of-type(n+8) { display: none; }
   }
 
   /* ── 도매 정책금융 안내 (C1·C2·온렌딩) ── */
@@ -1453,11 +1534,57 @@
   }
 
   // ── 렌더링 ──
-  function renderResults(list) {
-    document.getElementById('results-count').textContent = list.length + '건';
+  let currentSpecialFilter = null; // AI 특수자격 칩 선택값
 
-    if (!list.length) {
-      document.getElementById('results-list').innerHTML = `
+  // 결과 리스트에서 AI가 추출한 특수자격 모두 모아 빈도 순 정렬
+  function collectSpecialGroups(list) {
+    const counts = new Map();
+    for (const item of list) {
+      const groups = item._llm && Array.isArray(item._llm.specialGroups) ? item._llm.specialGroups : [];
+      for (const g of groups) {
+        if (!g) continue;
+        counts.set(g, (counts.get(g) || 0) + 1);
+      }
+    }
+    return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12);
+  }
+
+  function specialFilterRowHTML(list) {
+    const groups = collectSpecialGroups(list);
+    if (groups.length === 0) return '';
+    const chips = groups.map(([g, n]) => {
+      const active = currentSpecialFilter === g ? ' active' : '';
+      return `<span class="ai-filter-chip${active}" onclick="toggleSpecialFilter('${g.replace(/'/g, "&#39;")}')">${esc(g)} <span style="opacity:.6">${n}</span></span>`;
+    }).join('');
+    const clear = currentSpecialFilter
+      ? `<span class="ai-filter-chip" onclick="toggleSpecialFilter(null)" style="background:#fff;color:#94a3b8">× 해제</span>`
+      : '';
+    return `<div class="ai-filter-row"><span class="ai-filter-label">🤖 AI 추천 자격</span>${chips}${clear}</div>`;
+  }
+
+  function toggleSpecialFilter(group) {
+    currentSpecialFilter = (group && currentSpecialFilter !== group) ? group : null;
+    // 현재 탭 필터를 다시 적용해 결합
+    const activeTab = document.querySelector('.tab-btn.active');
+    const filter = activeTab ? activeTab.getAttribute('data-filter') || '전체' : '전체';
+    filterResults(activeTab, filter);
+  }
+
+  function applySpecialFilter(list) {
+    if (!currentSpecialFilter) return list;
+    return list.filter(item =>
+      item._llm && Array.isArray(item._llm.specialGroups) &&
+      item._llm.specialGroups.includes(currentSpecialFilter)
+    );
+  }
+
+  function renderResults(list) {
+    const filterRowHTML = specialFilterRowHTML(list);
+    const finalList = applySpecialFilter(list);
+    document.getElementById('results-count').textContent = finalList.length + '건';
+
+    if (!finalList.length) {
+      document.getElementById('results-list').innerHTML = filterRowHTML + `
         <div class="empty">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.5">
             <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
@@ -1467,7 +1594,7 @@
       return;
     }
 
-    document.getElementById('results-list').innerHTML = list.map(item => resultCardHTML(item)).join('');
+    document.getElementById('results-list').innerHTML = filterRowHTML + finalList.map(item => resultCardHTML(item)).join('');
   }
 
   const FIN_CAT_ICON = { '창업지원':'🚀', '융자지원':'💰', '특례보증':'🛡', '이차보전':'📉' };
@@ -1478,15 +1605,23 @@
     const realm   = esc(item.pldirSportRealmLclasCodeNm || '');
     const period  = esc(item.reqstBeginEndDe || '상시 모집');
     const rawSummary = item.bsnsSumryCn || item.trgetNm || '';
-    const summary = esc(rawSummary);
     const url     = item.pblancUrl || '#';
     const tags    = (item.hashtags || item.hashTags || '').split(',').filter(t => t.trim()).slice(0, 5);
+
+    // ── AI 파싱 메타 (있으면 보강, 없으면 원본 그대로) ──
+    const llm = item._llm || null;
+    const summary = esc(llm && llm.summary ? llm.summary : rawSummary);
 
     const tagHTML = tags.map(t => {
       const cls = t.includes('서울')||t.includes('경기')||t.includes('부산')||t.includes('대구')||t.includes('광주')||t.includes('대전')||t.includes('인천')||t.includes('울산')||t.includes('세종')||t.includes('강원')||t.includes('충')||t.includes('전')||t.includes('경')||t.includes('제주') ? 'tag-area'
                 : t.includes('소상공인')||t.includes('중소기업')||t.includes('창업') ? 'tag-type' : 'tag-org';
       return `<span class="tag ${cls}">${esc(t.trim())}</span>`;
     }).join('');
+
+    // 특수자격 칩 (AI가 추출한 것만 — 청년/여성/재해피해/저신용 등)
+    const specialChipsHTML = (llm && Array.isArray(llm.specialGroups))
+      ? llm.specialGroups.slice(0, 4).map(g => `<span class="tag tag-special">⭐ ${esc(g)}</span>`).join('')
+      : '';
 
     const isRegional  = item._isRegional;
     const hasCity     = item._hasCity;
@@ -1504,11 +1639,33 @@
       ? `<span class="badge-fin fin-${finCat}">${FIN_CAT_ICON[finCat]} ${finCat}</span>`
       : '';
 
+    const aiBadge = llm ? `<span class="badge-ai" title="AI가 분석한 매칭 정보">🤖 AI 분석</span>` : '';
+
+    // AI 추천 사유 (matchReason)
+    const reasonHTML = (llm && llm.matchReason)
+      ? `<div class="llm-reason"><span class="llm-icon">AI</span><span>${esc(llm.matchReason)}</span></div>`
+      : '';
+
+    // 지원한도 (AI가 추출한 amountText)
+    const amountHTML = (llm && llm.amountText)
+      ? `<div class="llm-amount">💰 ${esc(llm.amountText)}</div>`
+      : '';
+
     // 금융 하이라이트 (한도·금리) 추출
     const highlights = finCat ? extractFinanceHighlight(rawSummary) : [];
     const highlightHTML = highlights.length
       ? `<div class="finance-highlight">${highlights.map(h => `<span>${h}</span>`).join('')}</div>`
       : '';
+
+    // 신청 상태 보강: AI가 verify_at_branch 로 분류한 경우 별도 표시
+    let statusBadgeHTML;
+    if (llm && llm.applicationStatusHint === 'verify_at_branch') {
+      statusBadgeHTML = `<span class="status-badge tag-status-verify" style="margin:0 6px 0 0;padding:2px 8px;font-size:11px">🟡 영업점 확인</span>`;
+    } else if (isOpen) {
+      statusBadgeHTML = `<span class="status-badge status-ok" style="margin:0 6px 0 0;padding:2px 8px;font-size:11px">✅ 접수 중</span>`;
+    } else {
+      statusBadgeHTML = `<span class="status-badge status-error" style="margin:0 6px 0 0;padding:2px 8px;font-size:11px">❌ 마감</span>`;
+    }
 
     return `
     <div class="result-card${isRegional ? '' : ' national'}${isNoiseItem ? ' noise-card' : ''}">
@@ -1516,21 +1673,21 @@
         <div class="result-name">
           <a href="${url}" target="_blank">${name}</a>
         </div>
-        <div style="display:flex;gap:4px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">${finBadge}${regionBadge}</div>
+        <div style="display:flex;gap:4px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">${aiBadge}${finBadge}${regionBadge}</div>
       </div>
+      ${reasonHTML}
       <div class="result-tags">
         ${org ? `<span class="tag tag-org">🏛 ${org}</span>` : ''}
         ${realm ? `<span class="tag tag-type">${realm}</span>` : ''}
+        ${specialChipsHTML}
         ${tagHTML}
       </div>
+      ${amountHTML}
       ${highlightHTML}
       ${summary ? `<div class="result-summary">${summary}</div>` : ''}
       <div class="result-footer">
         <div class="result-date">
-          ${isOpen
-            ? `<span class="status-badge status-ok" style="margin:0 6px 0 0;padding:2px 8px;font-size:11px">✅ 접수 중</span>`
-            : `<span class="status-badge status-error" style="margin:0 6px 0 0;padding:2px 8px;font-size:11px">❌ 마감</span>`
-          }📅 ${period}
+          ${statusBadgeHTML}📅 ${period}
         </div>
         ${url !== '#' ? `<a class="result-link" href="${url}" target="_blank">상세보기 →</a>` : ''}
       </div>

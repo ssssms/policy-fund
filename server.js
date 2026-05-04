@@ -1,9 +1,61 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = 3000;
+
+// ─────────────────────────────────────────────
+// LLM 파싱 메타데이터 로더 (parsed-funds.json)
+// 서버 시작 시 메모리 적재 + 파일 변경 시 자동 리로드
+// 파일이 없거나 매칭 실패 시에도 서비스는 그대로 동작 (graceful fallback)
+// ─────────────────────────────────────────────
+const LLM_FILE = path.join(__dirname, 'parsed-funds.json');
+let llmIndex = {}; // pblancId → 파싱 메타
+let llmUpdatedAt = null;
+
+function loadLlmIndex() {
+  try {
+    if (!fs.existsSync(LLM_FILE)) {
+      llmIndex = {};
+      llmUpdatedAt = null;
+      console.log('[LLM] parsed-funds.json 없음 — LLM 메타 비활성화 (서비스는 정상 동작)');
+      return;
+    }
+    const obj = JSON.parse(fs.readFileSync(LLM_FILE, 'utf8'));
+    llmIndex = (obj && obj.items) ? obj.items : {};
+    llmUpdatedAt = obj.updatedAt || null;
+    console.log(`[LLM] parsed-funds.json 로드: ${Object.keys(llmIndex).length}건 (${llmUpdatedAt || '?'})`);
+  } catch (e) {
+    console.warn('[LLM] parsed-funds.json 로드 실패, 비활성화:', e.message);
+    llmIndex = {};
+    llmUpdatedAt = null;
+  }
+}
+loadLlmIndex();
+try {
+  // 파일 갱신 감지 (debounce 500ms)
+  let reloadTimer = null;
+  fs.watch(__dirname, (event, filename) => {
+    if (filename === 'parsed-funds.json') {
+      clearTimeout(reloadTimer);
+      reloadTimer = setTimeout(loadLlmIndex, 500);
+    }
+  });
+} catch (e) { /* watch 미지원 환경 무시 */ }
+
+function enrichWithLlm(item) {
+  if (!item || !item.pblancId) return item;
+  const meta = llmIndex[item.pblancId];
+  if (!meta) return item;
+  // 원본 보존 + _llm 필드 추가
+  return { ...item, _llm: meta };
+}
+function enrichArrayWithLlm(items) {
+  if (!Array.isArray(items)) return items;
+  return items.map(enrichWithLlm);
+}
 
 // ── API 키 ──
 const DATA_GO_KR_KEY = '602232bf3c4efc9b39717b92fc82ee11a3ef22aa1821f1d883a2f16a321821bc';
@@ -222,7 +274,7 @@ app.get('/api/search', async (req, res) => {
       return scoreB - scoreA;
     });
 
-    res.json({ success: true, total: processed.length, data: processed });
+    res.json({ success: true, total: processed.length, data: enrichArrayWithLlm(processed), llmUpdatedAt });
   } catch (err) {
     console.error('[오류]', err.message);
     res.status(500).json({ success: false, error: err.message });
@@ -454,7 +506,7 @@ app.get('/api/search-extra', async (req, res) => {
     }
   }
 
-  res.json({ success: true, total: results.length, data: results, errors });
+  res.json({ success: true, total: results.length, data: enrichArrayWithLlm(results), errors, llmUpdatedAt });
 });
 
 // ─────────────────────────────────────────────
