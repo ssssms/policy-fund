@@ -350,6 +350,144 @@
   .result-card.noise-card { opacity: 0.55; }
   .result-card.noise-card::before { background: #cbd5e1; }
 
+  /* ── Phase 2: 프로필 입력 토글 + 정밀 매칭 ── */
+  .profile-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 14px; padding: 12px 16px;
+    background: linear-gradient(135deg, #faf5ff, #eff6ff);
+    border: 1.5px dashed #c4b5fd;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .15s;
+  }
+  .profile-toggle:hover { border-color: #a78bfa; background: linear-gradient(135deg, #f3e8ff, #dbeafe); }
+  .profile-toggle.expanded { border-style: solid; border-color: #a78bfa; }
+  .profile-toggle-left { display: flex; align-items: center; gap: 12px; }
+  .profile-toggle-icon { font-size: 20px; }
+  .profile-toggle-text { display: flex; flex-direction: column; gap: 2px; }
+  .profile-toggle-title { font-size: 13px; font-weight: 700; color: #6b21a8; }
+  .profile-toggle-sub { font-size: 11px; color: #7c3aed; opacity: 0.85; }
+  .profile-toggle-chevron { font-size: 12px; color: #7c3aed; transition: transform .2s; }
+  .profile-toggle.expanded .profile-toggle-chevron { transform: rotate(180deg); }
+
+  .profile-section {
+    margin-top: 10px; padding: 16px;
+    background: #faf5ff;
+    border: 1px solid #e9d5ff;
+    border-radius: 10px;
+    transition: all .2s;
+  }
+  .profile-section.is-collapsed { display: none; }
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 900px) { .profile-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .profile-special-wrap {
+    border-top: 1px dashed #e9d5ff;
+    padding-top: 12px;
+    margin-bottom: 12px;
+  }
+  .profile-special-label {
+    display: block;
+    font-size: 12px; font-weight: 700; color: #6b21a8;
+    margin-bottom: 8px;
+  }
+  .profile-special {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .profile-special label {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 5px 11px;
+    background: white;
+    border: 1.5px solid #e9d5ff;
+    border-radius: 99px;
+    font-size: 11.5px; font-weight: 600; color: #6b21a8;
+    cursor: pointer; user-select: none;
+    transition: all .15s;
+  }
+  .profile-special label:hover { background: #f3e8ff; border-color: #c4b5fd; }
+  .profile-special input[type="checkbox"] { display: none; }
+  .profile-special label.checked {
+    background: #a855f7; color: white; border-color: #a855f7;
+  }
+
+  .profile-clear-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; flex-wrap: wrap;
+    padding-top: 6px;
+  }
+  .profile-clear-btn {
+    background: white;
+    border: 1px solid #e9d5ff;
+    color: #7c3aed;
+    font-size: 11.5px; font-weight: 600;
+    padding: 5px 12px; border-radius: 6px;
+    cursor: pointer;
+  }
+  .profile-clear-btn:hover { background: #f3e8ff; }
+  .profile-help { font-size: 11px; color: #94a3b8; }
+
+  /* ── 결과 3섹션 (자격 충족 / 확인 필요 / 자격 미달) ── */
+  .match-section {
+    margin-bottom: 14px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .match-section-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 11px 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .15s;
+  }
+  .match-section-header:hover { filter: brightness(0.97); }
+  .match-section.eligible .match-section-header { background: #d1fae5; color: #065f46; border: 1.5px solid #6ee7b7; }
+  .match-section.check    .match-section-header { background: #fef3c7; color: #92400e; border: 1.5px solid #fcd34d; }
+  .match-section.ineligible .match-section-header { background: #f1f5f9; color: #475569; border: 1.5px solid #cbd5e1; }
+  .match-section-icon { font-size: 18px; }
+  .match-section-title { font-size: 14px; font-weight: 800; flex: 1; }
+  .match-section-count {
+    background: rgba(255,255,255,.7);
+    padding: 2px 10px; border-radius: 99px;
+    font-size: 12px; font-weight: 700;
+  }
+  .match-section-chev { font-size: 11px; transition: transform .2s; }
+  .match-section.expanded .match-section-chev { transform: rotate(180deg); }
+  .match-section-body { padding: 12px 0 4px; }
+  .match-section.is-collapsed .match-section-body { display: none; }
+  .match-section.is-collapsed .match-section-header { border-radius: 12px; }
+
+  /* 카드 내 매칭 디테일 */
+  .match-details {
+    list-style: none; padding: 8px 12px; margin: 0 0 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 12px; line-height: 1.7;
+  }
+  .match-details li {
+    display: flex; align-items: flex-start; gap: 6px;
+    padding: 1px 0;
+  }
+  .match-details .mt-mark {
+    flex-shrink: 0; font-weight: 800; width: 14px;
+    display: inline-block; text-align: center;
+  }
+  .match-details .mt-text { flex: 1; word-break: keep-all; }
+  .match-pass .mt-mark { color: #059669; }
+  .match-pass .mt-text { color: #065f46; }
+  .match-pref .mt-mark { color: #d97706; }
+  .match-pref .mt-text { color: #92400e; font-weight: 700; }
+  .match-fail .mt-mark { color: #dc2626; }
+  .match-fail .mt-text { color: #991b1b; }
+  .match-unknown .mt-mark { color: #94a3b8; }
+  .match-unknown .mt-text { color: #64748b; font-style: italic; }
+
   /* ── AI 매칭 보강 (parsed-funds.json) ── */
   .llm-reason {
     display: flex; align-items: flex-start; gap: 8px;
@@ -479,6 +617,25 @@
     .ai-filter-row { padding: 8px 10px; gap: 5px; }
     .ai-filter-label { font-size: 10.5px; }
     .ai-filter-chip { font-size: 10.5px; padding: 3px 8px; }
+
+    /* Phase 2: 프로필 토글 + 3섹션 + 매칭 디테일 */
+    .profile-toggle { padding: 10px 14px; }
+    .profile-toggle-icon { font-size: 17px; }
+    .profile-toggle-title { font-size: 12.5px; }
+    .profile-toggle-sub { font-size: 10.5px; }
+    .profile-section { padding: 12px; }
+    .profile-grid { gap: 8px; }
+    .profile-special label { font-size: 10.5px; padding: 4px 9px; }
+    .profile-help { font-size: 10px; }
+
+    .match-section { margin-bottom: 10px; }
+    .match-section-header { padding: 9px 12px; gap: 8px; }
+    .match-section-icon { font-size: 16px; }
+    .match-section-title { font-size: 13px; }
+    .match-section-count { font-size: 11px; padding: 1px 8px; }
+
+    .match-details { font-size: 11px; padding: 6px 10px; line-height: 1.55; }
+    .match-details .mt-mark { width: 12px; }
   }
 
   @media (max-width: 380px) {
@@ -930,6 +1087,77 @@
       </div>
     </div>
 
+    <!-- ── Phase 2: 프로필 기반 정밀 매칭 (선택 입력) ── -->
+    <div class="profile-toggle" id="profile-toggle" onclick="toggleProfileSection()">
+      <span class="profile-toggle-left">
+        <span class="profile-toggle-icon">🎯</span>
+        <span class="profile-toggle-text">
+          <span class="profile-toggle-title">더 정확한 매칭을 원하시면</span>
+          <span class="profile-toggle-sub">업력·매출·연령 등 입력 시 자격 ✅⚠️❌ 자동 분류</span>
+        </span>
+      </span>
+      <span class="profile-toggle-chevron">▼</span>
+    </div>
+
+    <div class="profile-section is-collapsed" id="profile-section">
+      <div class="profile-grid">
+        <div class="form-group">
+          <label>업력</label>
+          <select id="bizAge">
+            <option value="">선택 안 함</option>
+            <option value="under1">1년 미만</option>
+            <option value="1to3">1~3년</option>
+            <option value="3to5">3~5년</option>
+            <option value="5to10">5~10년</option>
+            <option value="over10">10년 이상</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>직원 수</label>
+          <select id="empCount">
+            <option value="">선택 안 함</option>
+            <option value="zero">없음 (1인 사장)</option>
+            <option value="1to4">1~4명</option>
+            <option value="5to9">5~9명</option>
+            <option value="over10">10명 이상</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>연매출 구간</label>
+          <select id="salesRange">
+            <option value="">선택 안 함</option>
+            <option value="under1">1억 미만</option>
+            <option value="1to5">1~5억</option>
+            <option value="5to10">5~10억</option>
+            <option value="over10">10억 이상</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>대표자 연령대</label>
+          <select id="ageGroup">
+            <option value="">선택 안 함</option>
+            <option value="20s">20대</option>
+            <option value="30s">30대</option>
+            <option value="40s">40대</option>
+            <option value="50s">50대</option>
+            <option value="60plus">60대 이상</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="profile-special-wrap">
+        <label class="profile-special-label">해당되는 특수자격 (다중 선택)</label>
+        <div class="profile-special" id="profile-special">
+          <!-- specialGroups 빈도 상위 — Phase 2 init에서 동적 채움, 정적 fallback도 포함 -->
+        </div>
+      </div>
+
+      <div class="profile-clear-row">
+        <button type="button" class="profile-clear-btn" onclick="clearProfile()">초기화</button>
+        <span class="profile-help">입력 안 해도 검색됩니다. 입력하면 자격 충족 여부가 자동 표시됩니다.</span>
+      </div>
+    </div>
+
     <button class="btn btn-primary search-btn" onclick="searchFunds()" id="searchBtn">
       🔍 정책자금 찾기
     </button>
@@ -1282,6 +1510,236 @@
     el.innerHTML = `<div class="status-badge status-${type}">${msg}</div>`;
   }
 
+  // ════════════════════════════════════════════════════════════
+  //  Phase 2: 사용자 프로필 ↔ 자금 자격 정밀 매칭
+  // ════════════════════════════════════════════════════════════
+
+  // 체크박스 옵션 — parsed-funds.json 빈도 상위 + UX 우선순위
+  const SPECIAL_GROUP_OPTIONS = [
+    '청년', '여성', '예비창업자', '기존사업자',
+    '재해피해', '저신용', '저소득', '장애인',
+    '사회적기업', '재창업', '한부모', '고령자',
+    '신혼부부', '북한이탈주민', '다문화'
+  ];
+
+  function toggleProfileSection() {
+    const sec = document.getElementById('profile-section');
+    const tog = document.getElementById('profile-toggle');
+    if (sec.classList.contains('is-collapsed')) {
+      sec.classList.remove('is-collapsed');
+      tog.classList.add('expanded');
+    } else {
+      sec.classList.add('is-collapsed');
+      tog.classList.remove('expanded');
+    }
+  }
+
+  function setupProfileSpecialCheckboxes() {
+    const wrap = document.getElementById('profile-special');
+    if (!wrap) return;
+    wrap.innerHTML = SPECIAL_GROUP_OPTIONS.map(g => `
+      <label data-group="${esc(g)}">
+        <input type="checkbox" value="${esc(g)}" />
+        ${esc(g)}
+      </label>
+    `).join('');
+    wrap.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        cb.parentElement.classList.toggle('checked', cb.checked);
+      });
+    });
+  }
+
+  function clearProfile() {
+    ['bizAge','empCount','salesRange','ageGroup'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    document.querySelectorAll('#profile-special input[type="checkbox"]').forEach(cb => {
+      cb.checked = false;
+      cb.parentElement.classList.remove('checked');
+    });
+  }
+
+  function getUserProfile() {
+    const profile = {
+      bizAge:    (document.getElementById('bizAge') || {}).value || '',
+      empCount:  (document.getElementById('empCount') || {}).value || '',
+      salesRange:(document.getElementById('salesRange') || {}).value || '',
+      ageGroup:  (document.getElementById('ageGroup') || {}).value || '',
+      specialGroups: Array.from(document.querySelectorAll('#profile-special input:checked')).map(cb => cb.value),
+      bizSize:   (document.getElementById('bizSize') || {}).value || '',
+    };
+    // 추가 정보가 하나도 없으면 null → 매칭 비활성화 (Phase 1 호환)
+    const hasAny = profile.bizAge || profile.empCount || profile.salesRange ||
+                   profile.ageGroup || profile.specialGroups.length > 0;
+    return hasAny ? profile : null;
+  }
+
+  // ── 사용자 입력 → 숫자 범위 변환 ──
+  function userAgeRange(g)    { return ({'20s':[20,29],'30s':[30,39],'40s':[40,49],'50s':[50,59],'60plus':[60,100]})[g] || null; }
+  function userBizAgeRange(b) { return ({'under1':[0,1],'1to3':[1,3],'3to5':[3,5],'5to10':[5,10],'over10':[10,100]})[b] || null; }
+  function userSalesRange(s)  { return ({'under1':[0,1],'1to5':[1,5],'5to10':[5,10],'over10':[10,10000]})[s] || null; }
+  function userBizAgeLabel(b) { return ({'under1':'1년 미만','1to3':'1~3년','3to5':'3~5년','5to10':'5~10년','over10':'10년 이상'})[b] || ''; }
+  function userSalesLabel(s)  { return ({'under1':'1억 미만','1to5':'1~5억','5to10':'5~10억','over10':'10억 이상'})[s] || ''; }
+  function userAgeLabel(a)    { return ({'20s':'20대','30s':'30대','40s':'40대','50s':'50대','60plus':'60대 이상'})[a] || ''; }
+
+  // ── LLM 자연어 자격 → 숫자 범위 파서 ──
+  function parseAgeRangeLLM(text) {
+    if (!text) return null;
+    const t = String(text);
+    const numbers = [...t.matchAll(/(\d+)\s*세/g)].map(m => parseInt(m[1], 10));
+    if (numbers.length === 0) return null;
+    const lower = /이하|미만|이내/.test(t);
+    const upper = /이상|초과|넘는/.test(t);
+    if (numbers.length >= 2) return { min: Math.min(...numbers), max: Math.max(...numbers) };
+    if (lower) return { min: 0, max: numbers[0] };
+    if (upper) return { min: numbers[0], max: 100 };
+    return { min: 0, max: numbers[0] };
+  }
+  function parseBizAgeRangeLLM(text) {
+    if (!text) return null;
+    const t = String(text);
+    const yearMs  = [...t.matchAll(/(\d+)\s*년/g)].map(m => parseInt(m[1], 10));
+    const monthMs = [...t.matchAll(/(\d+)\s*개월/g)].map(m => parseInt(m[1], 10) / 12);
+    const numbers = [...yearMs, ...monthMs];
+    if (numbers.length === 0) return null;
+    const lower = /이하|미만|이내/.test(t);
+    const upper = /이상|초과|경과/.test(t);
+    if (numbers.length >= 2) return { min: Math.min(...numbers), max: Math.max(...numbers) };
+    if (lower) return { min: 0, max: numbers[0] };
+    if (upper) return { min: numbers[0], max: 100 };
+    return { min: 0, max: numbers[0] };
+  }
+  function parseSalesLimitLLM(text) {
+    if (!text) return null;
+    const t = String(text);
+    const eokMs = [...t.matchAll(/(\d+(?:\.\d+)?)\s*억/g)].map(m => parseFloat(m[1]));
+    const manMs = [...t.matchAll(/(\d+(?:,\d{3})*)\s*만/g)].map(m => parseFloat(m[1].replace(/,/g,'')) / 10000);
+    const numbers = [...eokMs, ...manMs];
+    if (numbers.length === 0) return null;
+    const lower = /이하|미만|이내/.test(t);
+    const upper = /이상|초과/.test(t);
+    if (numbers.length >= 2) return { min: Math.min(...numbers), max: Math.max(...numbers) };
+    if (lower) return { min: 0, max: numbers[0] };
+    if (upper) return { min: numbers[0], max: 1e6 };
+    return { min: 0, max: numbers[0] };
+  }
+  function rangesOverlap(a, fundMinMax) {
+    return a[0] <= fundMinMax.max && a[1] >= fundMinMax.min;
+  }
+
+  // ── 매칭 평가 메인 ──
+  // 반환: { status: 'unrated'|'eligible'|'check'|'ineligible', details: [...], prefCount: n }
+  function evaluateMatch(item, profile) {
+    if (!profile) return { status: 'unrated', details: [], prefCount: 0 };
+    const llm = item._llm;
+    if (!llm) return {
+      status: 'check',
+      details: [{type:'unknown', text:'AI 자격 분석 데이터 없음 — 본문 직접 확인 권장'}],
+      prefCount: 0
+    };
+
+    const details = [];
+    let hasFail = false, hasUnknown = false, prefCount = 0;
+
+    // 1. 업력
+    if (profile.bizAge && llm.businessAgeRange) {
+      const userR = userBizAgeRange(profile.bizAge);
+      const fundR = parseBizAgeRangeLLM(llm.businessAgeRange);
+      if (fundR) {
+        if (rangesOverlap(userR, fundR)) {
+          details.push({type:'pass', text:`업력 ${userBizAgeLabel(profile.bizAge)} 적합 (조건: ${esc(llm.businessAgeRange)})`});
+        } else {
+          hasFail = true;
+          details.push({type:'fail', text:`업력 조건 미충족 (필요: ${esc(llm.businessAgeRange)} / 입력: ${userBizAgeLabel(profile.bizAge)})`});
+        }
+      } else {
+        hasUnknown = true;
+        details.push({type:'unknown', text:`업력 조건 해석 불가: ${esc(llm.businessAgeRange)}`});
+      }
+    }
+
+    // 2. 매출
+    if (profile.salesRange && llm.salesLimit) {
+      const userR = userSalesRange(profile.salesRange);
+      const fundR = parseSalesLimitLLM(llm.salesLimit);
+      if (fundR) {
+        if (rangesOverlap(userR, fundR)) {
+          details.push({type:'pass', text:`매출 ${userSalesLabel(profile.salesRange)} 적합 (조건: ${esc(llm.salesLimit)})`});
+        } else {
+          hasFail = true;
+          details.push({type:'fail', text:`매출 한도 초과 (필요: ${esc(llm.salesLimit)} / 입력: ${userSalesLabel(profile.salesRange)})`});
+        }
+      } else {
+        hasUnknown = true;
+        details.push({type:'unknown', text:`매출 조건 해석 불가: ${esc(llm.salesLimit)}`});
+      }
+    }
+
+    // 3. 연령
+    if (profile.ageGroup && llm.ageRange) {
+      const userR = userAgeRange(profile.ageGroup);
+      const fundR = parseAgeRangeLLM(llm.ageRange);
+      if (fundR) {
+        if (rangesOverlap(userR, fundR)) {
+          details.push({type:'pass', text:`연령 ${userAgeLabel(profile.ageGroup)} 적합 (조건: ${esc(llm.ageRange)})`});
+        } else {
+          hasFail = true;
+          details.push({type:'fail', text:`연령 조건 미충족 (필요: ${esc(llm.ageRange)} / 입력: ${userAgeLabel(profile.ageGroup)})`});
+        }
+      } else {
+        hasUnknown = true;
+        details.push({type:'unknown', text:`연령 조건 해석 불가: ${esc(llm.ageRange)}`});
+      }
+    }
+
+    // 4. 사업자 규모 (느슨한 매칭 — 미일치도 ⚠️ 처리)
+    if (profile.bizSize && Array.isArray(llm.businessSize) && llm.businessSize.length > 0
+        && !llm.businessSize.includes('제한없음')) {
+      if (llm.businessSize.includes(profile.bizSize)) {
+        details.push({type:'pass', text:`사업자규모 ${esc(profile.bizSize)} 적합 (대상: ${llm.businessSize.map(esc).join('/')})`});
+      } else {
+        hasUnknown = true;
+        details.push({type:'unknown', text:`사업자규모 명시 미일치 (대상: ${llm.businessSize.map(esc).join('/')} / 입력: ${esc(profile.bizSize)}) — 본문 확인`});
+      }
+    }
+
+    // 5. 특수자격 (우대 매칭, 보수적 처리)
+    if (Array.isArray(llm.specialGroups) && llm.specialGroups.length > 0) {
+      const userG = profile.specialGroups || [];
+      const matched = llm.specialGroups.filter(g => userG.includes(g));
+      if (matched.length > 0) {
+        prefCount += matched.length;
+        details.push({type:'pref', text:`우대 자격 매칭: ${matched.map(esc).join(' · ')}`});
+      } else if (userG.length > 0) {
+        hasUnknown = true;
+        details.push({type:'unknown', text:`이 자금의 명시 자격(${llm.specialGroups.map(esc).join('/')})과 매칭 없음 — 한정 자격 여부 확인`});
+      }
+    }
+
+    // 종합 판정
+    let status;
+    if (hasFail) status = 'ineligible';
+    else if (details.length === 0) {
+      status = 'eligible';
+      details.push({type:'pass', text:'자격 한정 조건이 명시되지 않은 일반 자금 — 신청 가능'});
+    } else if (hasUnknown) {
+      status = 'check';
+    } else {
+      status = 'eligible';
+    }
+
+    return { status, details, prefCount };
+  }
+
+  // 페이지 로드 시 체크박스 초기화
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupProfileSpecialCheckboxes);
+  } else {
+    setupProfileSpecialCheckboxes();
+  }
+
   // ── 정책자금 검색 (브라우저에서 기업마당 API 직접 호출) ──
   async function searchFunds() {
     const region   = document.getElementById('region').value;
@@ -1488,8 +1946,14 @@
         console.warn('[추가API]', extraErr.message);
       }
 
+      // ── Phase 2: 사용자 프로필 ↔ 자금 자격 매칭 평가 ──
+      const profile = getUserProfile();
+      processed.forEach(item => { item._match = evaluateMatch(item, profile); });
+
       allResults = processed;
+      allResults._profile = profile;
       currentFilter = '전체';
+      currentSpecialFilter = null;
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === '전체'));
       renderResults(allResults);
     } catch (e) {
@@ -1581,6 +2045,8 @@
   function renderResults(list) {
     const filterRowHTML = specialFilterRowHTML(list);
     const finalList = applySpecialFilter(list);
+    const profile = allResults._profile || null;
+
     document.getElementById('results-count').textContent = finalList.length + '건';
 
     if (!finalList.length) {
@@ -1594,7 +2060,48 @@
       return;
     }
 
-    document.getElementById('results-list').innerHTML = filterRowHTML + finalList.map(item => resultCardHTML(item)).join('');
+    // ── 프로필 미입력: Phase 1 동작 (기존 단일 리스트) ──
+    if (!profile) {
+      document.getElementById('results-list').innerHTML = filterRowHTML + finalList.map(item => resultCardHTML(item)).join('');
+      return;
+    }
+
+    // ── 프로필 입력 시: 3섹션 분리 ──
+    const eligible   = finalList.filter(it => it._match && it._match.status === 'eligible');
+    const checkList  = finalList.filter(it => it._match && it._match.status === 'check');
+    const ineligible = finalList.filter(it => it._match && it._match.status === 'ineligible');
+
+    // 자격 충족 안에서: 우대 수 desc → 기존 score 순서 유지
+    eligible.sort((a, b) => (b._match.prefCount || 0) - (a._match.prefCount || 0));
+
+    const sectionHTML = (key, icon, title, items, expanded) => {
+      if (items.length === 0) return '';
+      const stateClass = expanded ? 'expanded' : 'is-collapsed';
+      return `
+        <div class="match-section ${key} ${stateClass}" id="match-${key}">
+          <div class="match-section-header" onclick="toggleMatchSection('${key}')">
+            <span class="match-section-icon">${icon}</span>
+            <span class="match-section-title">${title}</span>
+            <span class="match-section-count">${items.length}건</span>
+            <span class="match-section-chev">▼</span>
+          </div>
+          <div class="match-section-body">${items.map(it => resultCardHTML(it)).join('')}</div>
+        </div>`;
+    };
+
+    const sections =
+      sectionHTML('eligible',   '✅', '자격 충족',   eligible,   true) +
+      sectionHTML('check',      '⚠️', '확인 필요',   checkList,  eligible.length === 0) +
+      sectionHTML('ineligible', '❌', '자격 미달',   ineligible, false);
+
+    document.getElementById('results-list').innerHTML = filterRowHTML + sections;
+  }
+
+  function toggleMatchSection(key) {
+    const sec = document.getElementById('match-' + key);
+    if (!sec) return;
+    sec.classList.toggle('is-collapsed');
+    sec.classList.toggle('expanded');
   }
 
   const FIN_CAT_ICON = { '창업지원':'🚀', '융자지원':'💰', '특례보증':'🛡', '이차보전':'📉' };
@@ -1646,6 +2153,16 @@
       ? `<div class="llm-reason"><span class="llm-icon">AI</span><span>${esc(llm.matchReason)}</span></div>`
       : '';
 
+    // Phase 2: 매칭 디테일 strip (프로필 입력 시에만)
+    const m = item._match;
+    let matchDetailsHTML = '';
+    if (m && m.status !== 'unrated' && m.details && m.details.length > 0) {
+      const markFor = t => ({pass:'✓', pref:'⭐', fail:'✗', unknown:'?'})[t] || '·';
+      matchDetailsHTML = `<ul class="match-details">${
+        m.details.map(d => `<li class="match-${d.type}"><span class="mt-mark">${markFor(d.type)}</span><span class="mt-text">${d.text}</span></li>`).join('')
+      }</ul>`;
+    }
+
     // 지원한도 (AI가 추출한 amountText)
     const amountHTML = (llm && llm.amountText)
       ? `<div class="llm-amount">💰 ${esc(llm.amountText)}</div>`
@@ -1676,6 +2193,7 @@
         <div style="display:flex;gap:4px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">${aiBadge}${finBadge}${regionBadge}</div>
       </div>
       ${reasonHTML}
+      ${matchDetailsHTML}
       <div class="result-tags">
         ${org ? `<span class="tag tag-org">🏛 ${org}</span>` : ''}
         ${realm ? `<span class="tag tag-type">${realm}</span>` : ''}
