@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-04T03:54:19.280Z",
-  "total": 7,
+  "updatedAt": "2026-05-04T08:39:42.133Z",
+  "total": 5,
   "data": [
     {
       "pblancNm": "2026년 2차 요소 수급 안정화 지원사업 공고",
@@ -58,30 +58,6 @@
       "reqstBeginEndDe": "2026-04-21",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71029/view",
       "pblancId": "MOTIE_71029",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년 나프타 수급 안정화 지원사업 공고",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-04-17",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71026/view",
-      "pblancId": "MOTIE_71026",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년도 제조암묵지기반AI모델개발사업 신규지원 대상과제 공고(수정)",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-04-17",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71021/view",
-      "pblancId": "MOTIE_71021",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "_source": "motie"
