@@ -456,6 +456,16 @@ app.get('/api/search-extra', async (req, res) => {
     errors.push('shinbo: 캐시 파일 없음');
   }
 
+  // 4-1. 중소벤처기업진흥공단(중진공) 정책자금 (정적 캐시, 7건)
+  try {
+    const cached = JSON.parse(fs.readFileSync(path.join(__dirname, 'kosmes-data.json'), 'utf-8'));
+    cached.data.forEach(item => addResult(item));
+    console.log(`[kosmes] 캐시 ${cached.data.length}건 (${cached.updatedAt})`);
+  } catch (err) {
+    console.error('[kosmes] 캐시 파일 로드 실패:', err.message);
+    errors.push('kosmes: 캐시 파일 없음');
+  }
+
   // 5. 산업통상자원부 공고 (실시간 크롤링 → 실패 시 캐시 파일 fallback)
   let motieCount = 0;
   try {
