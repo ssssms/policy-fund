@@ -1,2 +1,7 @@
 node_modules/
 .env
+
+# 작업용 임시 파일 (재파싱 진행 중에만 존재)
+parsed-funds.backup.json
+parsed-funds.new.json
+parsed-funds.old.json

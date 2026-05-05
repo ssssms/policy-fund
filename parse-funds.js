@@ -18,7 +18,6 @@ require('dotenv').config();
 const Anthropic = require('@anthropic-ai/sdk').default;
 
 const ROOT = __dirname;
-const OUTPUT_FILE = path.join(ROOT, 'parsed-funds.json');
 const MODEL = 'claude-sonnet-4-6';
 
 // ── CLI 인자 파싱 ──
@@ -30,6 +29,7 @@ const argVal = (flag) => {
 const SAMPLE = argVal('--sample') ? parseInt(argVal('--sample'), 10) : null;
 const FORCE = args.includes('--force');
 const CONCURRENCY = argVal('--concurrency') ? parseInt(argVal('--concurrency'), 10) : 5;
+const OUTPUT_FILE = path.join(ROOT, argVal('--output') || 'parsed-funds.json');
 
 // ── API 키 ──
 if (!process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY.includes('여기에')) {
@@ -44,6 +44,7 @@ function loadAllFunds() {
     { file: 'gov24-data.json', source: 'gov24' },
     { file: 'shinbo-data.json', source: 'shinbo' },
     { file: 'motie-data.json', source: 'motie' },
+    { file: 'kosmes-data.json', source: 'kosmes' },
   ];
   const all = [];
   for (const { file, source } of sources) {
@@ -160,8 +161,40 @@ const PARSE_TOOL = {
         items: { type: 'string' },
         description: '자유 검색용 추가 키워드 5~10개 (예: "탄소중립","수출지원","재해특례").',
       },
+      requirement: {
+        type: 'object',
+        description: '각 자격 항목의 "필수성" 분류. 잘못된 거절(false ❌) 방지를 위해 분류 모호 시 preference 또는 null로 보수적으로 분류.',
+        properties: {
+          ageRange: {
+            type: ['string', 'null'],
+            description: 'ageRange 자격의 필수성. "required" | "preference" | "conditional" | null. ageRange가 null이면 이것도 null.',
+          },
+          businessAgeRange: {
+            type: ['string', 'null'],
+            description: 'businessAgeRange 자격의 필수성. 같은 4값.',
+          },
+          salesLimit: {
+            type: ['string', 'null'],
+            description: 'salesLimit 자격의 필수성. 같은 4값.',
+          },
+          businessSize: {
+            type: ['string', 'null'],
+            description: 'businessSize 자격의 필수성. "required"|"preference"|null. (보통 자금별 핵심 정의는 required).',
+          },
+          specialGroups: {
+            type: 'object',
+            description: 'specialGroups 배열의 각 자격별 필수성 매핑. 예: {"청년": "required", "여성": "preference"}. 모든 값은 "required"|"preference"|"conditional".',
+            additionalProperties: { type: 'string' },
+          },
+        },
+        required: ['ageRange', 'businessAgeRange', 'salesLimit', 'businessSize', 'specialGroups'],
+      },
+      scopeNote: {
+        type: ['string', 'null'],
+        description: 'conditional 자격이 있을 때 "어떤 트랙·프로그램 한정인지" 1줄 보충. 예: "ageRange는 청년그린창업 트랙만 / businessAgeRange는 에코스타트업 트랙만". 없으면 null.',
+      },
     },
-    required: ['summary', 'matchReason', 'businessSize', 'industries', 'supportType', 'specialGroups', 'regions', 'isAlwaysOpen', 'applicationStatusHint', 'keywords'],
+    required: ['summary', 'matchReason', 'businessSize', 'industries', 'supportType', 'specialGroups', 'regions', 'isAlwaysOpen', 'applicationStatusHint', 'keywords', 'requirement', 'scopeNote'],
   },
 };
 
@@ -170,44 +203,146 @@ const SYSTEM_PROMPT = [
     type: 'text',
     text: `당신은 한국 정부·지자체 정책자금 공고를 분석해 소상공인이 매칭에 활용할 구조화 메타데이터를 추출하는 전문가입니다.
 
-추출 원칙:
-1. **추측 금지**: 본문에 명시되지 않은 조건은 null/빈배열로 둡니다. (예: 연령 언급 없으면 ageRange=null)
+**최우선 원칙**: 잘못된 거절(false ❌)이 잘못된 승인(false ✅)보다 더 큰 손해입니다. 자격 분류가 모호하면 보수적으로 "preference" 또는 null로 분류하세요. 절대 추측하지 마세요.
+
+═══ 기본 추출 원칙 ═══
+1. **추측 금지**: 본문에 명시되지 않은 조건은 null/빈배열.
 2. **소상공인 관점**: 사장님이 자기 사업에 해당하는지 판단할 수 있도록 산업/규모/지역 태그를 풍부하게 답니다.
 3. **summary는 50~80자**: 핵심 한 줄. "~을 위한 ~지원" 형식 권장.
 4. **matchReason**: "~사장님께 적합" 형식. 가장 강한 매칭 포인트 한 가지만.
-5. **specialGroups**: 명시된 우대·한정 대상만. 일반 대상이면 빈배열.
-6. **industries**: 본문에서 직간접 단서로 추론. "외식 프랜차이즈"면 ["음식","외식","프랜차이즈"] 처럼 다양하게.
-7. **applicationStatusHint**:
+5. **industries**: 본문에서 직간접 단서로 추론. "외식 프랜차이즈"면 ["음식","외식","프랜차이즈"] 처럼 다양하게.
+6. **applicationStatusHint**:
    - 본문에 "상시" 또는 reqstBeginEndDe가 "상시"면 open.
    - 도매금융(C1)처럼 "영업점 상담"이면 verify_at_branch.
    - 마감일이 명확히 과거이거나 "마감"이면 closed.
    - 그 외 미확정은 unknown.
 
-예시 입력:
+═══ requirement 객체 — 자격의 "필수성" 분류 (핵심 신규 기능) ═══
+
+각 자격 항목(ageRange / businessAgeRange / salesLimit / businessSize / 각 specialGroup)에 대해 다음 4값 중 하나로 분류합니다:
+
+▶ **required** (필수, 미충족 시 신청 불가)
+  - 한국어 패턴:
+    "~인 자에 한해 신청", "대상은 ○○", "○○만 신청 가능", "○○에 한정",
+    "○○ 자격을 갖춘 자", "○○인 기업/사업자에게 지원"
+  - 자격이 자금의 핵심 정의일 때
+  - 예: "대표자가 만 39세 이하인 중소기업" → ageRange="required"
+  - 예: "재해 피해를 입은 기업" → specialGroups.재해피해="required"
+  - 예: "사업개시 7년 이내" + 다른 일반 자격 명시 없음 → businessAgeRange="required"
+
+▶ **preference** (우대, 미충족 시 가산점만 없음, 신청 가능)
+  - 한국어 패턴:
+    "○○ 우대", "○○ 우선", "○○ 가산점", "○○ 가점",
+    "○○ 시 가점 부여", "특히 ○○인 경우"
+  - 일반 자격 + 특정 그룹 우대 패턴
+  - 예: "소상공인 대상, 여성기업 우대" → specialGroups.여성="preference"
+  - 예: "중소기업 대상, 청년창업 가점" → specialGroups.청년="preference"
+
+▶ **conditional** (일부 프로그램·트랙·세부사업만 해당)
+  - 한국어 패턴:
+    "(○○ 한정)", "○○ 트랙의 경우", "○○ 프로그램은",
+    "세부사업별로 ~", "○○ 부문 한정"
+  - 자금이 여러 프로그램으로 구성되며 일부만 자격 한정
+  - 예: "사업화 지원 / 에코스타트업(7년 이내) / 청년그린창업(39세 이하)"
+       → ageRange="conditional", businessAgeRange="conditional"
+  - scopeNote에 "에코스타트업 트랙 한정 / 사업화 지원은 일반" 같이 보충
+
+▶ **null** (조건 자체가 본문에 명시되지 않음 또는 분류 모호)
+  - 추측 금지. 본문에 단서 없으면 null.
+  - 해당 필드(예: ageRange)가 null이면 requirement.ageRange도 null.
+
+═══ 모호한 케이스 가이드 ═══
+
+| 표현 | 분류 | 이유 |
+|---|---|---|
+| "청년 우선 지원" | preference | "우선"은 가산점/우대 의미 |
+| "청년 한정" | required | "한정"은 필수 |
+| "청년에게 적합한 사업" | preference | 권유성 표현 |
+| "○○인 자에게 우선 지원" | preference | "우선" 키워드 |
+| "○○인 자에 한정" | required | "한정" 키워드 |
+| "○○인 자가 신청 가능" + 다른 일반 자격 명시 | preference | 일반인도 가능 |
+| "○○인 자가 신청 가능" + 다른 자격 명시 없음 | required | 핵심 정의 |
+| "○○인 경우 추가 지원" | preference | 추가/부가 |
+| "원칙적으로 ○○" | required | "원칙" = 핵심 |
+| "특별히 ○○" | preference | 가점성 |
+
+═══ 처리 절차 ═══
+
+1. 본문에서 자격 조건들을 모두 추출하여 기존 필드(specialGroups·ageRange·…)에 저장
+2. 각 자격에 대해 위 키워드/패턴으로 분류 → requirement 객체에 매핑
+3. 분류가 명확하지 않으면 **preference** 또는 **null** (보수적, 추측 X)
+4. specialGroups 배열은 모든 관련 자격, requirement.specialGroups 객체는 각 자격별 분류
+5. scopeNote: conditional 케이스에서 "어떤 프로그램이 한정인지" 한 줄 보충
+
+═══ 예시 1: 청년전용창업자금 (한정 자금) ═══
+원본: "대표자가 만 39세 이하로 사업 개시일로부터 3년 미만인 중소기업"
+
+추출:
 {
-  "pblancNm": "재해특례보증",
-  "bsnsSumryCn": "재해 피해를 입은 기업 중 지자체로부터 재해중소기업확인증을 발급받은 기업",
-  "trgetNm": "재해 피해를 입은 기업 중 지자체로부터 재해중소기업확인증을 발급받은 기업",
-  "reqstBeginEndDe": "상시",
-  "jrsdInsttNm": "대구신용보증재단"
+  "summary": "만 39세 이하 청년 + 창업 3년 미만 중소기업 전용 융자",
+  "matchReason": "만 39세 이하 청년 + 창업 3년 미만 둘 다 충족하는 사장님께 적합",
+  "specialGroups": ["청년"],
+  "ageRange": "만 39세 이하",
+  "businessAgeRange": "창업 3년 미만",
+  "businessSize": ["중소기업"],
+  "regions": ["전국"], "industries": ["전업종"], "supportType": ["융자"],
+  "isAlwaysOpen": false, "applicationStatusHint": "unknown",
+  "keywords": ["청년창업","청년전용","융자","39세이하"],
+  "requirement": {
+    "ageRange": "required",
+    "businessAgeRange": "required",
+    "salesLimit": null,
+    "businessSize": "required",
+    "specialGroups": { "청년": "required" }
+  },
+  "scopeNote": null
 }
 
-예시 출력 (extract_fund_metadata 호출):
+═══ 예시 2: 일반 보증 + 여성 우대 ═══
+원본: "대구 소재 소상공인 대상 보증, 여성기업 우대"
+
+추출:
 {
-  "summary": "재해 피해 입은 소상공인을 위한 특례 보증",
-  "matchReason": "최근 재해(태풍·화재 등) 피해 입은 사장님께 적합",
-  "businessSize": ["소상공인","중소기업"],
-  "industries": ["전업종"],
-  "supportType": ["보증"],
-  "specialGroups": ["재해피해"],
-  "ageRange": null,
-  "salesLimit": null,
-  "businessAgeRange": null,
-  "regions": ["대구"],
-  "amountText": null,
-  "isAlwaysOpen": true,
-  "applicationStatusHint": "open",
-  "keywords": ["재해특례","보증","대구신용보증재단","재해중소기업확인증"]
+  "summary": "대구 소상공인 신용보증 (여성기업 우대)",
+  "matchReason": "대구 소재 소상공인 사장님께 적합 (여성기업이면 추가 우대)",
+  "specialGroups": ["여성"],
+  "ageRange": null, "salesLimit": null, "businessAgeRange": null,
+  "businessSize": ["소상공인"],
+  "regions": ["대구"], "industries": ["전업종"], "supportType": ["보증"],
+  "isAlwaysOpen": false, "applicationStatusHint": "unknown",
+  "keywords": ["대구","보증","여성기업"],
+  "requirement": {
+    "ageRange": null,
+    "businessAgeRange": null,
+    "salesLimit": null,
+    "businessSize": "required",
+    "specialGroups": { "여성": "preference" }
+  },
+  "scopeNote": null
+}
+
+═══ 예시 3: 다중 트랙 자금 (conditional) ═══
+원본: "사업화 지원(우수 중소환경기업) / 에코스타트업(예비창업자 또는 7년 이내) / 청년그린창업(39세 이하)"
+
+추출:
+{
+  "summary": "환경·녹색산업 분야 중소환경기업·예비창업자·청년창업 사업화 지원 (3개 프로그램)",
+  "matchReason": "환경·녹색산업 분야 중소기업 또는 청년 창업자께 적합 (트랙 분리)",
+  "specialGroups": ["청년","예비창업자"],
+  "ageRange": "만 39세 이하 (청년그린창업 한정)",
+  "businessAgeRange": "창업 7년 이내 (에코스타트업 한정)",
+  "businessSize": ["중소기업","예비창업자"],
+  "regions": ["전국"], "industries": ["환경","녹색산업"], "supportType": ["보조금","컨설팅"],
+  "isAlwaysOpen": false, "applicationStatusHint": "unknown",
+  "keywords": ["환경","녹색산업","에코스타트업","청년그린창업"],
+  "requirement": {
+    "ageRange": "conditional",
+    "businessAgeRange": "conditional",
+    "salesLimit": null,
+    "businessSize": "preference",
+    "specialGroups": { "청년": "conditional", "예비창업자": "conditional" }
+  },
+  "scopeNote": "ageRange는 청년그린창업 트랙만 / businessAgeRange는 에코스타트업 트랙만 / 사업화 지원은 일반"
 }
 
 반드시 extract_fund_metadata 도구를 호출해 결과를 반환합니다. 절대 일반 텍스트로 답변하지 마세요.`,

@@ -487,6 +487,8 @@
   .match-fail .mt-text { color: #991b1b; }
   .match-unknown .mt-mark { color: #94a3b8; }
   .match-unknown .mt-text { color: #64748b; font-style: italic; }
+  .match-info .mt-mark { color: #0284c7; }
+  .match-info .mt-text { color: #475569; }
 
   /* ── AI 매칭 보강 (parsed-funds.json) ── */
   .llm-reason {
@@ -1652,8 +1654,14 @@
     return a[0] <= fundMinMax.max && a[1] >= fundMinMax.min;
   }
 
-  // ── 매칭 평가 메인 ──
+  // ── 매칭 평가 메인 (Phase 4: requirement 기반 한정/우대 구분) ──
   // 반환: { status: 'unrated'|'eligible'|'check'|'ineligible', details: [...], prefCount: n }
+  //
+  // 핵심 로직:
+  //  - 자금 조건 미충족 시 requirement.X 보고 분기
+  //    required → ❌ INELIGIBLE / preference → 가산점 없음 통과(info) /
+  //    conditional → ⚠️ CHECK (트랙 한정) / null → ⚠️ CHECK (보수적)
+  //  - 자금 조건 충족 시: preference이면 prefCount++ (우대 가산점), 그 외 일반 PASS
   function evaluateMatch(item, profile) {
     if (!profile) return { status: 'unrated', details: [], prefCount: 0 };
     const llm = item._llm;
@@ -1663,19 +1671,43 @@
       prefCount: 0
     };
 
+    const req = (llm.requirement && typeof llm.requirement === 'object') ? llm.requirement : {};
+    const scope = llm.scopeNote ? ` — ${esc(llm.scopeNote)}` : '';
     const details = [];
     let hasFail = false, hasUnknown = false, prefCount = 0;
+
+    // 미충족 시 분기 헬퍼 — requirement 분류 보고 fail/info/unknown 결정
+    const handleMiss = (reqType, condLabel, missDetail) => {
+      if (reqType === 'required') {
+        hasFail = true;
+        details.push({type:'fail', text:`[필수] ${condLabel} 미충족 — ${missDetail}`});
+      } else if (reqType === 'preference') {
+        details.push({type:'info', text:`${condLabel} 우대 미해당 (가산점 없음, 신청 가능)`});
+      } else if (reqType === 'conditional') {
+        hasUnknown = true;
+        details.push({type:'unknown', text:`${condLabel} 일부 트랙 한정 — 본문 확인${scope}`});
+      } else {
+        // null — 보수적으로 ⚠️
+        hasUnknown = true;
+        details.push({type:'unknown', text:`${condLabel} 필수/우대 분류 불명 — 본문 확인 권장 (${missDetail})`});
+      }
+    };
 
     // 1. 업력
     if (profile.bizAge && llm.businessAgeRange) {
       const userR = userBizAgeRange(profile.bizAge);
       const fundR = parseBizAgeRangeLLM(llm.businessAgeRange);
+      const reqType = req.businessAgeRange;
       if (fundR) {
         if (rangesOverlap(userR, fundR)) {
-          details.push({type:'pass', text:`업력 ${userBizAgeLabel(profile.bizAge)} 적합 (조건: ${esc(llm.businessAgeRange)})`});
+          if (reqType === 'preference') {
+            prefCount++;
+            details.push({type:'pref', text:`업력 ${userBizAgeLabel(profile.bizAge)} 우대 매칭 (가산점)`});
+          } else {
+            details.push({type:'pass', text:`업력 ${userBizAgeLabel(profile.bizAge)} 적합 (조건: ${esc(llm.businessAgeRange)})`});
+          }
         } else {
-          hasFail = true;
-          details.push({type:'fail', text:`업력 조건 미충족 (필요: ${esc(llm.businessAgeRange)} / 입력: ${userBizAgeLabel(profile.bizAge)})`});
+          handleMiss(reqType, '업력', `필요: ${esc(llm.businessAgeRange)} / 입력: ${userBizAgeLabel(profile.bizAge)}`);
         }
       } else {
         hasUnknown = true;
@@ -1687,12 +1719,17 @@
     if (profile.salesRange && llm.salesLimit) {
       const userR = userSalesRange(profile.salesRange);
       const fundR = parseSalesLimitLLM(llm.salesLimit);
+      const reqType = req.salesLimit;
       if (fundR) {
         if (rangesOverlap(userR, fundR)) {
-          details.push({type:'pass', text:`매출 ${userSalesLabel(profile.salesRange)} 적합 (조건: ${esc(llm.salesLimit)})`});
+          if (reqType === 'preference') {
+            prefCount++;
+            details.push({type:'pref', text:`매출 ${userSalesLabel(profile.salesRange)} 우대 매칭 (가산점)`});
+          } else {
+            details.push({type:'pass', text:`매출 ${userSalesLabel(profile.salesRange)} 적합 (조건: ${esc(llm.salesLimit)})`});
+          }
         } else {
-          hasFail = true;
-          details.push({type:'fail', text:`매출 한도 초과 (필요: ${esc(llm.salesLimit)} / 입력: ${userSalesLabel(profile.salesRange)})`});
+          handleMiss(reqType, '매출', `필요: ${esc(llm.salesLimit)} / 입력: ${userSalesLabel(profile.salesRange)}`);
         }
       } else {
         hasUnknown = true;
@@ -1704,12 +1741,17 @@
     if (profile.ageGroup && llm.ageRange) {
       const userR = userAgeRange(profile.ageGroup);
       const fundR = parseAgeRangeLLM(llm.ageRange);
+      const reqType = req.ageRange;
       if (fundR) {
         if (rangesOverlap(userR, fundR)) {
-          details.push({type:'pass', text:`연령 ${userAgeLabel(profile.ageGroup)} 적합 (조건: ${esc(llm.ageRange)})`});
+          if (reqType === 'preference') {
+            prefCount++;
+            details.push({type:'pref', text:`연령 ${userAgeLabel(profile.ageGroup)} 우대 매칭 (가산점)`});
+          } else {
+            details.push({type:'pass', text:`연령 ${userAgeLabel(profile.ageGroup)} 적합 (조건: ${esc(llm.ageRange)})`});
+          }
         } else {
-          hasFail = true;
-          details.push({type:'fail', text:`연령 조건 미충족 (필요: ${esc(llm.ageRange)} / 입력: ${userAgeLabel(profile.ageGroup)})`});
+          handleMiss(reqType, '연령', `필요: ${esc(llm.ageRange)} / 입력: ${userAgeLabel(profile.ageGroup)}`);
         }
       } else {
         hasUnknown = true;
@@ -1717,27 +1759,52 @@
       }
     }
 
-    // 4. 사업자 규모 (느슨한 매칭 — 미일치도 ⚠️ 처리)
+    // 4. 사업자 규모 (requirement 기반)
     if (profile.bizSize && Array.isArray(llm.businessSize) && llm.businessSize.length > 0
         && !llm.businessSize.includes('제한없음')) {
+      const reqType = req.businessSize;
       if (llm.businessSize.includes(profile.bizSize)) {
-        details.push({type:'pass', text:`사업자규모 ${esc(profile.bizSize)} 적합 (대상: ${llm.businessSize.map(esc).join('/')})`});
+        if (reqType === 'preference') {
+          prefCount++;
+          details.push({type:'pref', text:`사업자규모 ${esc(profile.bizSize)} 우대 매칭 (가산점)`});
+        } else {
+          details.push({type:'pass', text:`사업자규모 ${esc(profile.bizSize)} 적합 (대상: ${llm.businessSize.map(esc).join('/')})`});
+        }
       } else {
-        hasUnknown = true;
-        details.push({type:'unknown', text:`사업자규모 명시 미일치 (대상: ${llm.businessSize.map(esc).join('/')} / 입력: ${esc(profile.bizSize)}) — 본문 확인`});
+        handleMiss(reqType, '사업자규모', `대상: ${llm.businessSize.map(esc).join('/')} / 입력: ${esc(profile.bizSize)}`);
       }
     }
 
-    // 5. 특수자격 (우대 매칭, 보수적 처리)
+    // 5. 특수자격 (객체 기반 — 각 자격별 한정/우대 구분)
     if (Array.isArray(llm.specialGroups) && llm.specialGroups.length > 0) {
+      const sgReq = (req.specialGroups && typeof req.specialGroups === 'object') ? req.specialGroups : {};
       const userG = profile.specialGroups || [];
-      const matched = llm.specialGroups.filter(g => userG.includes(g));
-      if (matched.length > 0) {
-        prefCount += matched.length;
-        details.push({type:'pref', text:`우대 자격 매칭: ${matched.map(esc).join(' · ')}`});
-      } else if (userG.length > 0) {
-        hasUnknown = true;
-        details.push({type:'unknown', text:`이 자금의 명시 자격(${llm.specialGroups.map(esc).join('/')})과 매칭 없음 — 한정 자격 여부 확인`});
+      for (const g of llm.specialGroups) {
+        const reqType = sgReq[g] || null;
+        if (userG.includes(g)) {
+          // 사용자 체크 + 자금에 명시 → 매칭
+          if (reqType === 'preference') {
+            prefCount++;
+            details.push({type:'pref', text:`${esc(g)} 우대 매칭 (가산점)`});
+          } else {
+            details.push({type:'pass', text:`${esc(g)} 자격 충족`});
+          }
+        } else {
+          // 사용자 미체크 + 자금에 명시 → reqType 보고 분기
+          if (reqType === 'required') {
+            hasFail = true;
+            details.push({type:'fail', text:`[필수 자격] ${esc(g)} 미해당`});
+          } else if (reqType === 'conditional') {
+            hasUnknown = true;
+            details.push({type:'unknown', text:`${esc(g)} 일부 트랙 한정 — 본문 확인${scope}`});
+          } else if (reqType === 'preference') {
+            // 우대 자격이지만 사용자 미체크 — 영향 없음 (안내 X, 결과 단정)
+          } else {
+            // null — 분류 불명, 보수적 ⚠️
+            hasUnknown = true;
+            details.push({type:'unknown', text:`${esc(g)} 자격 분류 불명 — 한정 여부 본문 확인`});
+          }
+        }
       }
     }
 
@@ -2183,7 +2250,7 @@
     const m = item._match;
     let matchDetailsHTML = '';
     if (m && m.status !== 'unrated' && m.details && m.details.length > 0) {
-      const markFor = t => ({pass:'✓', pref:'⭐', fail:'✗', unknown:'?'})[t] || '·';
+      const markFor = t => ({pass:'✓', pref:'⭐', fail:'✗', unknown:'?', info:'ⓘ'})[t] || '·';
       matchDetailsHTML = `<ul class="match-details">${
         m.details.map(d => `<li class="match-${d.type}"><span class="mt-mark">${markFor(d.type)}</span><span class="mt-text">${d.text}</span></li>`).join('')
       }</ul>`;
