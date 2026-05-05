@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-04T04:27:52.327Z",
-  "total": 295,
+  "updatedAt": "2026-05-05T03:56:45.514Z",
+  "total": 296,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -4272,6 +4272,22 @@
       "_source": "gov24",
       "_orgType": "지방출자_출연기관",
       "_region": "",
+      "_city": ""
+    },
+    {
+      "pblancNm": "콘텐츠기업지원센터 제작지원",
+      "bsnsSumryCn": "도내·외 콘텐츠기업 대상 제작지원금 지급",
+      "jrsdInsttNm": "재단법인전북특별자치도콘텐츠융합진흥원",
+      "excInsttNm": "서비스관리부서",
+      "reqstBeginEndDe": "상시신청",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/O00101100006",
+      "pblancId": "GOV24_O00101100006",
+      "hashtags": "재단법인전북특별자치도,고용·창업,지방출자_출연기관",
+      "pldirSportRealmLclasCodeNm": "고용·창업",
+      "trgetNm": "전북 도내 콘텐츠 기업 및 산업 종사자, 콘텐츠 산업에 관심이 있는 도민 등",
+      "_source": "gov24",
+      "_orgType": "지방출자_출연기관",
+      "_region": "재단법인전북특별자치도",
       "_city": ""
     },
     {
