@@ -1990,8 +1990,10 @@
               const realm   = item.pldirSportRealmLclasCodeNm || '';
 
               // 시도/시군구 매칭 (기업마당과 동일 로직, content/jrsd/tags 광범위 검색)
+              // "전국" 키워드 자금은 어느 region 선택에서도 매칭되지만 isRegional=false (전국공통)
+              const isNationwide = tags.includes('전국');
               const hasSelectedRegion = regionTag
-                ? (tags.includes(regionTag) || content.includes(regionTag.toLowerCase()))
+                ? (tags.includes(regionTag) || content.includes(regionTag.toLowerCase()) || isNationwide)
                 : true;
               const hasCity = cityTag ? (
                 tags.includes(cityTag) ||
@@ -2010,11 +2012,15 @@
               if (isLifeIndustry && TECH_REALMS.has(realm) &&
                   !matchWords.some(w => (item.pblancNm || '').toLowerCase().includes(w))) continue;
 
+              // _isRegional: 기업마당 매칭(line 1917)과 동일하게 regionCount<=5 + "전국" 자금 제외
+              const regionCount = ALL_REGIONS.filter(r => tags.includes(r)).length;
+              const _isRegionalFlag = hasSelectedRegion && !isNationwide && regionCount <= 5;
+
               const finCat  = classifyFinance(content);
               const noise   = !finCat && isNoise(content);
               processed.push({
                 ...item,
-                _isRegional: hasSelectedRegion,
+                _isRegional: _isRegionalFlag,
                 _hasRegion: hasSelectedRegion,
                 _hasCity: hasCity,
                 _hasIndustry: hasIndustry,

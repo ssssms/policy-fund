@@ -105,12 +105,10 @@ function extractContent(html) {
         reqstBeginEndDe: '연중 (지역본부별 신청기간 내 수시 접수)',
         pblancUrl: `https://www.kosmes.or.kr/nsh/SH/SBI/${f.code}.do`,
         pblancId: `KOSMES_${f.code}`,
-        // 전국 대상 자금 — 모든 광역시도 포함해 사용자 지역 선택 시 매칭되게
-        hashtags: [
-          '중소벤처기업진흥공단', '중진공', '정책자금', '융자', '전국', f.stage,
-          '서울','부산','대구','인천','광주','대전','울산','세종',
-          '경기','강원','충북','충남','전북','전남','경북','경남','제주',
-        ].join(','),
+        // 전국 대상 자금 — "전국" 키워드만 (매칭 로직이 isNationwide로 처리).
+        // 광역시도 17개를 모두 넣지 않음 — 카드 tags에 "대구"가 노출돼 사용자 혼란을 주고
+        // _isRegional이 잘못 true로 분류되어 정렬 점수가 +20점 가산되는 회귀 발생.
+        hashtags: ['중소벤처기업진흥공단', '중진공', '정책자금', '융자', '전국', f.stage].join(','),
         pldirSportRealmLclasCodeNm: '금융',
         trgetNm: '중소기업기본법 제2조에 따른 중소기업 (전국). 재무 우량·휴폐업·세금체납·신용불량 등 제외',
         _source: 'kosmes',
