@@ -33,6 +33,14 @@ function parseBizAgeRangeLLM(t){if(!t)return null;t=String(t);const y=[...t.matc
 function parseSalesLimitLLM(t){if(!t)return null;t=String(t);const e=[...t.matchAll(/(\d+(?:\.\d+)?)\s*억/g)].map(m=>+m[1]);const m2=[...t.matchAll(/(\d+(?:,\d{3})*)\s*만/g)].map(m=>parseFloat(m[1].replace(/,/g,''))/10000);const ns=[...e,...m2];if(!ns.length)return null;const lo=/이하|미만|이내/.test(t),up=/이상|초과/.test(t);if(ns.length>=2)return{min:Math.min(...ns),max:Math.max(...ns)};if(lo)return{min:0,max:ns[0]};if(up)return{min:ns[0],max:1e6};return{min:0,max:ns[0]};}
 const overlap = (a, f) => a[0] <= f.max && a[1] >= f.min;
 
+// 사용자 체크박스 옵션 (index.html SPECIAL_GROUP_OPTIONS 사본)
+const SPECIAL_GROUP_OPTIONS = [
+  '청년', '여성', '예비창업자', '기존사업자',
+  '재해피해', '저신용', '저소득', '장애인',
+  '사회적기업', '재창업', '한부모', '고령자',
+  '신혼부부', '북한이탈주민', '다문화'
+];
+
 function evaluateMatch(item, profile) {
   if (!profile) return { status: 'unrated', details: [], prefCount: 0 };
   const llm = item; // parsed-funds 항목 자체가 LLM 메타
@@ -101,7 +109,11 @@ function evaluateMatch(item, profile) {
         if (r === 'preference') { prefCount++; details.push({type:'pref', text:`${g} 우대 매칭`}); }
         else details.push({type:'pass', text:`${g} 자격 충족`});
       } else {
-        if (r === 'required') { hasFail = true; details.push({type:'fail', text:`[필수] ${g} 미해당`}); }
+        const userCheckable = SPECIAL_GROUP_OPTIONS.includes(g);
+        if (r === 'required') {
+          if (userCheckable) { hasFail = true; details.push({type:'fail', text:`[필수] ${g} 미해당`}); }
+          else { hasUnknown = true; details.push({type:'unknown', text:`${g} 체크박스 외 — 본문 확인`}); }
+        }
         else if (r === 'conditional') { hasUnknown = true; details.push({type:'unknown', text:`${g} 트랙 한정 — 확인`}); }
         else if (r === 'preference') { /* 영향 없음 */ }
         else { hasUnknown = true; details.push({type:'unknown', text:`${g} 분류 불명 — 확인`}); }

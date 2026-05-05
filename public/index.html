@@ -1791,14 +1791,22 @@
           }
         } else {
           // 사용자 미체크 + 자금에 명시 → reqType 보고 분기
+          // 단, 사용자 체크박스(SPECIAL_GROUP_OPTIONS)에 없는 자격은 ❌ 대신 ⚠️
+          // (예: "귀어업인", "TAC참여어업인", "창업" 같은 LLM 추출 자격은 사용자가 체크할 방법이 없음)
+          const userCheckable = SPECIAL_GROUP_OPTIONS.includes(g);
           if (reqType === 'required') {
-            hasFail = true;
-            details.push({type:'fail', text:`[필수 자격] ${esc(g)} 미해당`});
+            if (userCheckable) {
+              hasFail = true;
+              details.push({type:'fail', text:`[필수 자격] ${esc(g)} 미해당`});
+            } else {
+              hasUnknown = true;
+              details.push({type:'unknown', text:`${esc(g)} 자격 — 체크박스 외 항목, 본문에서 본인 해당 여부 확인 필요`});
+            }
           } else if (reqType === 'conditional') {
             hasUnknown = true;
             details.push({type:'unknown', text:`${esc(g)} 일부 트랙 한정 — 본문 확인${scope}`});
           } else if (reqType === 'preference') {
-            // 우대 자격이지만 사용자 미체크 — 영향 없음 (안내 X, 결과 단정)
+            // 우대 자격이지만 사용자 미체크 — 영향 없음
           } else {
             // null — 분류 불명, 보수적 ⚠️
             hasUnknown = true;
