@@ -13660,8 +13660,7 @@
       "summary": "핵심기술 보호를 원하는 기업에게 기술자료 임치 및 기술탈취 방지를 지원하는 중소벤처기업부 사업",
       "matchReason": "기술유출·모방특허가 걱정되거나 핵심기술을 보호하고 싶은 중소기업 사장님께 적합",
       "businessSize": [
-        "중소기업",
-        "소상공인"
+        "중소기업"
       ],
       "industries": [
         "전업종",
@@ -13698,7 +13697,7 @@
         "ageRange": null,
         "businessAgeRange": null,
         "salesLimit": null,
-        "businessSize": "preference",
+        "businessSize": "required",
         "specialGroups": {}
       },
       "scopeNote": null
@@ -20958,8 +20957,7 @@
       "summary": "관세 피해 업종 중소기업의 대출 이자 부담 완화를 위한 이차보전 지원사업 (2026년도)",
       "matchReason": "관세 피해로 경영 부담을 겪고 있는 철강·세라믹 등 관세피해 업종 사업자께 적합",
       "businessSize": [
-        "중소기업",
-        "소상공인"
+        "중소기업"
       ],
       "industries": [
         "철강",
@@ -21346,8 +21344,7 @@
       "matchReason": "창업 7년 미만이거나 기술 보유 중소기업 사장님께 적합 (청년 39세 이하면 별도 저금리 트랙 가능)",
       "businessSize": [
         "중소기업",
-        "예비창업자",
-        "소상공인"
+        "예비창업자"
       ],
       "industries": [
         "전업종",
