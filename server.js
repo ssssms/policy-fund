@@ -215,8 +215,11 @@ app.get('/api/search', async (req, res) => {
         const hasSelectedRegion = regionTag ? tags.includes(regionTag) : true;
         const isRegional        = hasSelectedRegion && regionCount <= 5;
 
+        // 다른 광역시 자금이 동명 시군구로 매칭되는 것 차단 (예: 서울 중구 검색 시 대구 중구 자금 제외)
+        const otherRegionOnly = regionTag && !tags.includes(regionTag) &&
+                                ALL_REGIONS.some(r => r !== regionTag && tags.includes(r));
         // 시군구 매칭: hashtag에 있거나 기관명/제목에 포함
-        const hasCity = cityTag ? (
+        const hasCity = cityTag && !otherRegionOnly ? (
           tags.includes(cityTag) ||
           content.includes(cityTag.toLowerCase()) ||
           (cityFull !== cityTag && content.includes(cityFull.toLowerCase()))

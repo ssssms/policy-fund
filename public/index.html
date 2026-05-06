@@ -1916,7 +1916,10 @@
           const hasSelectedRegion = regionTag ? tags.includes(regionTag) : true;
           const isRegional        = hasSelectedRegion && regionCount <= 5;
 
-          const hasCity = cityTag ? (
+          // 다른 광역시 자금이 동명 시군구로 매칭되는 것 차단 (예: 서울 중구 검색 시 대구 중구 자금 제외)
+          const otherRegionOnly = regionTag && !tags.includes(regionTag) &&
+                                  ALL_REGIONS.some(r => r !== regionTag && tags.includes(r));
+          const hasCity = cityTag && !otherRegionOnly ? (
             tags.includes(cityTag) ||
             content.includes(cityTag.toLowerCase()) ||
             (cityFull !== cityTag && content.includes(cityFull.toLowerCase()))
@@ -1995,7 +1998,10 @@
               const hasSelectedRegion = regionTag
                 ? (tags.includes(regionTag) || content.includes(regionTag.toLowerCase()) || isNationwide)
                 : true;
-              const hasCity = cityTag ? (
+              // 다른 광역시 자금이 동명 시군구로 매칭되는 것 차단 (예: 서울 중구 검색 시 대구 중구 자금 제외)
+              const otherRegionOnly = regionTag && !tags.includes(regionTag) && !isNationwide &&
+                                      ALL_REGIONS.some(r => r !== regionTag && tags.includes(r));
+              const hasCity = cityTag && !otherRegionOnly ? (
                 tags.includes(cityTag) ||
                 content.includes(cityTag.toLowerCase()) ||
                 (cityFull !== cityTag && content.includes(cityFull.toLowerCase()))
