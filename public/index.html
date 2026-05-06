@@ -1498,7 +1498,7 @@
       const region = detectRegionFromBizNo(digits);
       if (region) {
         const sel = document.getElementById('region');
-        if (sel.value !== region) { sel.value = region; showRegionDetect(region); }
+        if (sel.value !== region) { sel.value = region; updateCityList(); showRegionDetect(region); }
       } else {
         const el = document.getElementById('region-detect');
         if (el) el.innerHTML = '';
