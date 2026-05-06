@@ -1953,13 +1953,22 @@
         })
         .filter(item => {
           if (!item._hasRegion) return false;
-          // 사용자가 시군구 명시 선택 + 자금이 다른 시군구 hashtag만 가지면 제외
+          // 사용자가 시군구 명시 선택 + 자금이 다른 시군구 자금이면 제외 (광역 자금 통과)
           if (regionTag && cityFull && !item._hasCity) {
             const tagList = (item.hashtags || '').split(',').map(t => t.trim()).filter(Boolean);
             const otherCityTagged = tagList.some(t =>
               /(구|군)$/.test(t) && t !== cityFull && t !== cityTag && t.length >= 2
             );
             if (otherCityTagged) return false;
+            const titleCities = [...((item.pblancNm || '').matchAll(/([가-힣]{1,5}(?:시|군|구))(?![가-힣])/g))]
+              .map(m => m[1])
+              .filter(c => !/(특별시|광역시|특별자치시|특별자치도)$/.test(c));
+            if (titleCities.length > 0) {
+              const hasUserCity = titleCities.some(c =>
+                c === cityFull || c === cityTag + '시' || c === cityTag + '군' || c === cityTag + '구'
+              );
+              if (!hasUserCity) return false;
+            }
           }
           if (isLifeIndustry && TECH_REALMS.has(item._realm) &&
               !matchWords.some(w => matchIndustryWord((item.pblancNm || '').toLowerCase(), w))) return false;
@@ -2035,14 +2044,24 @@
               // 시도 선택 + 시도 매칭 실패 시 제외 (단, 시군구 매칭은 시도 누락이어도 통과)
               if (regionTag && !hasSelectedRegion && !hasCity) continue;
 
-              // 사용자가 시군구를 명시 선택했고, 자금이 다른 시군구 hashtag(구/군 끝)를 가지면 → 다른 시군구 자금이라 제외
-              // (광역 자금 통과, 같은 시군구 자금 통과)
+              // 사용자가 시군구를 명시 선택했고, 자금이 다른 시군구 자금이면 제외 (광역 자금 통과)
               if (regionTag && cityFull && !hasCity) {
+                // (a) hashtags에 다른 시군구 tag(구/군 끝)
                 const tagList = tags.split(',').map(t => t.trim()).filter(Boolean);
                 const otherCityTagged = tagList.some(t =>
                   /(구|군)$/.test(t) && t !== cityFull && t !== cityTag && t.length >= 2
                 );
                 if (otherCityTagged) continue;
+                // (b) 자금명에 다른 시군구가 명시 (SHINBO 같이 hashtags 없는 자금 — 예: "2026 포항시 소상공인 특례보증")
+                const titleCities = [...((item.pblancNm || '').matchAll(/([가-힣]{1,5}(?:시|군|구))(?![가-힣])/g))]
+                  .map(m => m[1])
+                  .filter(c => !/(특별시|광역시|특별자치시|특별자치도)$/.test(c));
+                if (titleCities.length > 0) {
+                  const hasUserCity = titleCities.some(c =>
+                    c === cityFull || c === cityTag + '시' || c === cityTag + '군' || c === cityTag + '구'
+                  );
+                  if (!hasUserCity) continue;
+                }
               }
 
               const hasIndustry = matchWords.length === 0 || (

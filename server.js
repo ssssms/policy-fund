@@ -256,13 +256,22 @@ app.get('/api/search', async (req, res) => {
       })
       .filter(item => {
         if (!item._hasRegion) return false;
-        // 사용자가 시군구 명시 선택 + 자금이 다른 시군구 hashtag만 가지면 제외 (다른 시군구 자금)
+        // 사용자가 시군구 명시 선택 + 자금이 다른 시군구 자금이면 제외 (광역 자금 통과)
         if (regionTag && cityFull && !item._hasCity) {
           const tagList = (item.hashtags || '').split(',').map(t => t.trim()).filter(Boolean);
           const otherCityTagged = tagList.some(t =>
             /(구|군)$/.test(t) && t !== cityFull && t !== cityTag && t.length >= 2
           );
           if (otherCityTagged) return false;
+          const titleCities = [...((item.pblancNm || '').matchAll(/([가-힣]{1,5}(?:시|군|구))(?![가-힣])/g))]
+            .map(m => m[1])
+            .filter(c => !/(특별시|광역시|특별자치시|특별자치도)$/.test(c));
+          if (titleCities.length > 0) {
+            const hasUserCity = titleCities.some(c =>
+              c === cityFull || c === cityTag + '시' || c === cityTag + '군' || c === cityTag + '구'
+            );
+            if (!hasUserCity) return false;
+          }
         }
         // 생활업종: 기술·수출 realm이고 업종 키워드도 없으면 제외 (제목에 단어 경계 매칭 검사)
         if (isLifeIndustry && TECH_REALMS.has(item._realm) &&
