@@ -118,6 +118,14 @@ function cityToHashtag(city) {
   return city.replace(/(특별시|광역시|특별자치시|특별자치도|시|군|구)$/, '');
 }
 
+// 업종 키워드 매칭 — 한국어 합성어 안의 부분 매칭 차단
+// 예: '서비스' 검색이 '스포츠서비스', '안심상속서비스' 같은 합성어와 매칭되지 않도록
+// (lookbehind만 적용 — '서비스업'/'서비스 지원' 같은 정상 매칭은 유지)
+function matchIndustryWord(content, word) {
+  const escaped = word.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp('(?<![가-힣])' + escaped).test(content);
+}
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -225,9 +233,9 @@ app.get('/api/search', async (req, res) => {
           (cityFull !== cityTag && content.includes(cityFull.toLowerCase()))
         ) : false;
 
-        // 업종 매칭: 키워드 매칭 OR 관련 realm
+        // 업종 매칭: 키워드 매칭 OR 관련 realm (한국어 합성어 안 부분 매칭은 차단)
         const hasIndustry = matchWords.length === 0 || (
-          matchWords.some(w => content.includes(w.toLowerCase())) ||
+          matchWords.some(w => matchIndustryWord(content, w)) ||
           goodRealms.has(realm)
         );
 
@@ -242,9 +250,9 @@ app.get('/api/search', async (req, res) => {
       })
       .filter(item => {
         if (!item._hasRegion) return false;
-        // 생활업종: 기술·수출 realm이고 업종 키워드도 없으면 제외
+        // 생활업종: 기술·수출 realm이고 업종 키워드도 없으면 제외 (제목에 단어 경계 매칭 검사)
         if (isLifeIndustry && TECH_REALMS.has(item._realm) &&
-            !matchWords.some(w => (item.pblancNm || '').toLowerCase().includes(w))) return false;
+            !matchWords.some(w => matchIndustryWord((item.pblancNm || '').toLowerCase(), w))) return false;
         return true;
       });
 
