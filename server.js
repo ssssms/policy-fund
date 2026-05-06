@@ -113,9 +113,15 @@ const INDUSTRY_REALMS = {
 };
 
 // 시군구명에서 hashtag용 짧은 이름 추출 (경주시→경주, 해운대구→해운대, 달성군→달성)
+// "구/군" suffix는 결과 길이 2자 이상일 때만 떼기 — 중구·북구·남구·동구·서구 같은
+// 1글자 변환은 "중소기업/중앙행정기관" 같은 합성어와 폭발적 false positive 발생
 function cityToHashtag(city) {
   if (!city) return '';
-  return city.replace(/(특별시|광역시|특별자치시|특별자치도|시|군|구)$/, '');
+  let s = city.replace(/(특별시|광역시|특별자치시|특별자치도|시)$/, '');
+  if (/(구|군)$/.test(s) && s.length >= 3) {
+    s = s.replace(/(구|군)$/, '');
+  }
+  return s;
 }
 
 // 업종 키워드 매칭 — 한국어 합성어 안의 부분 매칭 차단
