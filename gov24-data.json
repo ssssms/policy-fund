@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-06T04:13:20.847Z",
-  "total": 296,
+  "updatedAt": "2026-05-07T04:12:46.954Z",
+  "total": 295,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -2035,38 +2035,6 @@
       "_city": "영광군"
     },
     {
-      "pblancNm": "2025년 영광군 소상공인 경영안정자금 이차보전 지원",
-      "bsnsSumryCn": "이차보전금 지원",
-      "jrsdInsttNm": "전라남도 영광군",
-      "excInsttNm": "일자리경제과",
-      "reqstBeginEndDe": "2025. 5. 1. ~ 2025. 11. 28.",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/497000000127",
-      "pblancId": "GOV24_497000000127",
-      "hashtags": "전라남도,영광군,생활안정,시군구",
-      "pldirSportRealmLclasCodeNm": "생활안정",
-      "trgetNm": "연매출 10억 원 이하 관내 소상공인 중 전남신용보증재단을 통해 신청일(2025. 5. 1.)이후 자금 대출을 받은 자\r\n※ 영광군과 협약 체결된 금융기관을 통해 실행\r\n※ 제외대상\r\n   - 소상공인시장진흥공단 정책자금 융자제외 대상 업종\r\n   - 휴·폐업 신고를 하였거나, 사실상 휴·폐업인 경우\r\n   - 지방세, 세외수입 체납자\r\n   - 당해 연도 정부·지자체 및 공공기관으로부터 정책자금 수혜를 받은 업체\r\n   - 기타 영광군이 정한 제외업종*\r\n    * 태양광·풍력 발전업, 어업, 방문판매업, 전자상거래업, 기타 무등록 점포 등",
-      "_source": "gov24",
-      "_orgType": "시군구",
-      "_region": "전라남도",
-      "_city": "영광군"
-    },
-    {
-      "pblancNm": "2025년 영광군 소상공인 신용보증수수료 지원",
-      "bsnsSumryCn": "신용보증수수료 지원",
-      "jrsdInsttNm": "전라남도 영광군",
-      "excInsttNm": "일자리경제과",
-      "reqstBeginEndDe": "2025. 5. 1. ~ 2025. 11. 28.",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/497000000128",
-      "pblancId": "GOV24_497000000128",
-      "hashtags": "전라남도,영광군,생활안정,시군구",
-      "pldirSportRealmLclasCodeNm": "생활안정",
-      "trgetNm": "연매출 10억 원 이하 관내 소상공인 중 전남신용보증재단을 통해 신청일(2025. 5. 1.)이후 자금 대출을 받은 자\r\n※ 제외대상\r\n   - 소상공인시장진흥공단 정책자금 융자제외 대상 업종\r\n   - 휴·폐업 신고를 하였거나, 사실상 휴·폐업인 경우\r\n   - 지방세, 세외수입 체납자\r\n   - 당해 연도 정부·지자체 및 공공기관으로부터 정책자금 수혜를 받은 업체\r\n   - 기타 영광군이 정한 제외업종*\r\n    * 태양광·풍력 발전업, 어업, 방문판매업, 전자상거래업, 기타 무등록 점포 등",
-      "_source": "gov24",
-      "_orgType": "시군구",
-      "_region": "전라남도",
-      "_city": "영광군"
-    },
-    {
       "pblancNm": "2026년 디지털 소상공인 전환 지원사업",
       "bsnsSumryCn": "스마트기술 기기 도입 시 최대 1백만 원 한도 지원",
       "jrsdInsttNm": "전라남도 영광군",
@@ -3904,6 +3872,22 @@
       "_source": "gov24",
       "_orgType": "지방출자_출연기관",
       "_region": "재단법인경기도",
+      "_city": ""
+    },
+    {
+      "pblancNm": "부천시 중소기업 기술혁신 지원",
+      "bsnsSumryCn": "기술혁신을 위한 R&D 및 기술화 지원, 사업화(마케팅 등) 지원",
+      "jrsdInsttNm": "(재)부천산업진흥원",
+      "excInsttNm": "서비스 관리부서",
+      "reqstBeginEndDe": "2026.04.16~2026.05.07",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/O00049700030",
+      "pblancId": "GOV24_O00049700030",
+      "hashtags": "고용·창업,지방출자_출연기관",
+      "pldirSportRealmLclasCodeNm": "고용·창업",
+      "trgetNm": "부천 소재(본사) 제조 및 지식서비스 분야 중소기업",
+      "_source": "gov24",
+      "_orgType": "지방출자_출연기관",
+      "_region": "",
       "_city": ""
     },
     {
