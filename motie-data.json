@@ -1,20 +1,19 @@
 {
-  "updatedAt": "2026-05-06T14:37:44.655Z",
-  "total": 5,
+  "updatedAt": "2026-05-07T03:51:29.910Z",
+  "total": 9,
   "data": [
     {
       "pblancNm": "「국가첨단전략산업 소재·부품·장비 중소·중견기업 투자지원금 운영 규정」 개정안 행정예고",
-      "bsnsSumryCn": "산업통상부공고 제 2026-319 호 \n\n「 국가첨단전략산업 소재 &middot; 부품 &middot; 장비 중소 &middot; 중견기업 투자지원금 운영 규정 」 에 대한 고시를 개정함에 있어 , 이를 국민에게 미리 알려 의견을 수렴 하고자 그 제정이유와 주요내용을 「 행정절차법 」 제 46 조의 규정에 따라 다음과 같이 공고합니다 . \n\n2026 년 4 월 27 일 \n산업통상부장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "산업공급망정책과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-04-27",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71050/view",
       "pblancId": "MOTIE_71050",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-319"
+      "_source": "motie"
     },
     {
       "pblancNm": "2026년 나프타 수급 안정화 지원사업 공고(수정)",
@@ -69,6 +68,59 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-316"
+    },
+    {
+      "pblancNm": "2026년도 뿌리산업 혁신공정장비 개발사업 신규지원 대상과제 공고(2차)",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71030/view",
+      "pblancId": "MOTIE_71030",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도 신산업 대응 차세대 공통·핵심 뿌리기술개발사업 신규지원 대상과제 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71029/view",
+      "pblancId": "MOTIE_71029",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년 나프타 수급 안정화 지원사업 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-17",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71026/view",
+      "pblancId": "MOTIE_71026",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도 제조암묵지기반AI모델개발사업 신규지원 대상과제 공고(수정)",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-300 호 \n\n2026 년도 제조암묵지기반 AI 모델개발사업 신규지원 대상과제 공고 \n\n2026 년도 제조암묵지기반 AI 모델개발사업 신규 지원대상 연구개발과제 를 다음과 같이 공고하오니 수행 하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 4 월 17 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "인공지능기계로봇과",
+      "reqstBeginEndDe": "2026-04-17",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71021/view",
+      "pblancId": "MOTIE_71021",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-300"
     }
   ]
 }
