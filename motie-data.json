@@ -1,19 +1,20 @@
 {
-  "updatedAt": "2026-05-07T08:45:11.867Z",
-  "total": 3,
+  "updatedAt": "2026-05-07T14:36:51.197Z",
+  "total": 9,
   "data": [
     {
       "pblancNm": "「국가첨단전략산업 소재·부품·장비 중소·중견기업 투자지원금 운영 규정」 개정안 행정예고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부공고 제 2026-319 호 \n\n「 국가첨단전략산업 소재 &middot; 부품 &middot; 장비 중소 &middot; 중견기업 투자지원금 운영 규정 」 에 대한 고시를 개정함에 있어 , 이를 국민에게 미리 알려 의견을 수렴 하고자 그 제정이유와 주요내용을 「 행정절차법 」 제 46 조의 규정에 따라 다음과 같이 공고합니다 . \n\n2026 년 4 월 27 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "산업공급망정책과",
       "reqstBeginEndDe": "2026-04-27",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71050/view",
       "pblancId": "MOTIE_71050",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-319"
     },
     {
       "pblancNm": "2026년 나프타 수급 안정화 지원사업 공고(수정)",
@@ -30,17 +31,97 @@
     },
     {
       "pblancNm": "2026년 2차 요소 수급 안정화 지원사업 공고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026 &ndash; 317 호 \n\n2026 년 2 차 요소 수급 안정화 지원사업 공고 \n\n차량용 요소의 안정적 수급을 위한 「 2026 년 2 차 요소 수급 안정화 지원사업 」 을 \n아래와 같이 공고하오니 많은 참여 바랍니다 . \n\n2026. 4. 22 \n산업통상부장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "화학산업과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-04-22",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71042/view",
       "pblancId": "MOTIE_71042",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도「관세피해업종 이차보전지원」사업 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-311 호 \n\n2026 년도 「 관세피해업종 이차보전지원 」 사업공고 \n\n「 관세피해업종 이차보전 지원사업 운영규정 ( 산업통상부고시 제 2026-18 호 ) 」 ( 이하 \" 운영규정 \" 이라 한다 ) 제 8 조에 따라 2026 년도 관세피해업종 이차보전 지원사업의 지원방식 , 지원대상 및 지원금리 등에 관한 사항을 다음과 같이 공고합니다 . \n2026 년 4 월 22 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "철강세라믹과",
+      "reqstBeginEndDe": "2026-04-22",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71040/view",
+      "pblancId": "MOTIE_71040",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
       "_source": "motie",
-      "pblancNo": "2026-317"
+      "pblancNo": "2026-311"
+    },
+    {
+      "pblancNm": "2026년도 산업통상협력개발지원사업(ODA) 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-316 호 \n\n2026 년도 산업통상협력개발지원사업 (ODA) 공고 \n\n『 2026 년 산업통상 ODA 시행계획 』 에 의거 , 2026 년도 산 업 통상 협력개발지원사업 (ODA, Official Development Assistance) 을 아래와 같이 공고하오니 참여를 원하는 기관은 본 공고문과 첨부 양식 * 에 따라 사 업계획서를 작성하여 신청하여 주시기 바랍니다 . \n\n2026. 4. 21. \n산업통상부장관 \n\n* 첨부 양식은 K-pass(www.k-pass.kr) 내 해당 사업공고 , 한국산업기술진흥원 홈페이지 (http://kiat.or.kr) 알림마당의 해당 \" 사업공고 \" 참조",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "통상협력총괄과",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71031/view",
+      "pblancId": "MOTIE_71031",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-316"
+    },
+    {
+      "pblancNm": "2026년도 뿌리산업 혁신공정장비 개발사업 신규지원 대상과제 공고(2차)",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-299 호 \n\n2026년도 뿌리산업 혁신공정장비 개발사업 신규지원 대상과제 공고(2차) \n\n2026 년도 뿌리산업 혁신공정장비 개발사업 신규 지원대상 연구개발과제 를 다음과 같이 공고하오니 수행 하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 04 월 21 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "산업공급망정책과",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71030/view",
+      "pblancId": "MOTIE_71030",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-299"
+    },
+    {
+      "pblancNm": "2026년도 신산업 대응 차세대 공통·핵심 뿌리기술개발사업 신규지원 대상과제 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71029/view",
+      "pblancId": "MOTIE_71029",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년 나프타 수급 안정화 지원사업 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-17",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71026/view",
+      "pblancId": "MOTIE_71026",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도 제조암묵지기반AI모델개발사업 신규지원 대상과제 공고(수정)",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-17",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71021/view",
+      "pblancId": "MOTIE_71021",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
     }
   ]
 }
