@@ -292,17 +292,17 @@ app.get('/api/search', async (req, res) => {
     }
     processed.forEach(item => { item._isOpen = isOpenNow(item); });
 
-    // 정렬: 접수중(100) > 시군구(40) > 지역특화(20) > 업종(10) > 핵심금융(5) / 노이즈(-30)
+    // 정렬: 접수중(100) > 시군구(40) > 지역특화(20) > 업종(10) > 핵심금융(5) / 기타(-200) / 노이즈(-30)
     processed.sort((a, b) => {
       const jrsdA = ((a.jrsdInsttNm || '') + (a.excInsttNm || '')).toLowerCase();
       const jrsdB = ((b.jrsdInsttNm || '') + (b.excInsttNm || '')).toLowerCase();
       const cityMatch = cityTag.toLowerCase();
       const scoreA = (a._isOpen ? 100 : 0) + (a._hasCity ? 40 : 0) + (a._isRegional ? 20 : 0)
-                   + (a._hasIndustry ? 10 : 0) + (a._finCat ? 5 : 0)
+                   + (a._hasIndustry ? 10 : 0) + (a._finCat ? 5 : -200)
                    + (cityMatch && jrsdA.includes(cityMatch) ? 2 : 0)
                    + (a._isNoise ? -30 : 0);
       const scoreB = (b._isOpen ? 100 : 0) + (b._hasCity ? 40 : 0) + (b._isRegional ? 20 : 0)
-                   + (b._hasIndustry ? 10 : 0) + (b._finCat ? 5 : 0)
+                   + (b._hasIndustry ? 10 : 0) + (b._finCat ? 5 : -200)
                    + (cityMatch && jrsdB.includes(cityMatch) ? 2 : 0)
                    + (b._isNoise ? -30 : 0);
       return scoreB - scoreA;

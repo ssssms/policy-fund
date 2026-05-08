@@ -1995,19 +1995,19 @@
         const jrsdB = ((b.jrsdInsttNm || '') + (b.excInsttNm || '')).toLowerCase();
         const cityMatch = cityTag.toLowerCase();
         // 1순위: 접수 중(+100) > 2순위: 시군구매칭(+40) > 3순위: 지역특화(+20) >
-        // 4순위: 업종매칭(+10) > 5순위: 핵심금융 보너스(+5) / 노이즈 패널티(-30)
+        // 4순위: 업종매칭(+10) > 5순위: 핵심금융 보너스(+5) / 기타 패널티(-200) / 노이즈 패널티(-30)
         const scoreA = (a._isOpen ? 100 : 0)
                      + (a._hasCity ? 40 : 0)
                      + (a._isRegional ? 20 : 0)
                      + (a._hasIndustry ? 10 : 0)
-                     + (a._finCat ? 5 : 0)
+                     + (a._finCat ? 5 : -200)
                      + (cityMatch && jrsdA.includes(cityMatch) ? 2 : 0)
                      + (a._isNoise ? -30 : 0);
         const scoreB = (b._isOpen ? 100 : 0)
                      + (b._hasCity ? 40 : 0)
                      + (b._isRegional ? 20 : 0)
                      + (b._hasIndustry ? 10 : 0)
-                     + (b._finCat ? 5 : 0)
+                     + (b._finCat ? 5 : -200)
                      + (cityMatch && jrsdB.includes(cityMatch) ? 2 : 0)
                      + (b._isNoise ? -30 : 0);
         return scoreB - scoreA;
@@ -2099,10 +2099,10 @@
             const jrsdB = ((b.jrsdInsttNm || '') + (b.excInsttNm || '')).toLowerCase();
             const cityMatch = cityTag.toLowerCase();
             const scoreA = (a._isOpen ? 100 : 0) + (a._hasCity ? 40 : 0) + (a._isRegional ? 20 : 0)
-                         + (a._hasIndustry ? 10 : 0) + (a._finCat ? 5 : 0)
+                         + (a._hasIndustry ? 10 : 0) + (a._finCat ? 5 : -200)
                          + (cityMatch && jrsdA.includes(cityMatch) ? 2 : 0) + (a._isNoise ? -30 : 0);
             const scoreB = (b._isOpen ? 100 : 0) + (b._hasCity ? 40 : 0) + (b._isRegional ? 20 : 0)
-                         + (b._hasIndustry ? 10 : 0) + (b._finCat ? 5 : 0)
+                         + (b._hasIndustry ? 10 : 0) + (b._finCat ? 5 : -200)
                          + (cityMatch && jrsdB.includes(cityMatch) ? 2 : 0) + (b._isNoise ? -30 : 0);
             return scoreB - scoreA;
           });
