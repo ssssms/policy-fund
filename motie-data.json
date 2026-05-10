@@ -1,19 +1,20 @@
 {
-  "updatedAt": "2026-05-10T08:20:05.906Z",
-  "total": 5,
+  "updatedAt": "2026-05-10T13:46:31.575Z",
+  "total": 9,
   "data": [
     {
       "pblancNm": "2026년 스마트그린산업단지 지원사업 통합 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-328 호 \n\n2026년 스마트그린산업단지 지원사업 통합 공모 \n\n산업단지를 디지털화 , 무탄소화 , 에너지 자립화하여 경쟁력 있고 환경친화적인 제조공간으로 전환하기 위해 「 2026 년 스마트그린산업단지 지원사업 통합 공모 」 를 다음과 같이 공고합니다 . 관심 있는 지자체 , 공공기관 , 민간기업 등의 적극적인 참여를 바라며 , 신청 전 반드시 사업별 상세공고 내용을 확인하시기 바랍니다 . \n2026. 4. 29. \n산업통상부 장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "입지총괄과",
       "reqstBeginEndDe": "2026-04-29",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71053/view",
       "pblancId": "MOTIE_71053",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-328"
     },
     {
       "pblancNm": "「국가첨단전략산업 소재·부품·장비 중소·중견기업 투자지원금 운영 규정」 개정안 행정예고",
@@ -43,16 +44,17 @@
     },
     {
       "pblancNm": "2026년 2차 요소 수급 안정화 지원사업 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026 &ndash; 317 호 \n\n2026 년 2 차 요소 수급 안정화 지원사업 공고 \n\n차량용 요소의 안정적 수급을 위한 「 2026 년 2 차 요소 수급 안정화 지원사업 」 을 \n아래와 같이 공고하오니 많은 참여 바랍니다 . \n\n2026. 4. 22 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "화학산업과",
       "reqstBeginEndDe": "2026-04-22",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71042/view",
       "pblancId": "MOTIE_71042",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-317"
     },
     {
       "pblancNm": "2026년도「관세피해업종 이차보전지원」사업 공고",
@@ -67,6 +69,59 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-311"
+    },
+    {
+      "pblancNm": "2026년도 산업통상협력개발지원사업(ODA) 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-316 호 \n\n2026 년도 산업통상협력개발지원사업 (ODA) 공고 \n\n『 2026 년 산업통상 ODA 시행계획 』 에 의거 , 2026 년도 산 업 통상 협력개발지원사업 (ODA, Official Development Assistance) 을 아래와 같이 공고하오니 참여를 원하는 기관은 본 공고문과 첨부 양식 * 에 따라 사 업계획서를 작성하여 신청하여 주시기 바랍니다 . \n\n2026. 4. 21. \n산업통상부장관 \n\n* 첨부 양식은 K-pass(www.k-pass.kr) 내 해당 사업공고 , 한국산업기술진흥원 홈페이지 (http://kiat.or.kr) 알림마당의 해당 \" 사업공고 \" 참조",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "통상협력총괄과",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71031/view",
+      "pblancId": "MOTIE_71031",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-316"
+    },
+    {
+      "pblancNm": "2026년도 뿌리산업 혁신공정장비 개발사업 신규지원 대상과제 공고(2차)",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71030/view",
+      "pblancId": "MOTIE_71030",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도 신산업 대응 차세대 공통·핵심 뿌리기술개발사업 신규지원 대상과제 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71029/view",
+      "pblancId": "MOTIE_71029",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년 나프타 수급 안정화 지원사업 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-17",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71026/view",
+      "pblancId": "MOTIE_71026",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
     }
   ]
 }
