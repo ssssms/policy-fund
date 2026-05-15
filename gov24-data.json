@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-14T04:28:37.414Z",
+  "updatedAt": "2026-05-15T04:34:59.669Z",
   "total": 295,
   "data": [
     {
@@ -2516,7 +2516,7 @@
     },
     {
       "pblancNm": "소상공인 청년창업원스텝",
-      "bsnsSumryCn": "청년 예비창업자 단계별 창업 지원",
+      "bsnsSumryCn": "청년 예비창업자·초기창업자 대상 단계별 창업 지원",
       "jrsdInsttNm": "경기도",
       "excInsttNm": "소상공인과",
       "reqstBeginEndDe": "접수기관 별 상이",
@@ -2524,7 +2524,7 @@
       "pblancId": "GOV24_641000000699",
       "hashtags": "경기도,고용·창업,광역시도",
       "pldirSportRealmLclasCodeNm": "고용·창업",
-      "trgetNm": "道내 창업 희망 청년(만 39세 이하)",
+      "trgetNm": "도내 19세~39세 예비창업자·초기창업자",
       "_source": "gov24",
       "_orgType": "광역시도",
       "_region": "경기도",
