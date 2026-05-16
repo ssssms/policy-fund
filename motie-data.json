@@ -1,33 +1,73 @@
 {
-  "updatedAt": "2026-05-16T03:49:23.088Z",
-  "total": 8,
+  "updatedAt": "2026-05-16T08:14:45.532Z",
+  "total": 9,
   "data": [
     {
-      "pblancNm": "2026년도 기계장비산업기술개발사업(AI팩토리, 기계) 신규지원 대상과제 공고",
+      "pblancNm": "2026년 중동피해 긴급지원 지사화사업 참여기업 모집 공고(수정공고)",
       "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
       "excInsttNm": "",
-      "reqstBeginEndDe": "2026-04-30",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71062/view",
-      "pblancId": "MOTIE_71062",
+      "reqstBeginEndDe": "2026-05-04",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71067/view",
+      "pblancId": "MOTIE_71067",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
       "_source": "motie"
     },
     {
-      "pblancNm": "2026년도 산업용무기‧유기화합물제형물성예측AI파운데이션모델개발사업 신규지원 대상과제 공고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026-339 호 \n\n2026 년도 산업용무기 ‧ 유기화합물제형물성예측 AI 파운데이션모델개발사업 신규지원 대상과제 공고 \n\n2026 년도 산업용무기 &middot; 유기화합물제형물성예측 AI 파운데이션모델개발사업 신규 지원대상 연 구개발과제 를 다음과 같이 공고하오니 수행 하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 04 월 30 일 \n산업통상부장관",
+      "pblancNm": "2026년도 산업통상협력개발지원(ODA) 사전타당성조사 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-04-30",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71064/view",
+      "pblancId": "MOTIE_71064",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도 열공정특화제조AI파운데이션모델개발사업 신규지원 대상과제 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-340 호 \n\n2026 년도 열공정특화제조 AI 파운데이션모델개발사업 신규지원 대상과제 공고 \n\n2026 년도 열공정특화제조 AI 파운데이션모델개발사업 신규 지원대상 연구개발과제 를 다음 과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 04 월 30 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
       "excInsttNm": "인공지능기계로봇과",
+      "reqstBeginEndDe": "2026-04-30",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71063/view",
+      "pblancId": "MOTIE_71063",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-340"
+    },
+    {
+      "pblancNm": "2026년도 기계장비산업기술개발사업(AI팩토리, 기계) 신규지원 대상과제 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-338 호 \n\n2026 년도 기계장비산업기술개발사업 신규지원 대상과제 공고 \n\n2026 년도 기계장비산업기술개발사업 신규 지원대상 연구개발과제 를 다음과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 04 월 30 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "인공지능기계로봇과",
+      "reqstBeginEndDe": "2026-04-30",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71062/view",
+      "pblancId": "MOTIE_71062",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-338"
+    },
+    {
+      "pblancNm": "2026년도 산업용무기‧유기화합물제형물성예측AI파운데이션모델개발사업 신규지원 대상과제 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-04-30",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71061/view",
       "pblancId": "MOTIE_71061",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-339"
+      "_source": "motie"
     },
     {
       "pblancNm": "2026년도 수요맞춤형산업별배터리소재및셀기술개발 사업 신규 지원대상 연구개발과제 재공고",
@@ -56,34 +96,6 @@
       "_source": "motie"
     },
     {
-      "pblancNm": "「국가첨단전략산업 소재·부품·장비 중소·중견기업 투자지원금 운영 규정」 개정안 행정예고",
-      "bsnsSumryCn": "산업통상부공고 제 2026-319 호 \n\n「 국가첨단전략산업 소재 &middot; 부품 &middot; 장비 중소 &middot; 중견기업 투자지원금 운영 규정 」 에 대한 고시를 개정함에 있어 , 이를 국민에게 미리 알려 의견을 수렴 하고자 그 제정이유와 주요내용을 「 행정절차법 」 제 46 조의 규정에 따라 다음과 같이 공고합니다 . \n\n2026 년 4 월 27 일 \n산업통상부장관",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "산업공급망정책과",
-      "reqstBeginEndDe": "2026-04-27",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71050/view",
-      "pblancId": "MOTIE_71050",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-319"
-    },
-    {
-      "pblancNm": "2026년 나프타 수급 안정화 지원사업 공고(수정)",
-      "bsnsSumryCn": "산업통상부 공고 제 2026 &ndash; 323 호 \n\n2026 년 나프타 수급 안정화 지원사업 공고 \n\n나프타의 긴급 수입을 촉진하기 위한 「 2026 년 나프타 수급 안정화 지원사업 」 을 아래와 같이 공고하오니 많은 참여 바랍니다 . \n\n2026. 4. 24 \n산업통상부장관",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "화학산업과",
-      "reqstBeginEndDe": "2026-04-24",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71049/view",
-      "pblancId": "MOTIE_71049",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-323"
-    },
-    {
       "pblancNm": "2026년 2차 요소 수급 안정화 지원사업 공고",
       "bsnsSumryCn": "산업통상부 공고 제 2026 &ndash; 317 호 \n\n2026 년 2 차 요소 수급 안정화 지원사업 공고 \n\n차량용 요소의 안정적 수급을 위한 「 2026 년 2 차 요소 수급 안정화 지원사업 」 을 \n아래와 같이 공고하오니 많은 참여 바랍니다 . \n\n2026. 4. 22 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
@@ -99,16 +111,17 @@
     },
     {
       "pblancNm": "2026년도「관세피해업종 이차보전지원」사업 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-311 호 \n\n2026 년도 「 관세피해업종 이차보전지원 」 사업공고 \n\n「 관세피해업종 이차보전 지원사업 운영규정 ( 산업통상부고시 제 2026-18 호 ) 」 ( 이하 \" 운영규정 \" 이라 한다 ) 제 8 조에 따라 2026 년도 관세피해업종 이차보전 지원사업의 지원방식 , 지원대상 및 지원금리 등에 관한 사항을 다음과 같이 공고합니다 . \n2026 년 4 월 22 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "철강세라믹과",
       "reqstBeginEndDe": "2026-04-22",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71040/view",
       "pblancId": "MOTIE_71040",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-311"
     }
   ]
 }
