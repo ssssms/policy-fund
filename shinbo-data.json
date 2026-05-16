@@ -1,24 +1,11 @@
 {
-  "updatedAt": "2026-05-15T04:47:12.777Z",
-  "total": 114,
+  "updatedAt": "2026-05-16T04:30:53.975Z",
+  "total": 112,
   "regions": {
-    "대구": 47,
+    "대구": 45,
     "경북": 67
   },
   "data": [
-    {
-      "pblancNm": "재해특례보증",
-      "bsnsSumryCn": "목적: 재해피해기업 지원 / 대상: 재해 피해를 입은 기업 중 지자체로부터 \"재해중소기업확인증\" 또는 \"피해사실 확인서\"를 발급받은 기업 / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=1",
-      "pblancId": "SHINBO_대구_1",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "재해 피해를 입은 기업 중 지자체로부터 \"재해중소기업확인증\" 또는 \"피해사실 확인서\"를 발급받은 기업",
-      "_source": "shinbo"
-    },
     {
       "pblancNm": "보증부 서민대출 협약보증(햇살론)",
       "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
@@ -264,19 +251,6 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "Track1. (창업환경 활성화 지원)-당재단 잔액 없는 업체 창업기업(6개월 이내)Track2.(서민물가 안정화를 위한 모범업소 지원)-백년가게, 착한가격 업소 또는 장수기업(업력 10년 이상)Track3.(민생경제지원)-업력 6개월 초과",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "운송업종 특별보증",
-      "bsnsSumryCn": "목적: 운송업종 영위 기업 우대 / 대상: 도로 화물 운송업(택시 운송업, 개인화물자동차 운송업, 일반 화물자동차 운송업, 건설장비 운영업, 전세버스 운송업) 영위 기업 / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=21",
-      "pblancId": "SHINBO_대구_21",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "도로 화물 운송업(택시 운송업, 개인화물자동차 운송업, 일반 화물자동차 운송업, 건설장비 운영업, 전세버스 운송업) 영위 기업",
       "_source": "shinbo"
     },
     {
