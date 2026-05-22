@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-05-21T05:13:23.077Z",
-  "total": 111,
+  "updatedAt": "2026-05-22T04:59:44.706Z",
+  "total": 114,
   "regions": {
-    "대구": 44,
+    "대구": 47,
     "경북": 67
   },
   "data": [
@@ -30,6 +30,45 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "햇살론 플러스",
+      "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=3",
+      "pblancId": "SHINBO_대구_3",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "장애인기업 특례보증",
+      "bsnsSumryCn": "목적: 장애인기업 지원 / 대상: 장애인기업 / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=4",
+      "pblancId": "SHINBO_대구_4",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "장애인기업",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "유망 예비창업자 사전보증",
+      "bsnsSumryCn": "목적: 창업 초기 사업정착 지원을 위한 보증지원 예상액 안내로 준비된 창업 유도 / 대상: 보증지원 예정 통지일로부터 6개월 이내 사업자등록증을 제출하고 창업할 예정인 유망 예비 창업자(대표자 개인신용평점이 NICE 기준 755점 또는 KCB 670점 이상)*유망 예비창업자 : 향후 사업자등록을 완료하여 실질적으로 창업하려는 예비창업기업의 대표자로서 창업교육, 컨설팅 이수자(1년 이내 교육시간이 10시간 이상이거나 컨설팅 횟수 2회 이상 방문 또는 컨설팅 시간 10시간 이상) 또는 최근 2년 이내 등록된 지식재산권을 사업화 하려는 예비 창업자 / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=5",
+      "pblancId": "SHINBO_대구_5",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "보증지원 예정 통지일로부터 6개월 이내 사업자등록증을 제출하고 창업할 예정인 유망 예비 창업자(대표자 개인신용평점이 NICE 기준 755점 또는 KCB 670점 이상)*유망 예비창업자 : 향후 사업자등록을 완료하여 실질적으로 창업하려는 예비창업기업의 대표자로서 창업교육, 컨설팅 이수자(1년 이내 교육시간이 10시간 이상이거나 컨설팅 횟수 2회 이상 방문 또는 컨설팅 시간 10시간 이상) 또는 최근 2년 이내 등록된 지식재산권을 사업화 하려는 예비 창업자",
       "_source": "shinbo"
     },
     {
