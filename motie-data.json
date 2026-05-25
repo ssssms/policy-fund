@@ -1,7 +1,33 @@
 {
-  "updatedAt": "2026-05-25T10:25:02.765Z",
+  "updatedAt": "2026-05-25T15:23:49.614Z",
   "total": 9,
   "data": [
+    {
+      "pblancNm": "산업 디지털 전환 협업지원센터 추가 지정 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-05-19",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71094/view",
+      "pblancId": "MOTIE_71094",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년 「국가첨단전략산업 소부장 중소·중견기업 투자지원금」사업시행 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-05-18",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71086/view",
+      "pblancId": "MOTIE_71086",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
     {
       "pblancNm": "지방자치단체의 국내복귀기업 유치에 대한 국가의 재정자금 지원기준 일부개정안 행정예고 공고",
       "bsnsSumryCn": "",
@@ -17,43 +43,17 @@
     },
     {
       "pblancNm": "해외진출기업의 국내복귀 지원에 관한 고시 일부개정안 행정예고 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-359 호 \n\n「 해외진출기업의 국내복귀 지원에 관한 고시 」 ( 산업 통 상부고시 제 2025-7 호 (2025.10.22.) 를 일부 개정함에 있어 그 개정 내용과 취지를 국민께 미리 알려 의견을 듣고자 ｢ 행정절차법 ｣ 제 46 조에 따라 다음과 같이 공고합니다 . \n\n2026 년 5 월 14 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "해외투자과",
       "reqstBeginEndDe": "2026-05-18",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71084/view",
       "pblancId": "MOTIE_71084",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년도 뿌리산업 혁신공정장비 개발사업 신규지원 대상과제 공고(3차)",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-05-12",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71075/view",
-      "pblancId": "MOTIE_71075",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년 중동피해 긴급지원 지사화사업 참여기업 모집 공고(수정공고)",
-      "bsnsSumryCn": "산업통상부 공고 제 2026-343 호 \n\n2026 년 중동피해 긴급지원 지사화사업 참여기업 모집 공고(수정공고) \n\n중동 수출 국내 중소 &middot; 중견 기업의 현지 비즈니스 애로를 해소하고 대체 시장 발굴을 지원하기 위하여 공공기관의 해외 네트워크를 현지 비즈니스 거점으로 활용하는 해외지사화사업 참여기업 모집계획을 다음과 같이 공고합니다 . \n\n2026 년 5 월 4 일 \n산업통상부 장관",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "무역진흥과",
-      "reqstBeginEndDe": "2026-05-04",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71067/view",
-      "pblancId": "MOTIE_71067",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
       "_source": "motie",
-      "pblancNo": "2026-343"
+      "pblancNo": "2026-359"
     },
     {
       "pblancNm": "2026년도 산업통상협력개발지원(ODA) 사전타당성조사 공고",
@@ -71,29 +71,31 @@
     },
     {
       "pblancNm": "2026년도 열공정특화제조AI파운데이션모델개발사업 신규지원 대상과제 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-340 호 \n\n2026 년도 열공정특화제조 AI 파운데이션모델개발사업 신규지원 대상과제 공고 \n\n2026 년도 열공정특화제조 AI 파운데이션모델개발사업 신규 지원대상 연구개발과제 를 다음 과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 04 월 30 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "인공지능기계로봇과",
       "reqstBeginEndDe": "2026-04-30",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71063/view",
       "pblancId": "MOTIE_71063",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-340"
     },
     {
       "pblancNm": "2026년도 기계장비산업기술개발사업(AI팩토리, 기계) 신규지원 대상과제 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-338 호 \n\n2026 년도 기계장비산업기술개발사업 신규지원 대상과제 공고 \n\n2026 년도 기계장비산업기술개발사업 신규 지원대상 연구개발과제 를 다음과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 04 월 30 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "인공지능기계로봇과",
       "reqstBeginEndDe": "2026-04-30",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71062/view",
       "pblancId": "MOTIE_71062",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-338"
     },
     {
       "pblancNm": "2026년도 산업용무기‧유기화합물제형물성예측AI파운데이션모델개발사업 신규지원 대상과제 공고",
@@ -110,17 +112,16 @@
     },
     {
       "pblancNm": "2026년도 수요맞춤형산업별배터리소재및셀기술개발 사업 신규 지원대상 연구개발과제 재공고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026-332 호 \n\n2026 년도 수요맞춤형산업별배터리소재및셀기술개발 사업 \n신규 지원대상 연구개발과제 재공고 \n\n수요맞춤형 산업별 배터리 소재 및 셀 기술개발 내 과제 1 건에 대해 재공고함 . 접수 마감일 이후 최초 공고 (2026 년 1 월 30 일 공고 ) 와 동일한 평가 항목 및 평가 절차에 따라 평가 진행 \n\n2026 년도 배터리 및 전기전자 분야 신규 지원대상 연구개발과제 를 다음과 같이 재공고하오니 수행 하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 4 월 30 일 \n산업통상부장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "배터리전기전자과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-04-30",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71058/view",
       "pblancId": "MOTIE_71058",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-332"
+      "_source": "motie"
     }
   ]
 }
