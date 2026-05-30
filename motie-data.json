@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-30T04:04:59.432Z",
-  "total": 6,
+  "updatedAt": "2026-05-30T08:36:55.116Z",
+  "total": 5,
   "data": [
     {
       "pblancNm": "2026년도 첨단소재공정고도화 및 기술역량확보기술개발사업 신규지원 대상과제 공고",
@@ -44,16 +44,17 @@
     },
     {
       "pblancNm": "지방자치단체의 국내복귀기업 유치에 대한 국가의 재정자금 지원기준 일부개정안 행정예고 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-358 호 \n\n「 지방자치단체의 국내복귀기업 유치에 대한 국가의 재정자금 지원기준 」 ( 산업 통 상부고시 제 2025-6 호 (2025.10.22.) 를 일부 개정함에 있어 그 개정 내용과 취지를 국민께 미리 알려 의견을 듣고자 ｢ 행정절차법 ｣ 제 46 조에 따라 다음과 같이 공고합니다 . \n\n2026 년 5 월 14 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "해외투자과",
       "reqstBeginEndDe": "2026-05-18",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71085/view",
       "pblancId": "MOTIE_71085",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-358"
     },
     {
       "pblancNm": "해외진출기업의 국내복귀 지원에 관한 고시 일부개정안 행정예고 공고",
@@ -68,19 +69,6 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-359"
-    },
-    {
-      "pblancNm": "2026년도 뿌리산업 혁신공정장비 개발사업 신규지원 대상과제 공고(3차)",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-05-12",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71075/view",
-      "pblancId": "MOTIE_71075",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie"
     }
   ]
 }
