@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-08T11:12:27.159Z",
+  "updatedAt": "2026-06-08T16:09:56.847Z",
   "total": 9,
   "data": [
     {
@@ -86,16 +86,17 @@
     },
     {
       "pblancNm": "2026년도 제2차 산업기술R&amp;D연구기획사업 신규지원 대상과제 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "2026 년도 제 2 차 산업기술 R&D 연구기획사업 신규지원 대상과제 공고 \n\n산업기술 R&D 연구기획사업의 2026 년도 제 2 차 신규지원 대상과제를 다음과 같이 공고하오니 동 사업에 참여를 희망하는 기관 ( 기업 ) 에서는 신청하여 주시기 바랍 니다 . \n\n2026 년 5 월 22 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "산업기술시장과",
       "reqstBeginEndDe": "2026-05-22",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71102/view",
       "pblancId": "MOTIE_71102",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-373"
     },
     {
       "pblancNm": "2026년도 첨단소재공정고도화 및 기술역량확보기술개발사업 신규지원 대상과제 공고",
@@ -112,17 +113,16 @@
     },
     {
       "pblancNm": "산업 디지털 전환 협업지원센터 추가 지정 공고",
-      "bsnsSumryCn": "산업통상자원부 공고 제 2026-370 호 \n\n산업 디지털 전환 협업지원센터 추가 지정 공고 \n\n산업 디지털 전환 촉진법 제 19 조 ( 산업 디지털 전환 협업지원센터 ) 등에 따라 산업 디지털 전환 협업지원센터로 광주테크노파크를 추가 지정함을 붙임과 같이 공고합니다 . \n\n2026 년 5 월 19 일 \n산업통상부 장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "산업인공지능정책과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-05-19",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71094/view",
       "pblancId": "MOTIE_71094",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-370"
+      "_source": "motie"
     }
   ]
 }
