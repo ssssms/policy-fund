@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-06-09T05:07:18.505Z",
-  "total": 113,
+  "updatedAt": "2026-06-10T05:13:00.982Z",
+  "total": 114,
   "regions": {
-    "대구": 46,
+    "대구": 47,
     "경북": 67
   },
   "data": [
@@ -173,6 +173,19 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "전통시장 및 상점가에 소재한 기업",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "녹색기업 지원 특례보증",
+      "bsnsSumryCn": "목적: ESG 가치 실천기업 육성 / 대상: 1.녹색확인기업 녹색인증기업, 녹색제품인증기업, ESG경영인증기업 2. ESG경영 실천 기업 고용유지및창출기업, 장애인 고용기업, 가족친화인증기업, 지역사회공헌 인증기업, ESG교육 수료기업, 리사이클링 영위기업 / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=14",
+      "pblancId": "SHINBO_대구_14",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "1.녹색확인기업 녹색인증기업, 녹색제품인증기업, ESG경영인증기업 2. ESG경영 실천 기업 고용유지및창출기업, 장애인 고용기업, 가족친화인증기업, 지역사회공헌 인증기업, ESG교육 수료기업, 리사이클링 영위기업",
       "_source": "shinbo"
     },
     {
