@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T05:41:40.940Z",
+  "updatedAt": "2026-06-23T04:41:05.851Z",
   "total": 295,
   "data": [
     {
@@ -3223,12 +3223,12 @@
       "bsnsSumryCn": "지역 자원에 혁신적인 아이디어를 접목하여 사업을 운영하는 소상공인의 사업화자금 지원",
       "jrsdInsttNm": "소상공인시장진흥공단",
       "excInsttNm": "로컬크리에이터육성TF",
-      "reqstBeginEndDe": "2024.02.16~2024.03.08",
+      "reqstBeginEndDe": "2026.04.01~2026.05.06",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/B55307700023",
       "pblancId": "GOV24_B55307700023",
       "hashtags": "고용·창업,공공기관",
       "pldirSportRealmLclasCodeNm": "고용·창업",
-      "trgetNm": "○ 로컬크리에이터(개인) 육성 사업 : 로컬크리에이터 정의 및 요건을 충족하는 소상공인\r\n○ 로컬크리에이터(협업) 육성 사업 : 로컬크리에이터 정의에 해당하는 소상공인 등 2개사 이상으로 구성된 협업팀\r\n\r\n* 소상공인 :  소상공인기본법 제2조에 따른 소상공인\r\n* 로컬크리에이터 정의 : 지역의 자연 및 문화 특성과 아이디어를 결합해 사업적가치를 창출하는 기업",
+      "trgetNm": "로컬기업 정의 및 요건을 충족하는 소상공인\r\n\r\n* 소상공인 :  소상공인기본법 제2조에 따른 소상공인\r\n* 로컬기업 정의 : 지역의 자연 및 문화 특성과 아이디어를 결합해 사업적 가치를 창출하는 기업",
       "_source": "gov24",
       "_orgType": "공공기관",
       "_region": "",
@@ -3671,7 +3671,7 @@
       "bsnsSumryCn": "중소벤처기업 보유 매출채권의 조기유동화를 지원 또는 조기 생산자금을 지원하여 성장을 촉진",
       "jrsdInsttNm": "중소벤처기업진흥공단",
       "excInsttNm": "지역혁신사업처",
-      "reqstBeginEndDe": "25년 1월 9일 접수~ 예산소진시까지",
+      "reqstBeginEndDe": "26년 1월 16일 접수~ 예산소진시까지",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/B55400900040",
       "pblancId": "GOV24_B55400900040",
       "hashtags": "고용·창업,공공기관",
