@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-13T09:40:50.377Z",
-  "total": 3,
+  "updatedAt": "2026-07-13T14:51:25.929Z",
+  "total": 4,
   "data": [
     {
       "pblancNm": "2026년 수출지원기반활용사업(긴급지원바우처 4차) 참여기업 모집공고",
@@ -32,12 +32,26 @@
     },
     {
       "pblancNm": "2026년도「신뢰성기반활용지원사업」수시형(2차) 참여기업 모집 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부공고 제 2026-478 호 \n2026 년도 「 신뢰성기반활용지원사업 」 수시형 (2 차 ) \n참여기업 모집 안내 \n\n2026 년도 ｢ 신뢰성기반활용지원사업 ｣ 의 수시형 (2 차 ) 참여기업 모집을 다음과 같이 안내하오니 , 사업에 참여하고자 하는 기업은 아래의 절차에 따라 신청하여 주시기 바랍니다 . \n2026 년 7 월 6 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "소재부품장비개발과",
       "reqstBeginEndDe": "2026-07-06",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71197/view",
       "pblancId": "MOTIE_71197",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-478"
+    },
+    {
+      "pblancNm": "2026년 산업혁신인재성장지원(해외연계)  - 최고급 해외인재유치 지원사업 시행계획 추가 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-06-30",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71186/view",
+      "pblancId": "MOTIE_71186",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
