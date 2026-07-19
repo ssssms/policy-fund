@@ -1535,17 +1535,24 @@
         body: JSON.stringify({ businessNumber: biz })
       });
       const json = await res.json();
-      if (!json.success) { showBizStatus('조회 실패: ' + json.error, 'error'); return; }
-      const d = json.data?.data?.[0];
-      if (!d) { showBizStatus('조회 결과 없음', 'warn'); return; }
-      const statusMap = { '01': ['계속사업자', 'ok'], '02': ['휴업자', 'warn'], '03': ['폐업자', 'error'] };
-      const [label, type] = statusMap[d.b_stt_cd] || [d.b_stt, 'info'];
       const estimatedRegion = detectRegionFromBizNo(biz);
       const regionText = estimatedRegion ? ` · 추정 소재지: ${estimatedRegion}` : '';
+      // 국세청 API 실패 시에도 지역 자동감지는 유효하므로 흐름을 막지 않고 안내만 표시
+      if (!json.success) { bizStatusFallback(estimatedRegion); return; }
+      const d = json.data?.data?.[0];
+      if (!d) { bizStatusFallback(estimatedRegion); return; }
+      const statusMap = { '01': ['계속사업자', 'ok'], '02': ['휴업자', 'warn'], '03': ['폐업자', 'error'] };
+      const [label, type] = statusMap[d.b_stt_cd] || [d.b_stt, 'info'];
       showBizStatus(`${label} · ${d.tax_type || ''}${regionText}`, type);
     } catch (e) {
-      showBizStatus('조회 오류: ' + e.message, 'error');
+      bizStatusFallback(detectRegionFromBizNo(biz));
     }
+  }
+
+  // 국세청 상태조회 실패 시 부드러운 안내 (지역감지 완료 강조, 다음 단계 진행 가능)
+  function bizStatusFallback(region) {
+    const regionText = region ? ` · 추정 소재지: ${region}` : '';
+    showBizStatus(`지역 자동감지 완료${regionText} · 상태조회는 잠시 후 재시도 가능 (다음 단계 진행 가능)`, 'info');
   }
 
   function showBizStatus(msg, type) {

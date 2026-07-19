@@ -579,21 +579,26 @@ app.post('/api/business-status', async (req, res) => {
     return res.status(400).json({ success: false, error: '사업자번호 10자리를 입력하세요.' });
   }
 
-  try {
-    const url = `https://api.odcloud.kr/api/nts-businessman/v1/status?serviceKey=${encodeURIComponent(NTS_API_KEY)}`;
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', accept: 'application/json' },
-      body: JSON.stringify({ b_no: [bNo] }),
-      timeout: 8000
-    });
-    if (!response.ok) throw new Error(`국세청 API HTTP ${response.status}`);
-    const data = await response.json();
-    res.json({ success: true, data });
-  } catch (err) {
-    console.error('[국세청 오류]', err.message);
-    res.status(500).json({ success: false, error: err.message });
+  const url = `https://api.odcloud.kr/api/nts-businessman/v1/status?serviceKey=${encodeURIComponent(NTS_API_KEY)}`;
+  // 국세청 odcloud API가 간헐적으로 500/타임아웃을 내므로 최대 2회 시도(타임아웃 12s)
+  let lastErr;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', accept: 'application/json' },
+        body: JSON.stringify({ b_no: [bNo] }),
+        timeout: 12000
+      });
+      if (!response.ok) throw new Error(`국세청 API HTTP ${response.status}`);
+      const data = await response.json();
+      return res.json({ success: true, data });
+    } catch (err) {
+      lastErr = err;
+      console.error(`[국세청 오류] 시도 ${attempt}/2:`, err.message);
+    }
   }
+  res.status(500).json({ success: false, error: lastErr ? lastErr.message : '국세청 API 조회 실패' });
 });
 
 app.listen(PORT, () => {
