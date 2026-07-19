@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-18T03:51:53.907Z",
-  "total": 114,
+  "updatedAt": "2026-07-19T04:23:57.578Z",
+  "total": 111,
   "regions": {
-    "대구": 47,
+    "대구": 44,
     "경북": 67
   },
   "data": [
@@ -27,19 +27,6 @@
       "reqstBeginEndDe": "상시",
       "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=2",
       "pblancId": "SHINBO_대구_2",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "햇살론 플러스",
-      "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 대출한도 - 2천만원 이내 이자지원 - 지원없음 보증료율 - 0.80%",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=3",
-      "pblancId": "SHINBO_대구_3",
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
@@ -72,19 +59,6 @@
       "_source": "shinbo"
     },
     {
-      "pblancNm": "브릿지보증",
-      "bsnsSumryCn": "목적: 폐업기업 재기지원 / 대상: 개인신용평점 하위 95%이거나 연간소득 8천만원 이하인 재단 보증을 이용중인 폐업기업 / 조건: 대출한도 - 전차보증 여신잔액 범위 내 이자지원 - 지원없음 보증료율 - 0.90%",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=6",
-      "pblancId": "SHINBO_대구_6",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "개인신용평점 하위 95%이거나 연간소득 8천만원 이하인 재단 보증을 이용중인 폐업기업",
-      "_source": "shinbo"
-    },
-    {
       "pblancNm": "재창업 특례보증",
       "bsnsSumryCn": "목적: 재창업기업의 창업자금 지원 / 대상: 개인신용평점 595점 이상인 기업 중 어느 하나에 해당하는 기업 1.폐업 후 재창업 또는 휴업 후 영업을 재개한 기업 2.업종을 전환 기업 / 조건: 대출한도 - 1억원 이내 이자지원 - 지원없음 보증료율 - 0.50%",
       "jrsdInsttNm": "대구신용보증재단",
@@ -95,19 +69,6 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "개인신용평점 595점 이상인 기업 중 어느 하나에 해당하는 기업 1.폐업 후 재창업 또는 휴업 후 영업을 재개한 기업 2.업종을 전환 기업",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "미래성과연동 특례보증",
-      "bsnsSumryCn": "목적: 성장단계별 우대자금 지원 / 대상: 1. 소상공인 졸업후보기업으로 아래 2가지 모두 충족 -소상공인 상시근로자 기준에 1~2명 적은 기업 -업종별 소기업 매출액 기준의 30% 이상 달성한 기업 2. 재단의 '미래 성장성 평가표'에 의해 인정받은 기업 / 조건: 대출한도 - 같은기업당 보증금액 8억원 이내단계별 상이) 이자지원 - 지원없음 보증료율 - 0.80%",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=8",
-      "pblancId": "SHINBO_대구_8",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "1. 소상공인 졸업후보기업으로 아래 2가지 모두 충족 -소상공인 상시근로자 기준에 1~2명 적은 기업 -업종별 소기업 매출액 기준의 30% 이상 달성한 기업 2. 재단의 '미래 성장성 평가표'에 의해 인정받은 기업",
       "_source": "shinbo"
     },
     {
