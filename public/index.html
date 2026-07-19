@@ -2219,6 +2219,23 @@
     );
   }
 
+  // ── 은행 관련 상품 중 iM뱅크(아이엠뱅크)를 최우선 배치 (비은행 상품은 위치 유지) ──
+  function _bankText(it) { return ((it.pblancNm || '') + ' ' + (it.bsnsSumryCn || '')); }
+  function isIMFund(it)   { return /(아이엠뱅크|iM\s?뱅크|iM\s?bank)/i.test(_bankText(it)); }
+  function isBankFund(it) { return /(은행|뱅크|bank)/i.test(_bankText(it)); }
+  function promoteIMAmongBanks(list) {
+    const bankIdx = [];
+    list.forEach((it, i) => { if (isBankFund(it)) bankIdx.push(i); });
+    if (bankIdx.length < 2) return list;              // 은행 상품 2건 미만이면 재배치 불필요
+    const banks = bankIdx.map(i => list[i]);
+    const im    = banks.filter(isIMFund);
+    if (im.length === 0 || im.length === banks.length) return list;  // iM만 있거나 iM이 없으면 순서 변화 없음
+    const rest  = banks.filter(it => !isIMFund(it));  // 안정 정렬: iM 그룹·나머지 그룹 각각 기존 순서 유지
+    const reordered = [...im, ...rest];
+    bankIdx.forEach((idx, k) => { list[idx] = reordered[k]; });  // 은행 슬롯 자리에만 재배치
+    return list;
+  }
+
   function renderResults(list) {
     const filterRowHTML = specialFilterRowHTML(list);
     const finalList = applySpecialFilter(list);
@@ -2239,6 +2256,7 @@
 
     // ── 프로필 미입력: Phase 1 동작 (기존 단일 리스트) ──
     if (!profile) {
+      promoteIMAmongBanks(finalList);
       document.getElementById('results-list').innerHTML = filterRowHTML + finalList.map(item => resultCardHTML(item)).join('');
       return;
     }
@@ -2250,6 +2268,11 @@
 
     // 자격 충족 안에서: 우대 수 desc → 기존 score 순서 유지
     eligible.sort((a, b) => (b._match.prefCount || 0) - (a._match.prefCount || 0));
+
+    // 각 섹션에서 은행 상품 중 iM뱅크 최우선 (비은행 위치 유지)
+    promoteIMAmongBanks(eligible);
+    promoteIMAmongBanks(checkList);
+    promoteIMAmongBanks(ineligible);
 
     const sectionHTML = (key, icon, title, items, expanded) => {
       if (items.length === 0) return '';
