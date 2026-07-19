@@ -1955,7 +1955,8 @@
             goodRealms.has(realm)
           );
 
-          const finCat  = classifyFinance(content);
+          // 신보재단 상품은 정의상 특례보증 — 요약 보일러플레이트("대출한도,이자지원,보증료율")의 '이자지원'이 이차보전으로 오분류되는 것 방지
+          const finCat  = item._source === 'shinbo' ? '특례보증' : classifyFinance(content);
           const noise   = !finCat && isNoise(content);
           return { ...item, _isRegional: isRegional, _hasRegion: hasSelectedRegion, _hasCity: hasCity, _hasIndustry: hasIndustry, _realm: realm, _finCat: finCat, _isNoise: noise };
         })
@@ -2084,7 +2085,8 @@
               const regionCount = ALL_REGIONS.filter(r => tags.includes(r)).length;
               const _isRegionalFlag = hasSelectedRegion && !isNationwide && regionCount <= 5;
 
-              const finCat  = classifyFinance(content);
+              // 신보재단 상품은 정의상 특례보증 (search-extra 경로) — 보일러플레이트 '이자지원' 오분류 방지
+              const finCat  = item._source === 'shinbo' ? '특례보증' : classifyFinance(content);
               const noise   = !finCat && isNoise(content);
               processed.push({
                 ...item,
