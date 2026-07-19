@@ -1358,6 +1358,18 @@
     return NOISE_KEYWORDS.some(kw => content.includes(kw));
   }
 
+  // ── 비금융 프로그램(교육·행사·공모전 등) 감지: 자금명 자체가 교육/행사이고 금융 신호가 없으면 최하위로 ──
+  // (요약·해시태그에만 '교육'이 있는 진짜 금융상품은 건드리지 않도록 자금명 기준으로만 판정)
+  const PROGRAM_NOISE_NAME = ['교육','전시회','박람회','연수','세미나','공모전','경진대회','캠프','아카데미','특강','워크숍','워크샵','설명회','포럼','컨퍼런스','체험','수료','강좌','훈련'];
+  const FIN_SIGNAL_NAME    = ['자금','융자','대출','보증','지원금','보조금','출연','이차','금리','펀드','투자','바우처','상환','대환','보험','신용'];
+  function isProgramNoise(item) {
+    const name = item.pblancNm || '';
+    if (!PROGRAM_NOISE_NAME.some(kw => name.includes(kw))) return false;
+    const nameNoOrg = name.replace(/신용보증재단|보증재단|신용보증기금|보증기금|은행/g, '');  // 기관명 '신용보증재단'의 '보증'을 금융신호로 오인 방지
+    if (FIN_SIGNAL_NAME.some(kw => nameNoOrg.includes(kw))) return false;
+    return true;
+  }
+
   function extractFinanceHighlight(text) {
     const t = (text || '').replace(/\s+/g, ' ');
     const parts = [];
@@ -1955,8 +1967,9 @@
             goodRealms.has(realm)
           );
 
+          // 교육·행사 등 비금융 프로그램은 기타(비금융)로 → 금융지원 우선 정렬에서 최하위
           // 신보재단 상품은 정의상 특례보증 — 요약 보일러플레이트("대출한도,이자지원,보증료율")의 '이자지원'이 이차보전으로 오분류되는 것 방지
-          const finCat  = item._source === 'shinbo' ? '특례보증' : classifyFinance(content);
+          const finCat  = isProgramNoise(item) ? null : (item._source === 'shinbo' ? '특례보증' : classifyFinance(content));
           const noise   = !finCat && isNoise(content);
           return { ...item, _isRegional: isRegional, _hasRegion: hasSelectedRegion, _hasCity: hasCity, _hasIndustry: hasIndustry, _realm: realm, _finCat: finCat, _isNoise: noise };
         })
@@ -2086,7 +2099,8 @@
               const _isRegionalFlag = hasSelectedRegion && !isNationwide && regionCount <= 5;
 
               // 신보재단 상품은 정의상 특례보증 (search-extra 경로) — 보일러플레이트 '이자지원' 오분류 방지
-              const finCat  = item._source === 'shinbo' ? '특례보증' : classifyFinance(content);
+              // 교육·행사 등 비금융 프로그램은 기타로 (금융지원 우선 정렬 최하위). 신보재단은 정의상 특례보증
+              const finCat  = isProgramNoise(item) ? null : (item._source === 'shinbo' ? '특례보증' : classifyFinance(content));
               const noise   = !finCat && isNoise(content);
               processed.push({
                 ...item,
