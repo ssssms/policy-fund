@@ -1,19 +1,20 @@
 {
-  "updatedAt": "2026-07-23T08:41:00.358Z",
-  "total": 5,
+  "updatedAt": "2026-07-23T14:21:55.345Z",
+  "total": 2,
   "data": [
     {
       "pblancNm": "2026년 「국가첨단전략산업 소부장 중소·중견기업 투자지원금」사업시행 2차 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제2026-515호 \n\n2026 년 「 국가첨단전략산업 소부장 중소 &middot; 중견기업 투자지원금 」 \n사업시행 2차 공고 \n\n국가첨단전략산업 분야의 핵심 소재&middot;부품 &middot;장비 기업의 국내 생산기반을 확충하고 공급망 안정화에 기여하기 위하여, 「2026년 국가첨단전략산업 소부장 중소&middot;중견기업 투자지원금」사업의 시행을 다음과 같이 공고합니다. \n\n2026년 7월 23일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "산업공급망정책과",
       "reqstBeginEndDe": "2026-07-23",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71234/view",
       "pblancId": "MOTIE_71234",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-515"
     },
     {
       "pblancNm": "2026년 수출지원기반활용사업(긴급지원바우처 4차) 참여기업 모집공고",
@@ -28,47 +29,6 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-487"
-    },
-    {
-      "pblancNm": "「지방자치단체의 지방투자기업 유치에 대한 국가의 재정자금 지원기준」 일부개정고시(안) 행정예고",
-      "bsnsSumryCn": "산업통상부공고 제 2026-479 호 \n\n「 지방자치단체의 지방투자기업 유치에 대한 국가의 재정자금 지원기준 」 에 대한 고시를 개정함에 있어 , 이를 국민에게 미리 알려 의견을 수렴하고자 그 개정이유와 주요 내용을 「 행정절차법 」 제 46 조의 규정에 따라 다음과 같이 공고합니다 . \n\n2026 년 7 월 6 일 \n산업통상부장관",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "지역경제진흥과",
-      "reqstBeginEndDe": "2026-07-06",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71200/view",
-      "pblancId": "MOTIE_71200",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-479"
-    },
-    {
-      "pblancNm": "2026년도「신뢰성기반활용지원사업」수시형(2차) 참여기업 모집 공고",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-07-06",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71197/view",
-      "pblancId": "MOTIE_71197",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년 산업혁신인재성장지원(해외연계)  - 최고급 해외인재유치 지원사업 시행계획 추가 공고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026-467 호 \n\n2026 년 산업혁신인재성장지원 ( 해외연계 ) \n- 최고급 해외인재유치 지원사업 시행계획 추가 공고 \n\n2026 년 『 산업혁신인재성장지원 ( 해외연계 )- 최고급 해외인재유치 지원 사업 』 을 아래와 같이 공고하오니 , 참여를 희망하는 기관은 신청하 여 주시기 바랍니다 . \n\n2026 년 6 월 30 일 ( 화 ) \n산업통상부장관",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "산업일자리혁신과",
-      "reqstBeginEndDe": "2026-06-30",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71186/view",
-      "pblancId": "MOTIE_71186",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-467"
     }
   ]
 }
