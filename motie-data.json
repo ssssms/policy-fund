@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T03:32:02.645Z",
+  "updatedAt": "2026-07-23T08:41:00.358Z",
   "total": 5,
   "data": [
     {
@@ -31,16 +31,17 @@
     },
     {
       "pblancNm": "「지방자치단체의 지방투자기업 유치에 대한 국가의 재정자금 지원기준」 일부개정고시(안) 행정예고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부공고 제 2026-479 호 \n\n「 지방자치단체의 지방투자기업 유치에 대한 국가의 재정자금 지원기준 」 에 대한 고시를 개정함에 있어 , 이를 국민에게 미리 알려 의견을 수렴하고자 그 개정이유와 주요 내용을 「 행정절차법 」 제 46 조의 규정에 따라 다음과 같이 공고합니다 . \n\n2026 년 7 월 6 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "지역경제진흥과",
       "reqstBeginEndDe": "2026-07-06",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71200/view",
       "pblancId": "MOTIE_71200",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-479"
     },
     {
       "pblancNm": "2026년도「신뢰성기반활용지원사업」수시형(2차) 참여기업 모집 공고",
