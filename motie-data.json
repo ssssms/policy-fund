@@ -1,7 +1,20 @@
 {
-  "updatedAt": "2026-07-24T03:27:06.779Z",
+  "updatedAt": "2026-07-24T08:36:45.513Z",
   "total": 5,
   "data": [
+    {
+      "pblancNm": "2026 한미 첨단분야 청년교류 지원사업 제6기 장학생 선발 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-07-24",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71237/view",
+      "pblancId": "MOTIE_71237",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
     {
       "pblancNm": "2026년 「국가첨단전략산업 소부장 중소·중견기업 투자지원금」사업시행 2차 공고",
       "bsnsSumryCn": "",
@@ -55,19 +68,6 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-478"
-    },
-    {
-      "pblancNm": "2026년 산업혁신인재성장지원(해외연계)  - 최고급 해외인재유치 지원사업 시행계획 추가 공고",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-06-30",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71186/view",
-      "pblancId": "MOTIE_71186",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie"
     }
   ]
 }
