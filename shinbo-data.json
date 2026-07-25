@@ -1,37 +1,11 @@
 {
-  "updatedAt": "2026-07-24T04:04:09.609Z",
-  "total": 114,
+  "updatedAt": "2026-07-25T04:04:35.959Z",
+  "total": 111,
   "regions": {
-    "대구": 47,
+    "대구": 44,
     "경북": 67
   },
   "data": [
-    {
-      "pblancNm": "재해특례보증",
-      "bsnsSumryCn": "목적: 재해피해기업 지원 / 대상: 재해 피해를 입은 기업 중 지자체로부터 \"재해중소기업확인증\" 또는 \"피해사실 확인서\"를 발급받은 기업 / 조건: 대출한도 - 3억원과 재해피해금액(또는 재해 복구 소요자금) 중 적은 금액 이자지원 - 지원없음 보증료율 - 특별재해 : 0.1% / 일반재해 : 0.5%",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=1",
-      "pblancId": "SHINBO_대구_1",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "재해 피해를 입은 기업 중 지자체로부터 \"재해중소기업확인증\" 또는 \"피해사실 확인서\"를 발급받은 기업",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "보증부 서민대출 협약보증(햇살론)",
-      "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 대출한도 - 2천만원 이내 이자지원 - 지원없음 보증료율 - 1.00%",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=2",
-      "pblancId": "SHINBO_대구_2",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
-      "_source": "shinbo"
-    },
     {
       "pblancNm": "햇살론 플러스",
       "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 대출한도 - 2천만원 이내 이자지원 - 지원없음 보증료율 - 0.80%",
@@ -147,19 +121,6 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "노란우산공제 가입중인 소기업, 소상공인",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "수출유망 중소기업 지원 특례보증",
-      "bsnsSumryCn": "목적: 수출기업 및 수출유망기업 지원 / 대상: 수출지원사업(중기부 글로벌강소기업 1,000+)선정기업 또는 최근 1년 이내 수출실적 보유기업(대표자 신용평점 710점 이상) / 조건: 대출한도 - 2억원 이내 이자지원 - 지원없음 보증료율 - 0.80%",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=12",
-      "pblancId": "SHINBO_대구_12",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "수출지원사업(중기부 글로벌강소기업 1,000+)선정기업 또는 최근 1년 이내 수출실적 보유기업(대표자 신용평점 710점 이상)",
       "_source": "shinbo"
     },
     {
