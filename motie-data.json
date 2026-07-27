@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-27T10:03:55.872Z",
-  "total": 5,
+  "updatedAt": "2026-07-27T14:52:36.497Z",
+  "total": 6,
   "data": [
     {
       "pblancNm": "제16차 장기 천연가스 수급계획 공고",
@@ -17,17 +17,16 @@
     },
     {
       "pblancNm": "중견기업 금융지원 프로그램(Rising Leaders 300) &#039;&#039;&#039;&#039;26년 하반기(8회차) 선정 공고",
-      "bsnsSumryCn": "산업통상자원부 공고 제 2026-512 호 \n\n「 중견기업 금융지원 프로그램 (Rising Leaders 300) 」 \n8 회차 선정 공고 \n\n중견기업 &middot; 중견기업 후보기업을 대상으로 2026 년 하반기 금융기관 ( 우리은행 ) ｢ 중견 기업 금융 지원 프로그램 ( 라이징 리더스 300) ｣ 의 산업부 추천기업 선정 계획을 다음과 같이 공고하오니 관심 있는 기업은 관련 규정에 따라 신청하여 주시기 바랍니다 . \n\n2026 년 7 월 27 일 \n산업통상부장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "중견기업정책과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-07-27",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71238/view",
       "pblancId": "MOTIE_71238",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-512"
+      "_source": "motie"
     },
     {
       "pblancNm": "2026 한미 첨단분야 청년교류 지원사업 제6기 장학생 선발 공고",
@@ -58,13 +57,26 @@
       "pblancNo": "2026-515"
     },
     {
-      "pblancNm": "2026년 수출지원기반활용사업(긴급지원바우처 4차) 참여기업 모집공고",
+      "pblancNm": "「지방자치단체의 지방투자기업 유치에 대한 국가의 재정자금 지원기준」 일부개정고시(안) 행정예고",
       "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
       "excInsttNm": "",
-      "reqstBeginEndDe": "2026-07-08",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71206/view",
-      "pblancId": "MOTIE_71206",
+      "reqstBeginEndDe": "2026-07-06",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71200/view",
+      "pblancId": "MOTIE_71200",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도「신뢰성기반활용지원사업」수시형(2차) 참여기업 모집 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-07-06",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71197/view",
+      "pblancId": "MOTIE_71197",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
