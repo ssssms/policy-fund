@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-27T04:12:58.353Z",
+  "updatedAt": "2026-07-28T03:46:34.105Z",
   "total": 295,
   "data": [
     {
@@ -183,7 +183,7 @@
       "bsnsSumryCn": "관광사업체의 신축 및 개보수를 포함한 시설자금과 운영자금 융자지원",
       "jrsdInsttNm": "문화체육관광부",
       "excInsttNm": "관광정책과",
-      "reqstBeginEndDe": " (1분기) 2025.12.31.(수)~2026.1.30.(금) / (2분기) 2026.3.30.(월)~4.30.(목)  ※ 예산 소진 시 조기 종료될 수 있음",
+      "reqstBeginEndDe": " (3분기) 2026.6.30.(화)~7.15.(수) / (4분기) 2026.8.31.(월)~9.15.(화)  ※ 예산 소진 시 조기 종료될 수 있음",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/137100000004",
       "pblancId": "GOV24_137100000004",
       "hashtags": "문화·환경,중앙행정기관",
@@ -2748,7 +2748,7 @@
       "pblancId": "GOV24_648000001077",
       "hashtags": "경상남도,주거·자립,광역시도",
       "pldirSportRealmLclasCodeNm": "주거·자립",
-      "trgetNm": "○ 소득인정액 기준 중위소득 63%이하 한부모가족",
+      "trgetNm": "○ 소득인정액 기준 중위소득 65%이하 한부모가족",
       "_source": "gov24",
       "_orgType": "광역시도",
       "_region": "경상남도",
@@ -3895,7 +3895,7 @@
       "bsnsSumryCn": "경상북도 내에 소재하고 있는 소기업, 소상공인에게 신용보증서 발급",
       "jrsdInsttNm": "경북신용보증재단",
       "excInsttNm": "서비스 관리부서",
-      "reqstBeginEndDe": "상시신청",
+      "reqstBeginEndDe": "자금소진시까지",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/O00067200001",
       "pblancId": "GOV24_O00067200001",
       "hashtags": "고용·창업,지방출자_출연기관",
