@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-29T03:49:27.169Z",
-  "total": 295,
+  "updatedAt": "2026-07-30T03:41:14.838Z",
+  "total": 291,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -1843,38 +1843,6 @@
       "_city": "보령시"
     },
     {
-      "pblancNm": "청년창업농 융자금 이자 지원",
-      "bsnsSumryCn": "후계농 융자금 실행한 청년농업인에게 이자 지원",
-      "jrsdInsttNm": "충청남도 아산시",
-      "excInsttNm": "농촌자원과",
-      "reqstBeginEndDe": "2026.06.01~2026.06.30",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/452000000124",
-      "pblancId": "GOV24_452000000124",
-      "hashtags": "충청남도,아산시,농림축산어업,시군구",
-      "pldirSportRealmLclasCodeNm": "농림축산어업",
-      "trgetNm": "○ 후계농 융자금 실행한 만40세미만 청년농업인",
-      "_source": "gov24",
-      "_orgType": "시군구",
-      "_region": "충청남도",
-      "_city": "아산시"
-    },
-    {
-      "pblancNm": "청년 창업 개인택시면허 양수 대출 지원",
-      "bsnsSumryCn": "청년의 개인택시 창업을 지원하여 택시 운행 활성화 및 시민편의를 증진",
-      "jrsdInsttNm": "충청남도 아산시",
-      "excInsttNm": "대중교통과",
-      "reqstBeginEndDe": "2024. 12. 22. ~ 2026. 1. 2.",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/452000000341",
-      "pblancId": "GOV24_452000000341",
-      "hashtags": "충청남도,아산시,생활안정,시군구",
-      "pldirSportRealmLclasCodeNm": "생활안정",
-      "trgetNm": "○ 신청자격(아래 요건을 모두 갖추어야 함)\r\n 가.「여객자동차운수사업법」제6조 및 제24조에 따른 결격사유가 없고, 같은 법 시행규칙 \r\n      제19조에 따른 개인택시운송사업면허 양수자격을 갖춘 자\r\n   나. 공고일 현재, 아산시에 6개월이상 거주중이며, 2년6월 이상 무사고 운전경력을 가진 자\r\n   다. 아산시·충남신용보증재단·하나은행간 협약조건에 따라 충남신용보증재단의 신용보증이 \r\n       가능하고 협약은행의 여신규정에 따른 대출이 가능한 자\r\n   라. 과거 개인택시운송사업 경력이 없는 자\r\n○ 지원대상자 선정기준\r\n1. 운전경력산정, 운전경력증명서 인정 기준, 무사고 운전경력 인정은「아산시 개인택시 \r\n     운송사업면허 업무 처리 규칙」적용\r\n  2. 사업 공고일 기준으로 융자지원 신청자격 및 제출된 서류의 이상 유무를 평가하여 무사고 \r\n     경력 순으로 지원대상자 선정 \r\n  4. 단, 신청자격 및 제출서류 평가 결과 선정기준에 적합한 사람이 여러 명일 경우, 다음 \r\n     우선순위에 따라 최종 선정\r\n     (1순위) 장기 무사고 운전경력자 우선 선정 \r\n     (2순위) 1순위가 동일할 경우 연장자 우선 선정",
-      "_source": "gov24",
-      "_orgType": "시군구",
-      "_region": "충청남도",
-      "_city": "아산시"
-    },
-    {
       "pblancNm": "귀농인 주거기반 조성 지원",
       "bsnsSumryCn": "귀농인이 농어촌 지역에 안정적으로 정착하여 영농에 종사할 수 있도록 주거환경 개선 지원",
       "jrsdInsttNm": "전북특별자치도 군산시",
@@ -2380,7 +2348,7 @@
       "pblancId": "GOV24_629000000110",
       "hashtags": "전남광주통합특별시,고용·창업,광역시도",
       "pldirSportRealmLclasCodeNm": "고용·창업",
-      "trgetNm": "광주 소재 소기업, 소상공인, 자영업자",
+      "trgetNm": "옛 광주지역 소재 소기업, 소상공인, 자영업자",
       "_source": "gov24",
       "_orgType": "광역시도",
       "_region": "전남광주통합특별시",
@@ -3907,22 +3875,6 @@
       "_city": ""
     },
     {
-      "pblancNm": "광주광역시 청년창업 특례보증 안내",
-      "bsnsSumryCn": "○보증지원 내용\r\n  -  본 건 기준 최대 5천만원 이내\r\n  -  1년간 3.0% 이자지원",
-      "jrsdInsttNm": "광주신용보증재단",
-      "excInsttNm": "서비스 관리부서",
-      "reqstBeginEndDe": "매년 3월 중 ~ 자금 소진 시까지",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/O00072800005",
-      "pblancId": "GOV24_O00072800005",
-      "hashtags": "고용·창업,지방출자_출연기관",
-      "pldirSportRealmLclasCodeNm": "고용·창업",
-      "trgetNm": "○ 보증신청 접수일 현재 대표자가 만 39세 이하이고, 개인신용평점이 625점 이상이며 업력이 7년 이하인 소기업·소상공인",
-      "_source": "gov24",
-      "_orgType": "지방출자_출연기관",
-      "_region": "",
-      "_city": ""
-    },
-    {
       "pblancNm": "[대구]희망리턴패키지 재도전교육",
       "bsnsSumryCn": "재기 및 재창업 소상공인 대상 보증 및 금융제도, 세무, 법률, 마케팅 등 교육 지원 ",
       "jrsdInsttNm": "대구신용보증재단",
@@ -4621,22 +4573,6 @@
       "hashtags": "고용·창업,중앙행정기관",
       "pldirSportRealmLclasCodeNm": "고용·창업",
       "trgetNm": "○ 『중소기업기본법 』상의 중소기업\r\n - 융자신청 희망기업 또는 대출잔액 보유 기업 등",
-      "_source": "gov24",
-      "_orgType": "중앙행정기관",
-      "_region": "",
-      "_city": ""
-    },
-    {
-      "pblancNm": "중소기업기술혁신개발사업",
-      "bsnsSumryCn": "중소기업을 대상으로 미래 유망분야의 기술개발(R&D) 지원",
-      "jrsdInsttNm": "중소벤처기업부",
-      "excInsttNm": "기술개발과",
-      "reqstBeginEndDe": "(상반기) 1월, (하반기) 6월, 일부 수시모집",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/SD0000012616",
-      "pblancId": "GOV24_SD0000012616",
-      "hashtags": "고용·창업,중앙행정기관",
-      "pldirSportRealmLclasCodeNm": "고용·창업",
-      "trgetNm": "○ (공통) 직전년도 매출액 20억원 이상 중소기업\r\n\r\n - 각 내역사업별 세부요건 있으므로,  상세내용은 공고 참고",
       "_source": "gov24",
       "_orgType": "중앙행정기관",
       "_region": "",
