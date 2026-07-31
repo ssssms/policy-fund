@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-30T03:41:14.838Z",
-  "total": 291,
+  "updatedAt": "2026-07-31T04:00:12.351Z",
+  "total": 292,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -445,6 +445,22 @@
       "hashtags": "고용·창업,중앙행정기관",
       "pldirSportRealmLclasCodeNm": "고용·창업",
       "trgetNm": "○ 선투자 받은 비기술·생활기반의 소상공인",
+      "_source": "gov24",
+      "_orgType": "중앙행정기관",
+      "_region": "",
+      "_city": ""
+    },
+    {
+      "pblancNm": "소상공인 도약지원",
+      "bsnsSumryCn": "소상공인의 기업가로서 성장을 위한 패키지 지원",
+      "jrsdInsttNm": "중소벤처기업부",
+      "excInsttNm": "소상공인성장촉진과",
+      "reqstBeginEndDe": "별도 안내",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/142100000052",
+      "pblancId": "GOV24_142100000052",
+      "hashtags": "고용·창업,중앙행정기관",
+      "pldirSportRealmLclasCodeNm": "고용·창업",
+      "trgetNm": "로컬크리에이터, 소상공인 등",
       "_source": "gov24",
       "_orgType": "중앙행정기관",
       "_region": "",
@@ -2215,7 +2231,7 @@
       "bsnsSumryCn": "농업인에게 목록집에 실린 농기계를 지원, 한도액의 50% 보조",
       "jrsdInsttNm": "경상남도 합천군",
       "excInsttNm": "농업유통과",
-      "reqstBeginEndDe": "2024.12.20~2025.01.13",
+      "reqstBeginEndDe": "2026. 12 ~ 2027. 1",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/548000000106",
       "pblancId": "GOV24_548000000106",
       "hashtags": "경상남도,합천군,농림축산어업,시군구",
