@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-31T04:00:12.351Z",
-  "total": 292,
+  "updatedAt": "2026-08-01T04:01:20.746Z",
+  "total": 293,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -2720,6 +2720,22 @@
       "_source": "gov24",
       "_orgType": "광역시도",
       "_region": "경상북도",
+      "_city": ""
+    },
+    {
+      "pblancNm": "벼재배농가경영안정자금지원",
+      "bsnsSumryCn": "도내 거주하며 도내 농지에서 벼 재배를 하는 농업인을 대상으로 벼 재배 경영안정자금 지원",
+      "jrsdInsttNm": "경상남도",
+      "excInsttNm": "스마트농업과",
+      "reqstBeginEndDe": "2026년 8월 3일 ~ 8월 31일",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/648000001034",
+      "pblancId": "GOV24_648000001034",
+      "hashtags": "경상남도,농림축산어업,광역시도",
+      "pldirSportRealmLclasCodeNm": "농림축산어업",
+      "trgetNm": "○ 도내에 주소지를 두고 도내 소재하는 농지에서 직접 벼를 재배하여 쌀을 생산하는 농업인",
+      "_source": "gov24",
+      "_orgType": "광역시도",
+      "_region": "경상남도",
       "_city": ""
     },
     {
