@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-03T04:06:16.705Z",
-  "total": 293,
+  "updatedAt": "2026-08-04T03:48:41.840Z",
+  "total": 292,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -2621,22 +2621,6 @@
       "hashtags": "충청북도,고용·창업,광역시도",
       "pldirSportRealmLclasCodeNm": "고용·창업",
       "trgetNm": "○ 도내 소상공인\r\n - 광업, 제조업, 건설업, 운수업 : 상시근로자 10인 미만\r\n - 그외 업종(도소매, 음식업 등) : 상시근로자 5인 미만",
-      "_source": "gov24",
-      "_orgType": "광역시도",
-      "_region": "충청북도",
-      "_city": ""
-    },
-    {
-      "pblancNm": "취업희망 소상공인 지원",
-      "bsnsSumryCn": "취업을 원하는 소상공인을 대상으로 전직상담, 직업훈련 등을 통해 취업 지원",
-      "jrsdInsttNm": "충청북도",
-      "excInsttNm": "일자리정책과",
-      "reqstBeginEndDe": "상시신청",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/643000000146",
-      "pblancId": "GOV24_643000000146",
-      "hashtags": "충청북도,고용·창업,광역시도",
-      "pldirSportRealmLclasCodeNm": "고용·창업",
-      "trgetNm": "취업을 희망하는 69세 이하 폐업 예정 또는 기 폐업 소상공인\r\n- 신청 제외대상 : 소상공인정책자금 지원 제외업종(임대업 등)\r\n- 기 폐업은 폐업일이 신청일 기준 3년 이내인 경우에 한함",
       "_source": "gov24",
       "_orgType": "광역시도",
       "_region": "충청북도",
