@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-05T03:43:24.666Z",
+  "updatedAt": "2026-08-06T03:49:37.547Z",
   "total": 292,
   "data": [
     {
@@ -23,7 +23,7 @@
       "bsnsSumryCn": "원양어업을 허가받은 자 또는 해외합작 원양어업 신고자를 대상으로 원양어업경영자금 융자 지원",
       "jrsdInsttNm": "해양수산부",
       "excInsttNm": "원양산업과",
-      "reqstBeginEndDe": "매월 25일까지(단, 공급 규모 소진 시 조기마감 될 수 있음) ",
+      "reqstBeginEndDe": "대출 약정희망일의 전월 25일까지(단, 공급 규모 소진 시 조기마감 될 수 있음) ",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/119200000016",
       "pblancId": "GOV24_119200000016",
       "hashtags": "농림축산어업,중앙행정기관",
@@ -1364,7 +1364,7 @@
     },
     {
       "pblancNm": "맞춤형 농기계 구입비 지원",
-      "bsnsSumryCn": "관내 거주경작 농업인에게 농기계 구입비 지원",
+      "bsnsSumryCn": "관내 거주, 경작 농업인에게 농기계 구입비 일부 지원",
       "jrsdInsttNm": "부산광역시 강서구",
       "excInsttNm": "농산과",
       "reqstBeginEndDe": "연초",
