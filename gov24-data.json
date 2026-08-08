@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-07T03:28:16.501Z",
-  "total": 293,
+  "updatedAt": "2026-08-08T02:28:06.874Z",
+  "total": 292,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -3206,7 +3206,7 @@
       "pblancNm": "로컬크리에이터 육성",
       "bsnsSumryCn": "지역 자원에 혁신적인 아이디어를 접목하여 사업을 운영하는 소상공인의 사업화자금 지원",
       "jrsdInsttNm": "소상공인시장진흥공단",
-      "excInsttNm": "투자육성팀",
+      "excInsttNm": "로컬창업팀",
       "reqstBeginEndDe": "2026.04.01~2026.05.06",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/B55307700023",
       "pblancId": "GOV24_B55307700023",
@@ -3229,22 +3229,6 @@
       "hashtags": "고용·창업,공공기관",
       "pldirSportRealmLclasCodeNm": "고용·창업",
       "trgetNm": "소상공인기본법 제2조에 따른 소상공인",
-      "_source": "gov24",
-      "_orgType": "공공기관",
-      "_region": "",
-      "_city": ""
-    },
-    {
-      "pblancNm": "라이콘(기업가형 소상공인) 육성",
-      "bsnsSumryCn": "라이프&로컬에서 혁신을 통해 새로운 부가가치를 창출하는 '기업가형 소상공인' 육성 사업",
-      "jrsdInsttNm": "소상공인시장진흥공단",
-      "excInsttNm": "투자육성팀",
-      "reqstBeginEndDe": "접수기관 별 상이",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/B55307700025",
-      "pblancId": "GOV24_B55307700025",
-      "hashtags": "생활안정,공공기관",
-      "pldirSportRealmLclasCodeNm": "생활안정",
-      "trgetNm": "○ 신사업창업사관학교 : 예비창업자\r\n○ 로컬크리에이터 육성사업 : 소상공인\r\n○ 로컬 브랜드 창출 :  소상공인\r\n○ 강한 소상공인 성장지원사업 : 소상공인\r\n○ 우리동네 크라우드 펀딩 : 소상공인\r\n○ 민간투자 연계형 매칭융자 : 소상공인",
       "_source": "gov24",
       "_orgType": "공공기관",
       "_region": "",
