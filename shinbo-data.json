@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-08T02:54:29.540Z",
-  "total": 114,
+  "updatedAt": "2026-08-09T03:07:34.671Z",
+  "total": 113,
   "regions": {
-    "대구": 47,
+    "대구": 46,
     "경북": 67
   },
   "data": [
@@ -27,19 +27,6 @@
       "reqstBeginEndDe": "상시",
       "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=2",
       "pblancId": "SHINBO_대구_2",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "햇살론 플러스",
-      "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 대출한도 - 2천만원 이내 이자지원 - 지원없음 보증료율 - 0.80%",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=3",
-      "pblancId": "SHINBO_대구_3",
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
