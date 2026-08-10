@@ -1,24 +1,11 @@
 {
-  "updatedAt": "2026-08-09T03:07:34.671Z",
-  "total": 113,
+  "updatedAt": "2026-08-10T03:18:42.238Z",
+  "total": 112,
   "regions": {
-    "대구": 46,
+    "대구": 45,
     "경북": 67
   },
   "data": [
-    {
-      "pblancNm": "재해특례보증",
-      "bsnsSumryCn": "목적: 재해피해기업 지원 / 대상: 재해 피해를 입은 기업 중 지자체로부터 \"재해중소기업확인증\" 또는 \"피해사실 확인서\"를 발급받은 기업 / 조건: 대출한도 - 3억원과 재해피해금액(또는 재해 복구 소요자금) 중 적은 금액 이자지원 - 지원없음 보증료율 - 특별재해 : 0.1% / 일반재해 : 0.5%",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=1",
-      "pblancId": "SHINBO_대구_1",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "재해 피해를 입은 기업 중 지자체로부터 \"재해중소기업확인증\" 또는 \"피해사실 확인서\"를 발급받은 기업",
-      "_source": "shinbo"
-    },
     {
       "pblancNm": "보증부 서민대출 협약보증(햇살론)",
       "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 대출한도 - 2천만원 이내 이자지원 - 지원없음 보증료율 - 1.00%",
