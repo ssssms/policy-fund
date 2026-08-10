@@ -1,7 +1,21 @@
 {
-  "updatedAt": "2026-08-10T07:54:20.286Z",
-  "total": 8,
+  "updatedAt": "2026-08-10T13:24:58.857Z",
+  "total": 9,
   "data": [
+    {
+      "pblancNm": "2026년도 2차 기계장비산업기술개발사업(AI팩토리) 신규지원 대상과제 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-540 호 \n\n2026 년도 2 차 기계장비산업기술개발사업 신규지원 대상과제 공고 \n\n2026 년도 2 차 기계장비산업기술개발사업 신규 지원대상 연구개발과제 를 다음과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 08 월 10 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "산업인공지능정책과",
+      "reqstBeginEndDe": "2026-08-10",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71265/view",
+      "pblancId": "MOTIE_71265",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-540"
+    },
     {
       "pblancNm": "｢통상변화대응지원대상 통상조약 등의 범위 지정 고시｣ 개정(안) 행정예고",
       "bsnsSumryCn": "",
@@ -17,30 +31,30 @@
     },
     {
       "pblancNm": "AI 응용제품 신속 상용화 지원사업 2차 신규지원 대상과제 공고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026-536 호 \n\n｢ AI 응용제품 신속 상용화 지원사업 ｣ \n2 차 신규지원 대상과제 공고 \n\n2026 년도 ｢ AI 응용제품 신속 상용화 지원사업 ｣ 2 차 신규 지원대상 과제 를 \n\n다음과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 8 월 4 일 \n\n산업통상부장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "제조인공지능전환협력과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-08-04",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71256/view",
       "pblancId": "MOTIE_71256",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-536"
+      "_source": "motie"
     },
     {
       "pblancNm": "2026년도 반도체첨단산업기술개발 신규 지원대상 연구개발과제 추가 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026 - 525 호 \n\n2026 년도 반도체첨단산업기술개발 ( 시스템반도체기술개발 ) 신규 지원대상 연구개발과제 추가 공고 \n\n반도체첨단산업기술개발 ( 시스템반도체기술개발 ) 품목 1 건에 대해 추가 공고함 . 접수 마감일 이후 최초 공고 (2026 년 1 월 13 일 공고 ) 와 동일한 평가 항목 및 평가 절차에 따라 평가 진행 \n\n2026 년도 반도체첨단산업기술개발 ( 시스템반도체기술개발 ) 사업의 신규 지원대상 연구개발과제 를 다음과 같이 추가 공고하오니 수행 하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 8 월 3 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "반도체과",
       "reqstBeginEndDe": "2026-08-03",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71253/view",
       "pblancId": "MOTIE_71253",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-525"
     },
     {
       "pblancNm": "2026년도 제3차 산업기술R&amp;D연구기획사업 신규지원 대상과제 공고",
