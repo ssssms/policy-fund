@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-10T02:41:10.128Z",
-  "total": 292,
+  "updatedAt": "2026-08-11T02:35:14.149Z",
+  "total": 294,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -55,7 +55,7 @@
       "bsnsSumryCn": "어려움에 빠진 어업경영체를 대상으로 수산경영회생자금 지원",
       "jrsdInsttNm": "해양수산부",
       "excInsttNm": "수산정책과",
-      "reqstBeginEndDe": "2025.1.1.~2025.12.10.",
+      "reqstBeginEndDe": "2026.1.1.~2026.12.10.",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/119200000044",
       "pblancId": "GOV24_119200000044",
       "hashtags": "농림축산어업,중앙행정기관",
@@ -1491,6 +1491,22 @@
       "_city": "남동구"
     },
     {
+      "pblancNm": "소상인 특례보증",
+      "bsnsSumryCn": "담보력이 부족한 소상인 채무 보증",
+      "jrsdInsttNm": "인천광역시 남동구",
+      "excInsttNm": "생활경제과",
+      "reqstBeginEndDe": "상시신청",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/353000000196",
+      "pblancId": "GOV24_353000000196",
+      "hashtags": "인천광역시,남동구,생활안정,시군구",
+      "pldirSportRealmLclasCodeNm": "생활안정",
+      "trgetNm": "담보력이 부족한 소상인",
+      "_source": "gov24",
+      "_orgType": "시군구",
+      "_region": "인천광역시",
+      "_city": "남동구"
+    },
+    {
       "pblancNm": "소상공인 특례보증",
       "bsnsSumryCn": "부평구 관내 사업자등록을 필한 소상공인 중 담보여력이 없거나 개인 대출이 어려운 소상공인",
       "jrsdInsttNm": "인천광역시 부평구",
@@ -2749,6 +2765,22 @@
       "hashtags": "제주특별자치도,고용·창업,광역시도",
       "pldirSportRealmLclasCodeNm": "고용·창업",
       "trgetNm": "○ 중장년 취업지원 프로젝트 : 중장년(만 40세 이상 65세 미만) 미취업자 고용 제주도내 중소기업",
+      "_source": "gov24",
+      "_orgType": "광역시도",
+      "_region": "제주특별자치도",
+      "_city": ""
+    },
+    {
+      "pblancNm": "청년농업인 영농정착지원",
+      "bsnsSumryCn": "   - 영농정착 지원금 지급: 영농경력에 따라 차등 지급\r\n",
+      "jrsdInsttNm": "제주특별자치도",
+      "excInsttNm": "친환경농정과",
+      "reqstBeginEndDe": "사업시행 전년도 11~12월 신청(농식품부 지침에 따라 변경될 수 있음)",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/650000001116",
+      "pblancId": "GOV24_650000001116",
+      "hashtags": "제주특별자치도,농림축산어업,광역시도",
+      "pldirSportRealmLclasCodeNm": "농림축산어업",
+      "trgetNm": "ㅇ (사업 대상)  독립경영 3년 이하 또는 독립영농 예정자\r\n   - (연령 기준) 18세~39세 \r\n   - (소득 기준) 건강보험료 납부 기준으로 판단\r\n   - (기타 조건) 병역(병역필 또는 면제자), 거주시(사업신청 시군구에 거주)",
       "_source": "gov24",
       "_orgType": "광역시도",
       "_region": "제주특별자치도",
