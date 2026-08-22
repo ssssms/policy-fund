@@ -1,5 +1,114 @@
 {
-  "updatedAt": "2026-08-22T06:51:56.505Z",
-  "total": 0,
-  "data": []
+  "updatedAt": "2026-08-22T12:52:39.190Z",
+  "total": 8,
+  "data": [
+    {
+      "pblancNm": "2026년「국가첨단전략산업 소부장 중소·중견기업 투자지원금」 사업 수정 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-556 호 \n\n2026 년 「 국가첨단전략산업 소부장 중소 &middot; 중견기업 투자지원금 」 사업 수정 공고 \n\n수요기업의 신청 여건 등을 감안하여 ｢ 2026 년 국가첨단전략산업 소부장 중소 &middot; 중견기업 투자지원금 ｣ 사업 의 2차 공고를 다음과 같이 수정 공고하고자 합니다 . \n\n2026 년 8 월 21 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "산업공급망정책과",
+      "reqstBeginEndDe": "2026-08-21",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71278/view",
+      "pblancId": "MOTIE_71278",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-556"
+    },
+    {
+      "pblancNm": "자원안보전담기관 추가 지정 결과 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-08-19",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71277/view",
+      "pblancId": "MOTIE_71277",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "｢AI 응용제품 신속 상용화 지원사업｣ 2차 신규지원 대상과제 공고(수정)",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-08-14",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71274/view",
+      "pblancId": "MOTIE_71274",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도 제2차 로봇산업기술개발사업 신규지원 대상과제 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-549 호 \n\n2026 년도 제 2 차 로봇산업기술개발사업 신규지원 대상과제 공고 \n\n2026 년도 제 2 차 로봇산업기술개발사업 신규 지원대상 연구개발과제 를 다음과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 08 월 13 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "인공지능기계로봇과",
+      "reqstBeginEndDe": "2026-08-13",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71273/view",
+      "pblancId": "MOTIE_71273",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-549"
+    },
+    {
+      "pblancNm": "2026년도 2차 기계장비산업기술개발사업(AI팩토리) 신규지원 대상과제 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-540 호 \n\n2026 년도 2 차 기계장비산업기술개발사업 신규지원 대상과제 공고 \n\n2026 년도 2 차 기계장비산업기술개발사업 신규 지원대상 연구개발과제 를 다음과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 08 월 10 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "산업인공지능정책과",
+      "reqstBeginEndDe": "2026-08-10",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71265/view",
+      "pblancId": "MOTIE_71265",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-540"
+    },
+    {
+      "pblancNm": "｢통상변화대응지원대상 통상조약 등의 범위 지정 고시｣ 개정(안) 행정예고",
+      "bsnsSumryCn": "◉ 산업통상부 공고 제 2026-530 호 \n\n｢ 통상변화대응지원대상 통상조약 등의 범위 지정 고시 ｣ 를 개정하는 데에 있어 , 그 개정이유와 주요내용을 국민에게 미리 알려 이에 대한 의견을 듣기 위하여 ｢ 행정절차법 ｣ 제 46 조에 따라 다음과 같이 공고합니다 . \n\n2026 년 8 월 6 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "통상협정활용과",
+      "reqstBeginEndDe": "2026-08-06",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71257/view",
+      "pblancId": "MOTIE_71257",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-530"
+    },
+    {
+      "pblancNm": "AI 응용제품 신속 상용화 지원사업 2차 신규지원 대상과제 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-08-04",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71256/view",
+      "pblancId": "MOTIE_71256",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년도 반도체첨단산업기술개발 신규 지원대상 연구개발과제 추가 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-08-03",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71253/view",
+      "pblancId": "MOTIE_71253",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    }
+  ]
 }
