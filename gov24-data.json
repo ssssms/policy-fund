@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-29T07:16:33.200Z",
-  "total": 295,
+  "updatedAt": "2026-08-30T05:40:26.195Z",
+  "total": 296,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -3933,6 +3933,22 @@
       "hashtags": "고용·창업,지방출자_출연기관",
       "pldirSportRealmLclasCodeNm": "고용·창업",
       "trgetNm": "○ 경영자문 대상 : 전남광주통합특별시(광산구, 동구, 서구, 남구, 북구) 소상공인(재단 보증이용업체, 보증신청중인 업체, 예비창업자)\r\n\r\n○ 경영컨설팅 대상 : 전남광주통합특별시(광산구, 동구, 서구, 남구, 북구) 소상공인(재단 보증이용업체, 보증신청중인 업체, 예비창업자)",
+      "_source": "gov24",
+      "_orgType": "지방출자_출연기관",
+      "_region": "",
+      "_city": ""
+    },
+    {
+      "pblancNm": "광주광역시 청년창업 특례보증 안내",
+      "bsnsSumryCn": "○보증지원 내용\r\n  -  본 건 기준 최대 5천만원 이내\r\n  -  1년간 3.0% 이자지원",
+      "jrsdInsttNm": "광주신용보증재단",
+      "excInsttNm": "서비스 관리부서",
+      "reqstBeginEndDe": "매년 3월 중 ~ 자금 소진 시까지",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/O00072800005",
+      "pblancId": "GOV24_O00072800005",
+      "hashtags": "고용·창업,지방출자_출연기관",
+      "pldirSportRealmLclasCodeNm": "고용·창업",
+      "trgetNm": "○ 보증신청 접수일 현재 대표자가 만 39세 이하이고, 개인신용평점이 625점 이상이며 업력이 7년 이하인 소기업·소상공인",
       "_source": "gov24",
       "_orgType": "지방출자_출연기관",
       "_region": "",
