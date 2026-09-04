@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-03T16:16:42.026Z",
-  "total": 12,
+  "updatedAt": "2026-09-04T04:09:42.212Z",
+  "total": 14,
   "data": [
     {
       "pblancNm": "2026년도 지역산업위기대응 이차보전 지원사업 2차 변경공고",
@@ -17,17 +17,16 @@
     },
     {
       "pblancNm": "2026년도 AX실증밸리조성(R&amp;D) 사업 신규지원 대상과제 공고",
-      "bsnsSumryCn": "2026 년도 AX 실증밸리조성 (R&D) 사업 신규지원 대상과제 공고 \n\n2026 년도 AX 실증밸리조성 (R&D) 사업의 신규 지원대상 연구개발과제 를 다음과 같이 공고 하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 8 월 31 일",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "인공지능기계로봇과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-08-31",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71295/view",
       "pblancId": "MOTIE_71295",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-567"
+      "_source": "motie"
     },
     {
       "pblancNm": "현금지원제도 운영요령 일부개정안 행정예고",
@@ -164,6 +163,34 @@
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
       "_source": "motie"
+    },
+    {
+      "pblancNm": "｢통상변화대응지원대상 통상조약 등의 범위 지정 고시｣ 개정(안) 행정예고",
+      "bsnsSumryCn": "◉ 산업통상부 공고 제 2026-530 호 \n\n｢ 통상변화대응지원대상 통상조약 등의 범위 지정 고시 ｣ 를 개정하는 데에 있어 , 그 개정이유와 주요내용을 국민에게 미리 알려 이에 대한 의견을 듣기 위하여 ｢ 행정절차법 ｣ 제 46 조에 따라 다음과 같이 공고합니다 . \n\n2026 년 8 월 6 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "통상협정활용과",
+      "reqstBeginEndDe": "2026-08-06",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71257/view",
+      "pblancId": "MOTIE_71257",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-530"
+    },
+    {
+      "pblancNm": "AI 응용제품 신속 상용화 지원사업 2차 신규지원 대상과제 공고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-536 호 \n\n｢ AI 응용제품 신속 상용화 지원사업 ｣ \n2 차 신규지원 대상과제 공고 \n\n2026 년도 ｢ AI 응용제품 신속 상용화 지원사업 ｣ 2 차 신규 지원대상 과제 를 \n\n다음과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 8 월 4 일 \n\n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "제조인공지능전환협력과",
+      "reqstBeginEndDe": "2026-08-04",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71256/view",
+      "pblancId": "MOTIE_71256",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-536"
     }
   ]
 }
