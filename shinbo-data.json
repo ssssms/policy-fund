@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-03T05:27:58.650Z",
-  "total": 113,
+  "updatedAt": "2026-09-05T05:08:47.934Z",
+  "total": 115,
   "regions": {
-    "대구": 46,
+    "대구": 48,
     "경북": 67
   },
   "data": [
@@ -17,6 +17,19 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "재해 피해를 입은 기업 중 지자체로부터 \"재해중소기업확인증\" 또는 \"피해사실 확인서\"를 발급받은 기업",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "보증부 서민대출 협약보증(햇살론)",
+      "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 대출한도 - 2천만원 이내 이자지원 - 지원없음 보증료율 - 1.00%",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=2",
+      "pblancId": "SHINBO_대구_2",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
       "_source": "shinbo"
     },
     {
@@ -602,6 +615,19 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "아래의 3가지 사항을 모두 충족하는 소상공인- 사업장이 수성구 소재기업일 것-보증신청 접수일 현재 개업(설립)일로부터 3개월 이상 영업 중일 것-보증신청 접수일 현재 대표자의 개인 신용평점이 NICE 710~924점 또는 KCB 620~929점일 것",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "지역 건설경기 활성화 특별보증",
+      "bsnsSumryCn": "대상: 건설업(표준산업분류 F41~42)을 영위 중인 업력 1년 이상의 기업 / 조건: 대출한도 - 같은기업당 재단보증금액 2억원 이내 이자지원 - 대구시 경영안정자금 연계 시 1.3~2.2%p 지원 보증료율 - 0.8%",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=48",
+      "pblancId": "SHINBO_대구_48",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "건설업(표준산업분류 F41~42)을 영위 중인 업력 1년 이상의 기업",
       "_source": "shinbo"
     },
     {
