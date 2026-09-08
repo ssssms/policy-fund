@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-07T05:03:44.281Z",
-  "total": 296,
+  "updatedAt": "2026-09-08T05:00:37.277Z",
+  "total": 298,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -2051,6 +2051,22 @@
       "_city": "영광군"
     },
     {
+      "pblancNm": "2026년 영광군 소상공인 신용보증수수료 지원",
+      "bsnsSumryCn": " 신용보증수수료 지원 ",
+      "jrsdInsttNm": "전남광주통합특별시 영광군",
+      "excInsttNm": "인구일자리과",
+      "reqstBeginEndDe": "2026. 4. 1.~ 예산 소진 시",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/497000000643",
+      "pblancId": "GOV24_497000000643",
+      "hashtags": "전남광주통합특별시,영광군,생활안정,시군구",
+      "pldirSportRealmLclasCodeNm": "생활안정",
+      "trgetNm": "연매출 10억 원 이하 관내 소상공인 중 전남신용보증재단을 통해 신청일(2026. 4. 6.)이후 자금 대출을 받은 자\r\n※ 제외대상\r\n   - 소상공인시장진흥공단 정책자금 융자제외 대상 업종\r\n   - 휴·폐업 신고를 하였거나, 사실상 휴·폐업인 경우\r\n   - 지방세, 세외수입 체납자\r\n   - 당해 연도 정부·지자체 및 공공기관으로부터 정책자금 수혜를 받은 업체\r\n   - 기타 영광군이 정한 제외업종*\r\n    * 태양광·풍력 발전업, 어업, 방문판매업, 전자상거래업, 기타 무등록 점포 등",
+      "_source": "gov24",
+      "_orgType": "시군구",
+      "_region": "전남광주통합특별시",
+      "_city": "영광군"
+    },
+    {
       "pblancNm": "소상공인 융자금 보증수수료 지원",
       "bsnsSumryCn": "소상공인에게 융자금 이차보전금 및 보증수수료 지원",
       "jrsdInsttNm": "전남광주통합특별시 완도군",
@@ -2339,6 +2355,38 @@
       "_city": "창원시"
     },
     {
+      "pblancNm": "북구 소상공인 디딤돌 3무 특례보증 지원",
+      "bsnsSumryCn": "북구 소상공인 대상 특례보증 대출 지원 및 이차보전, 보증료 지원",
+      "jrsdInsttNm": "전남광주통합특별시 북구",
+      "excInsttNm": "소상공인지원과",
+      "reqstBeginEndDe": "2026. 3. 3. ~ 자금 소진 시",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/582000000001",
+      "pblancId": "GOV24_582000000001",
+      "hashtags": "전남광주통합특별시,북구,생활안정,시군구",
+      "pldirSportRealmLclasCodeNm": "생활안정",
+      "trgetNm": "북구 소상공인",
+      "_source": "gov24",
+      "_orgType": "시군구",
+      "_region": "전남광주통합특별시",
+      "_city": "북구"
+    },
+    {
+      "pblancNm": "북구 저신용 소상공인 포용금융 이차보전 지원",
+      "bsnsSumryCn": "북구 저신용 소상공인의 서민금융형상품 대출이자(5.0%) 1년간 지원",
+      "jrsdInsttNm": "전남광주통합특별시 북구",
+      "excInsttNm": "소상공인지원과",
+      "reqstBeginEndDe": "2026.3.3.~ 자금 소진 시",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/582000000002",
+      "pblancId": "GOV24_582000000002",
+      "hashtags": "전남광주통합특별시,북구,생활안정,시군구",
+      "pldirSportRealmLclasCodeNm": "생활안정",
+      "trgetNm": "북구 저신용 소상공인",
+      "_source": "gov24",
+      "_orgType": "시군구",
+      "_region": "전남광주통합특별시",
+      "_city": "북구"
+    },
+    {
       "pblancNm": "소상공인 법률서비스 지원",
       "bsnsSumryCn": "종합 법률서비스 지원을 통한 소상공인의 안정적 영업 환경 조성",
       "jrsdInsttNm": "부산광역시",
@@ -2480,22 +2528,6 @@
       "_source": "gov24",
       "_orgType": "광역시도",
       "_region": "울산광역시",
-      "_city": ""
-    },
-    {
-      "pblancNm": "일반택시 장기무사고 근속자 융자 이차보전금 지원",
-      "bsnsSumryCn": "일반택시 장기무사고 운전자가 개인택시 면허 양수 시, 융자 및 이자 일부 지원",
-      "jrsdInsttNm": "경기도",
-      "excInsttNm": "택시교통과",
-      "reqstBeginEndDe": "접수기관 별 상이",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/641000000118",
-      "pblancId": "GOV24_641000000118",
-      "hashtags": "경기도,고용·창업,광역시도",
-      "pldirSportRealmLclasCodeNm": "고용·창업",
-      "trgetNm": "개인택시 면허를  양수하려는 일반택시 장기무사고 운수종사자\r\n\r\n(2026년도부터 신규는 신청 중단, 기존 지원대상자에 한해서 계속지원)",
-      "_source": "gov24",
-      "_orgType": "광역시도",
-      "_region": "경기도",
       "_city": ""
     },
     {
