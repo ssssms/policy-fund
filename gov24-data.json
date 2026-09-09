@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T05:00:37.277Z",
+  "updatedAt": "2026-09-09T05:00:37.630Z",
   "total": 298,
   "data": [
     {
@@ -2947,7 +2947,7 @@
       "_city": ""
     },
     {
-      "pblancNm": "기업 채무 신용보증",
+      "pblancNm": "신용보증",
       "bsnsSumryCn": "담보력이 미약한 중소기업 등에게 신용보증 지원",
       "jrsdInsttNm": "신용보증기금",
       "excInsttNm": "신용보증부",
@@ -2966,7 +2966,7 @@
       "pblancNm": "투·융자복합금융 지원",
       "bsnsSumryCn": "중소기업에게 금융·비금융 복합지원",
       "jrsdInsttNm": "신용보증기금",
-      "excInsttNm": "자본시장영업본부",
+      "excInsttNm": "4.0창업부",
       "reqstBeginEndDe": "상시신청",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/B19001600005",
       "pblancId": "GOV24_B19001600005",
