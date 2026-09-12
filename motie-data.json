@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-12T04:14:00.265Z",
-  "total": 11,
+  "updatedAt": "2026-09-12T10:31:43.298Z",
+  "total": 9,
   "data": [
     {
       "pblancNm": "2026년도 지역산업위기대응 이차보전 지원사업 2차 변경공고",
@@ -17,16 +17,17 @@
     },
     {
       "pblancNm": "2026년도 AX실증밸리조성(R&amp;D) 사업 신규지원 대상과제 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "2026 년도 AX 실증밸리조성 (R&D) 사업 신규지원 대상과제 공고 \n\n2026 년도 AX 실증밸리조성 (R&D) 사업의 신규 지원대상 연구개발과제 를 다음과 같이 공고 하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 8 월 31 일",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "인공지능기계로봇과",
       "reqstBeginEndDe": "2026-08-31",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71295/view",
       "pblancId": "MOTIE_71295",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-567"
     },
     {
       "pblancNm": "현금지원제도 운영요령 일부개정안 행정예고",
@@ -123,34 +124,6 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-555"
-    },
-    {
-      "pblancNm": "｢AI 응용제품 신속 상용화 지원사업｣ 2차 신규지원 대상과제 공고(수정)",
-      "bsnsSumryCn": "산업통상부 공고 제 2026-550 호 \n\n｢ AI 응용제품 신속 상용화 지원사업 ｣ \n2 차 신규지원 대상과제 공고 ( 수정 ) \n\n2026 년도 ｢ AI 응용제품 신속 상용화 지원사업 ｣ 2 차 신규 지원대상 과제 를 다음과 같이 \n\n공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 8 월 4 일 \n\n산업통상부장관",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "제조인공지능전환협력과",
-      "reqstBeginEndDe": "2026-08-14",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71274/view",
-      "pblancId": "MOTIE_71274",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-550"
-    },
-    {
-      "pblancNm": "2026년도 제2차 로봇산업기술개발사업 신규지원 대상과제 공고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026-549 호 \n\n2026 년도 제 2 차 로봇산업기술개발사업 신규지원 대상과제 공고 \n\n2026 년도 제 2 차 로봇산업기술개발사업 신규 지원대상 연구개발과제 를 다음과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n2026 년 08 월 13 일 \n산업통상부장관",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "인공지능기계로봇과",
-      "reqstBeginEndDe": "2026-08-13",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71273/view",
-      "pblancId": "MOTIE_71273",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-549"
     }
   ]
 }
