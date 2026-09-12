@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-11T05:00:09.219Z",
-  "total": 298,
+  "updatedAt": "2026-09-12T04:52:34.438Z",
+  "total": 300,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -1939,6 +1939,22 @@
       "_city": ""
     },
     {
+      "pblancNm": "농가 맞춤형 농기계 지원",
+      "bsnsSumryCn": "농업인에게 농기계 구입 보조금 지원",
+      "jrsdInsttNm": "전북특별자치도 장수군",
+      "excInsttNm": "농촌지원과",
+      "reqstBeginEndDe": "매년 연초",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/475000000224",
+      "pblancId": "GOV24_475000000224",
+      "hashtags": "전북특별자치도,장수군,농림축산어업,시군구",
+      "pldirSportRealmLclasCodeNm": "농림축산어업",
+      "trgetNm": "○ 경영정보를 등록하고 관내주소를 두며 관내 농지에서 경작하는 농업경영주",
+      "_source": "gov24",
+      "_orgType": "시군구",
+      "_region": "전북특별자치도",
+      "_city": "장수군"
+    },
+    {
       "pblancNm": "임실군 농어촌 소득금고(융자) 지원",
       "bsnsSumryCn": "농업인을 대상으로 3,000만원 이하 5년 상환 조건의 융자금 지원",
       "jrsdInsttNm": "전북특별자치도 임실군",
@@ -2353,6 +2369,22 @@
       "_orgType": "시군구",
       "_region": "경상남도",
       "_city": "창원시"
+    },
+    {
+      "pblancNm": "맞춤형 농기계 지원",
+      "bsnsSumryCn": "농업인에게 맞춤형 농기계 구입비 지원",
+      "jrsdInsttNm": "충청남도 당진시",
+      "excInsttNm": "농업정책과",
+      "reqstBeginEndDe": "매년 1~3월 사이(기간 조정 될 수 있음)",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/568000000114",
+      "pblancId": "GOV24_568000000114",
+      "hashtags": "충청남도,당진시,농림축산어업,시군구",
+      "pldirSportRealmLclasCodeNm": "농림축산어업",
+      "trgetNm": "관내 경영정보를 등록한 농업인·농업법인과 생산자단체로부터 신청을 받아 공급대상자를 선정하되 신청이 많을 경우 아래의 우선순위 기준으로 대상자 선정 제출\r\n   ①논타작물 재배농업인\r\n   ②청년후계농업인(만40세미만) *후계농증명서 확인 필수\r\n   ③청년농업인(만50세 미만)\r\n   ④여성농업인(여성경영주 또는 경영주외농업인)",
+      "_source": "gov24",
+      "_orgType": "시군구",
+      "_region": "충청남도",
+      "_city": "당진시"
     },
     {
       "pblancNm": "북구 소상공인 디딤돌 3무 특례보증 지원",
