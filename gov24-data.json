@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T05:17:44.227Z",
+  "updatedAt": "2026-09-15T05:09:40.314Z",
   "total": 300,
   "data": [
     {
@@ -1588,7 +1588,7 @@
     },
     {
       "pblancNm": "소상공인 특례보증 대출이자 지원",
-      "bsnsSumryCn": "소상공인 특례보증 대출 이자 지원(1년)",
+      "bsnsSumryCn": "소상공인 특례보증 대출 이자 일부지원(1년)",
       "jrsdInsttNm": "전남광주통합특별시 서구",
       "excInsttNm": "민생경제과",
       "reqstBeginEndDe": "접수기관 별 상이",
@@ -1596,7 +1596,7 @@
       "pblancId": "GOV24_360000000258",
       "hashtags": "전남광주통합특별시,서구,생활안정,시군구",
       "pldirSportRealmLclasCodeNm": "생활안정",
-      "trgetNm": "서구 관내 소상공인",
+      "trgetNm": "전남광주통합특별시 서구에 사업장을 등록한 소상공인",
       "_source": "gov24",
       "_orgType": "시군구",
       "_region": "전남광주통합특별시",
@@ -4308,7 +4308,7 @@
     },
     {
       "pblancNm": "전남 중소기업 면접비 지원",
-      "bsnsSumryCn": "5인이상 300미만  전남 중소기업 면접자 대상으로 면접비 지원(1인당 5만원, 최대2회)",
+      "bsnsSumryCn": "5인이상 300미만 구)전남 중소기업 면접자 대상  면접비 지원(1인당 5만원, 최대2회)",
       "jrsdInsttNm": "재단법인전남광주통합특별시중소기업일자리경제진흥원",
       "excInsttNm": "서비스 관리부서",
       "reqstBeginEndDe": "사업 공고일 ~ 예산소진시까지",
@@ -4352,22 +4352,6 @@
       "_source": "gov24",
       "_orgType": "지방출자_출연기관",
       "_region": "",
-      "_city": ""
-    },
-    {
-      "pblancNm": "콘텐츠기업지원센터 제작지원",
-      "bsnsSumryCn": "도내·외 콘텐츠기업 대상 제작지원금 지급",
-      "jrsdInsttNm": "재단법인전북특별자치도콘텐츠융합진흥원",
-      "excInsttNm": "서비스관리부서",
-      "reqstBeginEndDe": "상시신청",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/O00101100006",
-      "pblancId": "GOV24_O00101100006",
-      "hashtags": "재단법인전북특별자치도,고용·창업,지방출자_출연기관",
-      "pldirSportRealmLclasCodeNm": "고용·창업",
-      "trgetNm": "전북 도내 콘텐츠 기업 및 산업 종사자, 콘텐츠 산업에 관심이 있는 도민 등",
-      "_source": "gov24",
-      "_orgType": "지방출자_출연기관",
-      "_region": "재단법인전북특별자치도",
       "_city": ""
     },
     {
@@ -4797,6 +4781,22 @@
       "hashtags": "고용·창업,중앙행정기관",
       "pldirSportRealmLclasCodeNm": "고용·창업",
       "trgetNm": "○ 중소기업 기본법상 중소기업으로서 영리를 목적으로 사업을 영위하는 개인사업자 및 법인\r\n - 도박·사행성 게임, 사치, 향락, 부동산, 주류·담배 등 일부 업종은 보증지원 제한\r\n\r\n○ 지원 제외 대상\r\n - 보증 기관이 보증채무를 이행한 후 채권을 회수하지 못한 기업 및 채무관계가 등 보증금지 기업\r\n - 휴업 중인 기업, 대출금을 빈번히 연체하는 기업 및 금융거래확인서 기준일 현재 연체 중인 기업 등",
+      "_source": "gov24",
+      "_orgType": "중앙행정기관",
+      "_region": "",
+      "_city": ""
+    },
+    {
+      "pblancNm": "북한이탈주민 자립자활 지원",
+      "bsnsSumryCn": "북한이탈주민에게 일자리 제공·창출 및 교육 지원",
+      "jrsdInsttNm": "통일부",
+      "excInsttNm": "자립지원과",
+      "reqstBeginEndDe": "상시신청",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/WII000000120",
+      "pblancId": "GOV24_WII000000120",
+      "hashtags": "고용·창업,중앙행정기관",
+      "pldirSportRealmLclasCodeNm": "고용·창업",
+      "trgetNm": "ㅇ 북한이탈주민\r\nㅇ 북한이탈주민 고용사업체",
       "_source": "gov24",
       "_orgType": "중앙행정기관",
       "_region": "",
