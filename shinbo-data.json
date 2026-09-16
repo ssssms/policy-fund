@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T05:52:20.311Z",
+  "updatedAt": "2026-09-16T05:41:26.499Z",
   "total": 114,
   "regions": {
     "대구": 47,
@@ -43,6 +43,19 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "장애인기업 특례보증",
+      "bsnsSumryCn": "목적: 장애인기업 지원 / 대상: 장애인기업 / 조건: 대출한도 - 같은기업당 보증금액 1억원 이내 이자지원 - 지원없음 보증료율 - 0.70%",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=4",
+      "pblancId": "SHINBO_대구_4",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "장애인기업",
       "_source": "shinbo"
     },
     {
@@ -108,19 +121,6 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "1.기업가형 소상공인 가.로컬크리에이더육성사업 나. 강한소상공인성장지원사업 선정기업 다.소상공인복합융자사업 선정기업 라.백년가게 2. 예비 기업가형 소상공인 신사업창업사관학교 수료",
-      "_source": "shinbo"
-    },
-    {
-      "pblancNm": "소상공인 비즈+카드보증",
-      "bsnsSumryCn": "목적: 기업구매카드와 연계한 단기자금 지원 / 대상: 대표자 개인 신용평점 595~964점(NICE기준)이고 업력 1년 초과 및 연매출 12백만원 이상(또는 2개월 2백만원 이상)인 기업 / 조건: 대출한도 - 9백만원 이자지원 - 지원없음 보증료율 - 0.80%",
-      "jrsdInsttNm": "대구신용보증재단",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "상시",
-      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=10",
-      "pblancId": "SHINBO_대구_10",
-      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
-      "pldirSportRealmLclasCodeNm": "금융",
-      "trgetNm": "대표자 개인 신용평점 595~964점(NICE기준)이고 업력 1년 초과 및 연매출 12백만원 이상(또는 2개월 2백만원 이상)인 기업",
       "_source": "shinbo"
     },
     {
