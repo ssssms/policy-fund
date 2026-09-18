@@ -1,11 +1,24 @@
 {
-  "updatedAt": "2026-09-17T05:52:54.385Z",
-  "total": 110,
+  "updatedAt": "2026-09-18T05:33:37.831Z",
+  "total": 115,
   "regions": {
-    "대구": 46,
-    "경북": 64
+    "대구": 48,
+    "경북": 67
   },
   "data": [
+    {
+      "pblancNm": "재해특례보증",
+      "bsnsSumryCn": "목적: 재해피해기업 지원 / 대상: 재해 피해를 입은 기업 중 지자체로부터 \"재해중소기업확인증\" 또는 \"피해사실 확인서\"를 발급받은 기업 / 조건: 대출한도 - 3억원과 재해피해금액(또는 재해 복구 소요자금) 중 적은 금액 이자지원 - 지원없음 보증료율 - 특별재해 : 0.1% / 일반재해 : 0.5%",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=1",
+      "pblancId": "SHINBO_대구_1",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "재해 피해를 입은 기업 중 지자체로부터 \"재해중소기업확인증\" 또는 \"피해사실 확인서\"를 발급받은 기업",
+      "_source": "shinbo"
+    },
     {
       "pblancNm": "보증부 서민대출 협약보증(햇살론)",
       "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 대출한도 - 2천만원 이내 이자지원 - 지원없음 보증료율 - 1.00%",
@@ -14,6 +27,19 @@
       "reqstBeginEndDe": "상시",
       "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=2",
       "pblancId": "SHINBO_대구_2",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "햇살론 플러스",
+      "bsnsSumryCn": "목적: 서민 보증지원 / 대상: 저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함) / 조건: 대출한도 - 2천만원 이내 이자지원 - 지원없음 보증료율 - 0.80%",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=3",
+      "pblancId": "SHINBO_대구_3",
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "저신용(744점 이하), 저소득 소상공인(무등록 소상공인 포함)",
@@ -602,6 +628,45 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "건설업(표준산업분류 F41~42)을 영위 중인 업력 1년 이상의 기업",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "2026 포항시 소상공인 희망동행 특례보증",
+      "bsnsSumryCn": "대상: 신청일 현재 포항시 관내에 사업장(법인의 경우 본점 포함)이 소재하고 사업자 등록을 필한 소상공인 / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
+      "jrsdInsttNm": "경북신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://gbsinbo.co.kr/page/10045/10003.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=5",
+      "pblancId": "SHINBO_경북_5",
+      "hashtags": "경북,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "신청일 현재 포항시 관내에 사업장(법인의 경우 본점 포함)이 소재하고 사업자 등록을 필한 소상공인",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "2026 경주시 소상공인 특례보증",
+      "bsnsSumryCn": "대상: 신청일 현재 경주시 관내에 사업장이 소재하는 개인사업자로서 신용보증기관 보증지원 및 금융기관 대출금 지원에 결격사유가 없는 자 / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
+      "jrsdInsttNm": "경북신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://gbsinbo.co.kr/page/10045/10003.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=7",
+      "pblancId": "SHINBO_경북_7",
+      "hashtags": "경북,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "신청일 현재 경주시 관내에 사업장이 소재하는 개인사업자로서 신용보증기관 보증지원 및 금융기관 대출금 지원에 결격사유가 없는 자",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "2026 김천시 소상공인 특례보증",
+      "bsnsSumryCn": "대상: 신청일 현재 김천시 관내에 사업장(법인의 경우 본점 포함)이 소재하고 사업자 등록을 필한 소상공인 또는 청년창업자** 청년창업자 : 19세 이상 45세 이하이면서, 창업 후 3년 이내인 경우 / 조건: 자금조건-대출한도,이자지원,보증료율 대출한도",
+      "jrsdInsttNm": "경북신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://gbsinbo.co.kr/page/10045/10003.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=8",
+      "pblancId": "SHINBO_경북_8",
+      "hashtags": "경북,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "신청일 현재 김천시 관내에 사업장(법인의 경우 본점 포함)이 소재하고 사업자 등록을 필한 소상공인 또는 청년창업자** 청년창업자 : 19세 이상 45세 이하이면서, 창업 후 3년 이내인 경우",
       "_source": "shinbo"
     },
     {
