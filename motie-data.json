@@ -1,20 +1,19 @@
 {
-  "updatedAt": "2026-09-20T15:53:30.943Z",
-  "total": 2,
+  "updatedAt": "2026-09-21T04:32:42.296Z",
+  "total": 3,
   "data": [
     {
       "pblancNm": "2026년 소부장 공급망안정 종합지원 사업 공고(3차)",
-      "bsnsSumryCn": "산업통상부 공고 제 2026-608 호 \n\n2026 년도 소부장 공급망안정 종합지원 사업 공고 (3 차 ) \n\n｢ 소재 ‧ 부품 ‧ 장비산업 경쟁력강화 및 공급망 안정화를 위한 특별조치법 ｣ 제 23 조의 4 에 따른 소부장 공급망안정 종합지원사업을 다음과 같이 공고하오니 , 참여를 희망하는 기업들께서는 적극 활용하여 주시기 바랍니다 . \n\n2026. 9. 18. \n\n산업통상부 장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "산업공급망정책과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-09-18",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71329/view",
       "pblancId": "MOTIE_71329",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-608"
+      "_source": "motie"
     },
     {
       "pblancNm": "2026년도 지역산업위기대응 이차보전 지원사업 2차 변경공고",
@@ -29,6 +28,20 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-584"
+    },
+    {
+      "pblancNm": "2026년도 AX실증밸리조성(R&amp;D) 사업 신규지원 대상과제 공고",
+      "bsnsSumryCn": "2026 년도 AX 실증밸리조성 (R&D) 사업 신규지원 대상과제 공고 \n\n2026 년도 AX 실증밸리조성 (R&D) 사업의 신규 지원대상 연구개발과제 를 다음과 같이 공고 하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 8 월 31 일",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "인공지능기계로봇과",
+      "reqstBeginEndDe": "2026-08-31",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71295/view",
+      "pblancId": "MOTIE_71295",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-567"
     }
   ]
 }
