@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-01T06:48:24.180Z",
-  "total": 114,
+  "updatedAt": "2026-10-02T06:29:37.446Z",
+  "total": 115,
   "regions": {
-    "대구": 47,
+    "대구": 48,
     "경북": 67
   },
   "data": [
@@ -160,6 +160,19 @@
       "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
       "pldirSportRealmLclasCodeNm": "금융",
       "trgetNm": "수출지원사업(중기부 글로벌강소기업 1,000+)선정기업 또는 최근 1년 이내 수출실적 보유기업(대표자 신용평점 710점 이상)",
+      "_source": "shinbo"
+    },
+    {
+      "pblancNm": "전통시장 금융지원 협약보증",
+      "bsnsSumryCn": "목적: 전통시장, 상점가 기업 우대 자금 지원 / 대상: 전통시장 및 상점가에 소재한 기업 / 조건: 대출한도 - 5천만원 이내(같은기업당 보증금액 1억원 이내) 이자지원 - 지원없음 보증료율 - 0.80%",
+      "jrsdInsttNm": "대구신용보증재단",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "상시",
+      "pblancUrl": "https://www.dgsinbo.or.kr/page/10039/10043.tc?pageDtlOrdrNo=1&importUrl=/guaranteegoods/detail.tc&gdsNo=13",
+      "pblancId": "SHINBO_대구_13",
+      "hashtags": "대구,신용보증재단,소상공인,중소기업,보증",
+      "pldirSportRealmLclasCodeNm": "금융",
+      "trgetNm": "전통시장 및 상점가에 소재한 기업",
       "_source": "shinbo"
     },
     {
