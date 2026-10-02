@@ -1,7 +1,20 @@
 {
-  "updatedAt": "2026-10-02T05:14:34.213Z",
-  "total": 4,
+  "updatedAt": "2026-10-02T12:18:59.557Z",
+  "total": 5,
   "data": [
+    {
+      "pblancNm": "2026년도 산업통상협력개발지원(ODA) 사전타당성조사 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-10-02",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71356/view",
+      "pblancId": "MOTIE_71356",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
     {
       "pblancNm": "「신뢰성기반활용지원사업」연구개발기관 모집 공고",
       "bsnsSumryCn": "",
