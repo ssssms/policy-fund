@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-07T06:18:29.303Z",
-  "total": 300,
+  "updatedAt": "2026-10-08T06:28:50.910Z",
+  "total": 299,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -1505,22 +1505,6 @@
       "_orgType": "시군구",
       "_region": "인천광역시",
       "_city": "남동구"
-    },
-    {
-      "pblancNm": "소상공인 특례보증",
-      "bsnsSumryCn": "부평구 관내 사업자등록을 필한 소상공인 중 담보여력이 없거나 개인 대출이 어려운 소상공인",
-      "jrsdInsttNm": "인천광역시 부평구",
-      "excInsttNm": "경제지원과",
-      "reqstBeginEndDe": "예산소진 전",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/354000000112",
-      "pblancId": "GOV24_354000000112",
-      "hashtags": "인천광역시,부평구,생활안정,시군구",
-      "pldirSportRealmLclasCodeNm": "생활안정",
-      "trgetNm": "부평구 소재 소상공인 중 담보 여력이 부족한 소상공인",
-      "_source": "gov24",
-      "_orgType": "시군구",
-      "_region": "인천광역시",
-      "_city": "부평구"
     },
     {
       "pblancNm": "소상공인 특례보증",
