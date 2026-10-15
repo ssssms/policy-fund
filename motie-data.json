@@ -1,7 +1,21 @@
 {
-  "updatedAt": "2026-10-15T11:15:23.181Z",
-  "total": 6,
+  "updatedAt": "2026-10-15T16:45:58.121Z",
+  "total": 7,
   "data": [
+    {
+      "pblancNm": "뿌리산업 외국인 활용 지원제도 운영지침  개정안 행정예고",
+      "bsnsSumryCn": "산업통상부 공고 제 2026 -639 호 \n\n「 뿌리산업 외국인 활용 지원제도 운영지침 」 을 개정 함에 있어 , 그 개정 이유와 주요내용을 미리 국민에게 알려 이에 대한 의견을 듣고자 「 행정절차법 」 제 46 조에 따라 다음과 같이 공고합니다 . \n2026 년 10 월 16 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "산업공급망정책과",
+      "reqstBeginEndDe": "2026-10-16",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71361/view",
+      "pblancId": "MOTIE_71361",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie",
+      "pblancNo": "2026-639"
+    },
     {
       "pblancNm": "2026년 지역거점 AX 혁신 기술개발 사업 신규지원 대상과제 공고 (공정·응용 솔루션 AX R&amp;D, 응용 제품 AX R&amp;D)",
       "bsnsSumryCn": "",
@@ -72,16 +86,17 @@
     },
     {
       "pblancNm": "2026년 소부장 공급망안정 종합지원 사업 공고(3차)",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-608 호 \n\n2026 년도 소부장 공급망안정 종합지원 사업 공고 (3 차 ) \n\n｢ 소재 ‧ 부품 ‧ 장비산업 경쟁력강화 및 공급망 안정화를 위한 특별조치법 ｣ 제 23 조의 4 에 따른 소부장 공급망안정 종합지원사업을 다음과 같이 공고하오니 , 참여를 희망하는 기업들께서는 적극 활용하여 주시기 바랍니다 . \n\n2026. 9. 18. \n\n산업통상부 장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "산업공급망정책과",
       "reqstBeginEndDe": "2026-09-18",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71329/view",
       "pblancId": "MOTIE_71329",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-608"
     }
   ]
 }
