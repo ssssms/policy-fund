@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-18T15:43:43.998Z",
-  "total": 5,
+  "updatedAt": "2026-10-19T04:17:21.210Z",
+  "total": 7,
   "data": [
     {
       "pblancNm": "뿌리산업 외국인 활용 지원제도 운영지침  개정안 행정예고",
@@ -17,9 +17,9 @@
     },
     {
       "pblancNm": "뿌리산업 외국인 활용 지원제도 운영지침 개정안 행정예고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026 -639 호 \n\n「 뿌리산업 외국인 활용 지원제도 운영지침 」 을 개정 함에 있어 , 그 개정 이유와 주요내용을 미리 국민에게 알려 이에 대한 의견을 듣고자 「 행정절차법 」 제 46 조에 따라 다음과 같이 공고합니다 . \n2026 년 10 월 16 일 \n산업통상부장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "산업공급망정책과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-10-16",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71372/view",
       "pblancId": "MOTIE_71372",
@@ -69,6 +69,32 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-626"
+    },
+    {
+      "pblancNm": "2026년도 소재부품기술개발사업(4차) 신규지원 대상과제 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-09-22",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71333/view",
+      "pblancId": "MOTIE_71333",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "해외자원개발사업자금 융자기준 일부개정(안) 행정예고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-09-22",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71325/view",
+      "pblancId": "MOTIE_71325",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
     }
   ]
 }
