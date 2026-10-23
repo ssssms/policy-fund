@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-22T05:11:59.059Z",
-  "total": 299,
+  "updatedAt": "2026-10-23T05:11:44.241Z",
+  "total": 297,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -301,22 +301,6 @@
       "hashtags": "농림축산어업,중앙행정기관",
       "pldirSportRealmLclasCodeNm": "농림축산어업",
       "trgetNm": "○ 사업대상자\r\n - 산촌으로 이주하여 임업에 종사하고 있거나 하고자 하는 자로서, 귀산촌한 지 만 5년이 경과하지 않은 자(단, 신청일 기준 만 65세 이하인 자)\r\n  ㆍ (정착자금) 산촌지역으로 이주하여 주택자금(목조주택 포함) 대출 예정인 자는 대출금 수령 후 2개월 이내 주소지 이전을 증명하여야 함\r\n  ㆍ (창업자금) 대출신청자는 주소지 이전(전입)이 완료된 상태에서 신청하여야 하며, 이주할 예정인 자는 신청 불가\r\n  ㆍ 주택구입, 국산목조주택신축 자금은 연령기준을 적용하지 않음",
-      "_source": "gov24",
-      "_orgType": "중앙행정기관",
-      "_region": "",
-      "_city": ""
-    },
-    {
-      "pblancNm": "혁신 소상공인 창업지원",
-      "bsnsSumryCn": "예비창업자를 대상으로 교육 및 멘토링, 사업화 등을 지원하는 사업",
-      "jrsdInsttNm": "중소벤처기업부",
-      "excInsttNm": "소상공인성장촉진과",
-      "reqstBeginEndDe": "별도 안내",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/142000000038",
-      "pblancId": "GOV24_142000000038",
-      "hashtags": "고용·창업,중앙행정기관",
-      "pldirSportRealmLclasCodeNm": "고용·창업",
-      "trgetNm": "○ 생활분야에서 창의적인 아이디어로 창업을 하고자 하는 하는 예비창업자",
       "_source": "gov24",
       "_orgType": "중앙행정기관",
       "_region": "",
@@ -1331,22 +1315,6 @@
       "_city": "동대문구"
     },
     {
-      "pblancNm": "주민소득지원 및 생활안정기금 융자 및 희망자금 지원",
-      "bsnsSumryCn": "저소득주민에게 소득 및 생활안정기금 융자 및 희망자금 지원",
-      "jrsdInsttNm": "서울특별시 동작구",
-      "excInsttNm": "지역경제과",
-      "reqstBeginEndDe": "동작구 홈페이지 공고(http://dongjak.go.kr)",
-      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/319000000127",
-      "pblancId": "GOV24_319000000127",
-      "hashtags": "서울특별시,동작구,생활안정,시군구",
-      "pldirSportRealmLclasCodeNm": "생활안정",
-      "trgetNm": "동작구에 주민등록이 되어 있는 저소득 주민",
-      "_source": "gov24",
-      "_orgType": "시군구",
-      "_region": "서울특별시",
-      "_city": "동작구"
-    },
-    {
       "pblancNm": "중소기업육성기금 융자 지원",
       "bsnsSumryCn": "관내에서 3개월 이상 영업 중인 중소기업 및 소상공인을 대상으로 시설개선 및 경영자금 융자",
       "jrsdInsttNm": "서울특별시 동작구",
@@ -1590,7 +1558,7 @@
       "pblancNm": "소상공인 경영안정자금지원",
       "bsnsSumryCn": "담보력이 약한 소상공인에 금융혜택을 통한 경영안정자금지원",
       "jrsdInsttNm": "대전광역시 서구",
-      "excInsttNm": "지역경제과",
+      "excInsttNm": "민생경제과",
       "reqstBeginEndDe": "보증한도 소진 시까지",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/366000000117",
       "pblancId": "GOV24_366000000117",
@@ -4518,7 +4486,7 @@
       "pblancNm": "소상공인 정책자금 융자 지원(일반경영안정자금, 특별경영안정자금, 성장기반자금 등)",
       "bsnsSumryCn": "소상공인 대상 시중은행 대비 저금리 정책자금을 지원",
       "jrsdInsttNm": "중소벤처기업부",
-      "excInsttNm": "소상공인경영안정과",
+      "excInsttNm": "소상공인경영안정정책과",
       "reqstBeginEndDe": "자금별 상이",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/SD0000007429",
       "pblancId": "GOV24_SD0000007429",
