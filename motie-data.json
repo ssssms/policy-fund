@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-25T11:08:50.607Z",
-  "total": 5,
+  "updatedAt": "2026-10-25T15:57:14.245Z",
+  "total": 4,
   "data": [
     {
       "pblancNm": "2026년도 제3차 기계장비산업기술개발사업 신규지원 대상과제 공고",
@@ -55,19 +55,6 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-643"
-    },
-    {
-      "pblancNm": "2026년도 산업통상협력개발지원(ODA) 사전타당성조사 공고",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-10-02",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71356/view",
-      "pblancId": "MOTIE_71356",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie"
     }
   ]
 }
