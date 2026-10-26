@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-26T04:21:11.850Z",
-  "total": 6,
+  "updatedAt": "2026-10-26T12:42:28.616Z",
+  "total": 5,
   "data": [
     {
       "pblancNm": "2026년도 제3차 기계장비산업기술개발사업 신규지원 대상과제 공고",
@@ -44,16 +44,17 @@
     },
     {
       "pblancNm": "2026년 지역거점 AX 혁신 기술개발 사업 신규지원 대상과제 공고 (공정·응용 솔루션 AX R&amp;D, 응용 제품 AX R&amp;D)",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "2026 년 지역거점 AX 혁신 기술개발 사업 신규지원 대상과제 공고 \n( 공정 &middot; 응용 솔루션 AX R&D, 응용 제품 AX R&D) \n\n2026 년도 지역거점 AX 혁신 기술개발 사업의 신규 지원대상 연구개발과제 를 다음과 같이 공고 하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 10 월 13 일 \n과학기술정보통신부 &middot; 산업통상부 장관 \n대구디지털혁신진흥원 부설 지역거점 AX 혁신기술개발사업단 단장 직무대행",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "인공지능기계로봇과",
       "reqstBeginEndDe": "2026-10-13",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71365/view",
       "pblancId": "MOTIE_71365",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-643"
     },
     {
       "pblancNm": "2026년도 산업통상협력개발지원(ODA) 사전타당성조사 공고",
@@ -67,20 +68,6 @@
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
       "_source": "motie"
-    },
-    {
-      "pblancNm": "「신뢰성기반활용지원사업」연구개발기관 모집 공고",
-      "bsnsSumryCn": "산업통상부공고 제 2026-626 호 \n\n「 신뢰성기반활용지원사업 」 연구개발기관 모집 공고 \n\n｢ 신뢰성기반활용지원사업 ｣ 의 연구개발기관 모집계획을 다음과 같이 공고하오니 , \n사업을 수행하고자 하는 기관 ( 기업포함 ) 은 아래의 절차에 따라 신청하여 주시기 \n바랍니다 . \n2026 년 9 월 30 일 \n산업통상부장관",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "소재부품장비개발과",
-      "reqstBeginEndDe": "2026-09-30",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71346/view",
-      "pblancId": "MOTIE_71346",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-626"
     }
   ]
 }
