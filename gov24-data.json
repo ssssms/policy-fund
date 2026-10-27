@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-26T05:09:04.244Z",
-  "total": 297,
+  "updatedAt": "2026-10-27T05:23:28.567Z",
+  "total": 298,
   "data": [
     {
       "pblancNm": "귀어 창업 및 주택구입 지원(융자)",
@@ -1366,7 +1366,7 @@
       "pblancNm": "수출보험료 지원사업",
       "bsnsSumryCn": "지원내용 : 단기수출보험, 수출신용보증보험, 환변동보험",
       "jrsdInsttNm": "대구광역시 달성군",
-      "excInsttNm": "경제산업과",
+      "excInsttNm": "기업일자리과",
       "reqstBeginEndDe": "상시신청",
       "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/348000000419",
       "pblancId": "GOV24_348000000419",
@@ -1777,6 +1777,22 @@
       "_orgType": "시군구",
       "_region": "경기도",
       "_city": "연천군"
+    },
+    {
+      "pblancNm": "중소기업 육성자금 지원",
+      "bsnsSumryCn": "운전자금과 시설자금 융자 추천 및 이차보전 ",
+      "jrsdInsttNm": "강원특별자치도 원주시",
+      "excInsttNm": "기업지원일자리과",
+      "reqstBeginEndDe": "연도별 상반기, 하반기 공고 참고",
+      "pblancUrl": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/419100000014",
+      "pblancId": "GOV24_419100000014",
+      "hashtags": "강원특별자치도,원주시,고용·창업,시군구",
+      "pldirSportRealmLclasCodeNm": "고용·창업",
+      "trgetNm": "본사, 주사무소 또는 사업장 중 어느 하나가 원주시에 소재하는 중소기업\r\n - 제조업, 지식정보 관련업, 건설업(2년이상), 관광업, 도매 및 소매업, 숙박업, 이미용업, 목욕장업, 세탁업, 일반음식점업, 자동차정비업, 운송업",
+      "_source": "gov24",
+      "_orgType": "시군구",
+      "_region": "강원특별자치도",
+      "_city": "원주시"
     },
     {
       "pblancNm": "스마트팜 ICT융복합확산(시설보급-ICT시설보급)",
