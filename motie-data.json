@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T04:40:11.633Z",
+  "updatedAt": "2026-10-27T11:57:38.133Z",
   "total": 7,
   "data": [
     {
@@ -17,17 +17,16 @@
     },
     {
       "pblancNm": "국가첨단전략산업 특성화대학 등 지정 및 지원에 관한 운영지침 일부개정안 행정예고 공고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026 -645 호 \n\n「 국가첨단전략산업 특성화대학 등 지정 및 지원에 관한 운영지침 」 를 개정 함에 있어 , 그 개정 이유와 주요내용을 미리 국민에게 알려 이에 대한 의견을 듣고자 「 행정절차법 」 제 46 조에 따라 다음과 같이 공고합니다 . \n2026 년 10 월 19 일 \n산업통상부장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "산업일자리혁신과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-10-19",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71387/view",
       "pblancId": "MOTIE_71387",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-645"
+      "_source": "motie"
     },
     {
       "pblancNm": "해외진출기업의 국내복귀 지원에 관한 고시  일부개정안 행정예고 공고",
@@ -42,19 +41,6 @@
       "trgetNm": "",
       "_source": "motie",
       "pblancNo": "2026-649"
-    },
-    {
-      "pblancNm": "뿌리산업 외국인 활용 지원제도 운영지침 개정안 행정예고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026 -639 호 \n\n「 뿌리산업 외국인 활용 지원제도 운영지침 」 을 개정 함에 있어 , 그 개정 이유와 주요내용을 미리 국민에게 알려 이에 대한 의견을 듣고자 「 행정절차법 」 제 46 조에 따라 다음과 같이 공고합니다 . \n2026 년 10 월 16 일 \n산업통상부장관",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "산업공급망정책과",
-      "reqstBeginEndDe": "2026-10-16",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71372/view",
-      "pblancId": "MOTIE_71372",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie"
     },
     {
       "pblancNm": "뿌리산업 외국인 활용 지원제도 운영지침  개정안 행정예고",
@@ -72,16 +58,17 @@
     },
     {
       "pblancNm": "2026년 지역거점 AX 혁신 기술개발 사업 신규지원 대상과제 공고 (공정·응용 솔루션 AX R&amp;D, 응용 제품 AX R&amp;D)",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "2026 년 지역거점 AX 혁신 기술개발 사업 신규지원 대상과제 공고 \n( 공정 &middot; 응용 솔루션 AX R&D, 응용 제품 AX R&D) \n\n2026 년도 지역거점 AX 혁신 기술개발 사업의 신규 지원대상 연구개발과제 를 다음과 같이 공고 하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 10 월 13 일 \n과학기술정보통신부 &middot; 산업통상부 장관 \n대구디지털혁신진흥원 부설 지역거점 AX 혁신기술개발사업단 단장 직무대행",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "인공지능기계로봇과",
       "reqstBeginEndDe": "2026-10-13",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71365/view",
       "pblancId": "MOTIE_71365",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-643"
     },
     {
       "pblancNm": "2026년도 산업통상협력개발지원(ODA) 사전타당성조사 공고",
@@ -91,6 +78,19 @@
       "reqstBeginEndDe": "2026-10-02",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71356/view",
       "pblancId": "MOTIE_71356",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "「신뢰성기반활용지원사업」연구개발기관 모집 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-09-30",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71346/view",
+      "pblancId": "MOTIE_71346",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
