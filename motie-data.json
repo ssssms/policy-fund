@@ -1,7 +1,33 @@
 {
-  "updatedAt": "2026-11-05T06:13:54.111Z",
-  "total": 6,
+  "updatedAt": "2026-11-05T19:48:47.211Z",
+  "total": 8,
   "data": [
+    {
+      "pblancNm": "「도시가스요금 경감지원금액 한도 산정 등에 관한 지침」 일부개정안 행정예고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-11-06",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71408/view",
+      "pblancId": "MOTIE_71408",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "2026년「국가첨단전략산업 소부장 중소·중견기업 투자지원금」 사업시행 3차 공고",
+      "bsnsSumryCn": "",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "",
+      "reqstBeginEndDe": "2026-11-05",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71411/view",
+      "pblancId": "MOTIE_71411",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
     {
       "pblancNm": "2026년 AX실증밸리조성(R&amp;D) 사업 신규지원 대상과제 재공고",
       "bsnsSumryCn": "",
