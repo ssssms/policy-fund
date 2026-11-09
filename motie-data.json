@@ -1,19 +1,33 @@
 {
-  "updatedAt": "2026-11-08T13:08:51.050Z",
-  "total": 6,
+  "updatedAt": "2026-11-09T05:51:07.343Z",
+  "total": 7,
   "data": [
     {
-      "pblancNm": "「도시가스요금 경감지원금액 한도 산정 등에 관한 지침」 일부개정안 행정예고",
+      "pblancNm": "2027년도 소재·부품·장비 양산성능평가지원사업 총괄주관연구개발기관 모집 공고",
       "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
       "excInsttNm": "",
+      "reqstBeginEndDe": "2026-11-09",
+      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71414/view",
+      "pblancId": "MOTIE_71414",
+      "hashtags": "",
+      "pldirSportRealmLclasCodeNm": "",
+      "trgetNm": "",
+      "_source": "motie"
+    },
+    {
+      "pblancNm": "「도시가스요금 경감지원금액 한도 산정 등에 관한 지침」 일부개정안 행정예고",
+      "bsnsSumryCn": "산업통상부공고 제 2026 - 685 호 \n\n「 도시가스요금 경감지원금액 한도 산정 등에 관한 지침 」 을 개정 함에 있어 , 그 개정 이유와 주요내용을 미리 국민에게 알려 이에 대한 의견을 듣고자 「 행정절차법 」 제 46 조에 따라 다음과 같이 공고합니다 . \n\n2026 년 11 월 6 일 \n산업통상부장관",
+      "jrsdInsttNm": "산업통상자원부",
+      "excInsttNm": "가스산업과",
       "reqstBeginEndDe": "2026-11-06",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71408/view",
       "pblancId": "MOTIE_71408",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-685"
     },
     {
       "pblancNm": "2026년「국가첨단전략산업 소부장 중소·중견기업 투자지원금」 사업시행 3차 공고",
@@ -45,17 +59,16 @@
     },
     {
       "pblancNm": "2026년도 제3차 기계장비산업기술개발사업 신규지원 대상과제 공고",
-      "bsnsSumryCn": "산업통상부 공고 제 2026-661 호 \n\n2026 년도 제 3 차 기계장비산업기술개발사업 신규지원 대상과제 공고 \n\n2026 년도 제 3 차 기계장비산업기술개발사업 신규 지원대상 연구개발과제 를 다음과 같이 공고하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 10 월 22 일 \n산업통상부장관",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "산업인공지능정책과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-10-22",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71384/view",
       "pblancId": "MOTIE_71384",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-661"
+      "_source": "motie"
     },
     {
       "pblancNm": "국가첨단전략산업 특성화대학 등 지정 및 지원에 관한 운영지침 일부개정안 행정예고 공고",
@@ -72,16 +85,17 @@
     },
     {
       "pblancNm": "해외진출기업의 국내복귀 지원에 관한 고시  일부개정안 행정예고 공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "산업통상부 공고 제 2026-649 호 \n\n「 해외진출기업의 국내복귀 지원에 관한 고시 」 를 일부 개정함에 있어 그 개정 내용과 취지를 국민께 미리 알려 의견을 듣고자 ｢ 행정절차법 ｣ 제 46 조에 따라 다음과 같이 공고합니다 . \n\n2026 년 10 월 16 일 \n산업통상부장관",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "해외투자과",
       "reqstBeginEndDe": "2026-10-16",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71388/view",
       "pblancId": "MOTIE_71388",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-649"
     }
   ]
 }
