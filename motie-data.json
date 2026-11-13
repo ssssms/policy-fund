@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-12T19:47:07.797Z",
-  "total": 5,
+  "updatedAt": "2026-11-13T06:12:00.950Z",
+  "total": 4,
   "data": [
     {
       "pblancNm": "2027년도 소재·부품·장비 양산성능평가지원사업 총괄주관연구개발기관 모집 공고",
@@ -45,29 +45,17 @@
     },
     {
       "pblancNm": "2026년 AX실증밸리조성(R&amp;D) 사업 신규지원 대상과제 재공고",
-      "bsnsSumryCn": "",
+      "bsnsSumryCn": "2026 년도 AX 실증밸리조성 (R&D) 사업의 신규 지원대상 연구개발과제를 다음과 같이 재 공고 하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 11 월 3 일 \n\n인공지능산업융합사업단장",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
+      "excInsttNm": "인공지능기계로봇과",
       "reqstBeginEndDe": "2026-11-03",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71407/view",
       "pblancId": "MOTIE_71407",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie"
-    },
-    {
-      "pblancNm": "2026년도 제3차 기계장비산업기술개발사업 신규지원 대상과제 공고",
-      "bsnsSumryCn": "",
-      "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "",
-      "reqstBeginEndDe": "2026-10-22",
-      "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71384/view",
-      "pblancId": "MOTIE_71384",
-      "hashtags": "",
-      "pldirSportRealmLclasCodeNm": "",
-      "trgetNm": "",
-      "_source": "motie"
+      "_source": "motie",
+      "pblancNo": "2026-683"
     }
   ]
 }
