@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T19:00:05.554Z",
+  "updatedAt": "2026-11-22T06:16:16.531Z",
   "total": 5,
   "data": [
     {
@@ -59,17 +59,16 @@
     },
     {
       "pblancNm": "2026년 AX실증밸리조성(R&amp;D) 사업 신규지원 대상과제 재공고",
-      "bsnsSumryCn": "2026 년도 AX 실증밸리조성 (R&D) 사업의 신규 지원대상 연구개발과제를 다음과 같이 재 공고 하오니 수행하고자 하는 자는 신청하여 주시기 바랍니다 . \n\n2026 년 11 월 3 일 \n\n인공지능산업융합사업단장",
+      "bsnsSumryCn": "",
       "jrsdInsttNm": "산업통상자원부",
-      "excInsttNm": "인공지능기계로봇과",
+      "excInsttNm": "",
       "reqstBeginEndDe": "2026-11-03",
       "pblancUrl": "https://www.motie.go.kr/kor/article/ATCLc01b2801b/71407/view",
       "pblancId": "MOTIE_71407",
       "hashtags": "",
       "pldirSportRealmLclasCodeNm": "",
       "trgetNm": "",
-      "_source": "motie",
-      "pblancNo": "2026-683"
+      "_source": "motie"
     }
   ]
 }
